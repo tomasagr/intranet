@@ -1,0 +1,41 @@
+.rse {
+	.date {
+		margin: 2em 0;
+		font-size: 12px;
+		color: #999;
+		font-weight: bold;
+	}
+
+	.content {
+		font-size: 14px;
+		color: #999;
+		font-weight: 400;
+		padding-bottom: 2.4em;
+	}
+}
+
+.rse-images {
+	margin: 3em 0;
+
+	img {
+		padding-bottom: 1.1em;
+	}
+
+	.description {
+		height: 395px;
+		background: $green;
+		padding-top: 4em;
+		padding-left: 2em;
+		padding-right: 2em;
+
+		.content {
+			color: white;
+		}
+
+		.title {
+			color: white;
+			font-size: 30px;
+			margin-bottom: .8em;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.sectores {
+	margin-top: 2em;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	background: white;
+	article {
+		.name {
+			margin-bottom: 0;
+			margin-top: 1em;
+			color: #444;
+			font-weight: 600;
+		}
+		.departamento {
+			color: #a7a7a7;
+			font-size: 14px;
+		}
+
+		.description {
+			color: #666666;
+			font-size: 13px;
+		}
+	}
+}
+
+.sectores-lista {
+		h2.title {
+			text-align: center;
+			font-weight: bold;
+			font-size: 3em;
+			margin-top: 0;
+			margin-bottom: 22px;
+		}
+
+		.sector-item {
+			margin-bottom: 1em;
+			a {
+				padding: 1em 1.5em;
+				width: 100%;
+				display: inline-block;
+				border: 2px solid #c1c1c1;
+				color: #c1c1c1;
+				transition: .3s all ease;
+				
+				&:hover {
+					text-decoration: none;
+					background: $orange;
+					color: white;
+					border-color: transparent;
+				}
+				
+				h2 {
+					font-size: 25px;
+					margin-top: 0px;
+					margin-bottom: 3px;
+				}
+			}
+		}
+	}

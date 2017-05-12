@@ -1,0 +1,94 @@
+.salas {
+  .sala-tabs {
+    button {
+      margin-right: 3em;
+    }
+  }
+  button.fc-prev-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+  }
+
+  button.fc-next-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right {
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .fc-center h2 {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  th.fc-day-header.fc-widget-header {
+    padding: 1.6em 0;
+    font-size: 12px;
+  }
+
+  .fc-day-number {
+    text-align: center !important;
+    padding-top: 1.3em !important;
+  }
+
+  .ticks {
+    margin-top: 1em;
+
+    span {
+      margin-right: 4em;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+
+  .header-list h2 {
+    font-family: "Lato";
+    font-weight: 600;
+    color: $green;
+    margin-bottom: 0px;
+  }
+
+  .header-list h3 {
+    color: black;
+    font-weight: 400;
+    color: #505154;
+    margin-top: 9px;
+    margin-bottom: 1em;
+  }
+
+  .items {
+    font-family: "Lato";
+
+    .item {
+      .hour, .event-title {
+        margin: 0;
+      }
+
+      .hour {
+        color: #c5c5c5;
+        font-weight: bold;
+      }
+
+      .event-title {
+        font-weight: bold;
+        margin: 1em 0;
+      }
+
+      .event-description {
+        color: #c5c5c5;
+      }
+    }
+
+    .hour-range {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: 400 !important;
+        margin: .8em 0;
+      }
+    }
+  }
+}

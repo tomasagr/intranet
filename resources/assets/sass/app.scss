@@ -1,0 +1,283 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,500,600,ge700,800,900|Open+Sans:300,400,600,800,900);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import './header';
+@import './news';
+@import './calendar';
+@import './sectores';
+@import './aboutus';
+@import './manuals';
+@import './products';
+@import './jobs';
+@import './rse';
+@import './diary';
+@import './rincon';
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: "Lato";
+}
+
+.main-container {
+	margin-bottom: 4em;
+}
+
+.default-text {
+	font-family: "Open Sans";
+	font-size: 14px;
+	color: white;
+	padding: 2em 0;
+}
+
+.main-content .title {
+	text-align: center;
+	font-weight: bold;
+	margin: 1em 0;
+	font-size: 2.5em;
+}
+
+.default-text.copy {
+	padding-top: 0;
+	font-size: 11px;
+}
+
+.bg-orange {
+	background: $orange;
+	color: white;
+}
+
+.label.tag {
+	position: relative;
+    padding: .5em 0em .5em .6em;
+    text-align: left;
+    width: 62px !important;
+    display: inline-block;
+    height: 25px;
+    font-weight: 300;
+    background-color: transparent;
+    background: url(/images/tag.png?57da30f6c803f7fb132d72095f326fb5) no-repeat;
+}
+
+.btn-summit {
+	border-radius: 15px;
+	font-size: 10px;
+	font-weight: 600;
+
+	&:hover {
+		background: $orange;
+		color: white;
+	}
+}
+
+
+// Overrides
+.danger-alternative {
+	font-weight: 800;
+	width: 300px;
+	font-family: "Lato";
+	font-weight: bold;
+	font-size: 10px;
+	padding-top: 1.2em;
+	padding-bottom: 1.2em;
+	letter-spacing: 4px;
+	background: #f3922c;
+	boder: 0;
+	border-radius: 100px;
+}
+
+.button-center {
+	margin-top: 2em;
+	display: block;
+	width: 100%
+}
+
+.orange-alt {
+	background: white;
+	font-size: 14px;
+	color: $orange;
+	width: 150px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	letter-spacing: 2px;
+}
+
+label {
+	font-weight: 700 !important;
+}
+
+#login input.form-control {
+	border-radius: 0;
+	padding: 1.3em 1em;
+	border: 0;
+}
+
+textarea {
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	text-align: left !important;
+}
+
+input.form-control {
+	border-radius: 0;
+	padding: 1.3em 1em;
+	box-shadow: none;
+}
+
+input.inline-block-input {
+	width: 100% !important;
+}
+
+.btn {
+	transition: .3s ease all !important;
+}
+
+.input-group-btn button {
+	padding: 8.3px 12px;
+}
+
+// LOGIN
+.background-login {
+	width: 100%;
+	height: 100vh;
+	background: url('../img/bg-login.png');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.login-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.button-send {
+	margin-top: 2.3em;
+}
+
+.background-main {
+	background: $body-bg
+}
+
+// REGISTER
+.logo-register  img {
+	text-align: center;
+	padding: 2em;
+	margin: 0 auto;
+	width: 300px;
+}
+
+.card {
+	padding: 1em;
+	padding-bottom: 2em;
+	background: $card-bg;
+
+	.upload-row {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 3em 0 2em 0;
+	}
+
+	.top-title {
+		font-family: "Lato";
+		font-weight: 900;
+		font-size: 3em;
+		text-align: center;
+	}
+
+	.user-image {
+		width: 130px;
+		height: 130px;
+	}
+
+	.inline-flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.questions {
+	margin-bottom: 2em;
+	h1 {
+		color: $orange;
+		font-weight: 900;
+		font-family: "Lato";
+		margin-bottom: 1.5em;
+	}
+	label {
+		margin-bottom: 1.5em;
+	}
+	.questions-items {
+		.inline-flex {
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+	}
+}
+
+.footer {
+	background: $orange;
+	color: white !important;
+
+	a {
+		color: white !important;
+	}
+
+	.logo {
+		display: flex;
+		justify-content: center;
+		margin-top: 21px;
+		padding-bottom: 2em;
+		border-bottom: 1px solid white;
+	}
+
+	.social {
+		display: flex;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		font-size: 20px;
+		justify-content: center;
+		align-items: center;
+
+		span {
+			padding: 0 .8em;
+		}
+	}
+
+	.copy {
+		padding-bottom: 1em;
+	}
+}
+
+
+.search-item {
+	h1 {
+		text-transform: uppercase;
+		color: $orange;
+		font-weight: bold;
+	}
+	.content {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2em;
+
+		p {
+			color: #aaa;
+		}
+	}
+}

@@ -1,0 +1,86 @@
+.jobs-list .description {
+	margin: 3em 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.image {
+		margin: 1em;
+	}
+
+	.data {
+		padding-right: 6em;
+		width: 597px;
+
+		p {
+			margin-bottom: 2px;
+		}
+
+		.content {
+			color: #aaa
+		}
+	}
+}
+
+.first {
+	padding: 0;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #aaa;
+	.col-md-6 {
+		padding: 0;
+	}
+	.option {
+		color: #aaa;
+	}
+}
+.options {
+	padding-right: 5em;
+}
+.second {
+	padding: 0;
+	margin-bottom: 1em;
+	.option {
+		color: #aaa;
+	}
+
+	.col-md-6 {
+		padding: 0;
+	}
+}
+
+.square {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.square.green {
+	background: $green;
+}
+
+.square.orange {
+	background: $orange;
+}
+
+.title-jobs {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 3em;
+	h2 {
+		font-weight: bold;
+		color: $orange;
+		width: 100%;
+	}
+}
+
+.jobs-detail {
+	.options {
+		margin: 2em 0;
+	}
+}

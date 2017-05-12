@@ -1,0 +1,57 @@
+.manuals {
+	background: white;
+
+	.search input {
+		border-radius: 20px;
+	}
+
+	.manual-lists .description {
+		margin: 3em 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.image {
+			margin: 1em;
+		}
+
+		.data {
+			padding-right: 6em;
+    	width: 597px;
+
+			p {
+				margin-bottom: 2px;
+			}
+
+			.content {
+				color: #aaa
+			}
+		}
+	}
+}
+
+.first {
+	padding: 0;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #aaa;
+	.col-md-6 {
+		padding: 0;
+	}
+	.option {
+		color: #aaa;
+	}
+}
+.options {
+	padding-right: 5em;
+}
+.second {
+	padding: 0;
+	margin-bottom: 1em;
+	.option {
+		color: #aaa;
+	}
+
+	.col-md-6 {
+		padding: 0;
+	}
+}

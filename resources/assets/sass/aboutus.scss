@@ -1,0 +1,75 @@
+.aboutus {
+	p {
+		color: #c0c0c0;
+	}
+	.main-content {
+		background: white;
+		padding-bottom: 2em;
+	}
+	.content p {
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+	}
+
+	.main-content.pearsons {
+		margin-top: 2em;
+	}
+
+	.btn-group {
+		margin-right: 3em;
+	}
+
+	.slider {
+		text-align: center;
+		margin-top: 4em;
+	}
+}
+
+.pearsons-list {
+	margin-top: 2em;
+
+	.pearson {
+		margin: 1em 0;
+		margin-bottom: 2em;
+
+		.name {
+			font-weight: bold;
+			color: black;
+			margin-top: 1em;
+			margin-bottom: 0;
+		}
+		a {
+			color: $orange;
+			font-size: 14px;
+		}
+	}
+}
+
+.sugerencias-links {
+	padding-bottom: 3em;
+	.sector-item {
+			margin-bottom: 1em;
+			a {
+				padding: 1em 1.5em;
+				width: 100%;
+				display: inline-block;
+				border: 2px solid #c1c1c1;
+				color: #c1c1c1;
+				transition: .3s all ease;
+
+				&:hover {
+					text-decoration: none;
+					background: $green;
+					color: white;
+					border-color: transparent;
+				}
+
+				h2 {
+					font-size: 25px;
+					margin-top: 0px;
+					margin-bottom: 3px;
+				}
+			}
+		}
+}
