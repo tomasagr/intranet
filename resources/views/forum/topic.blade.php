@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="messages clearfix">
-				<div class="content-list">
+				<div class="content-list" style="padding: 2em;">
 				<div class="col-md-3 text-center">
 					<img src="/images/default.svg" alt="" class="img-responsive">
 					<h3 style="color: #444; font-size: 20px; margin-bottom: 5px; font-weight: bold;">Lucas Michailian</h3>
