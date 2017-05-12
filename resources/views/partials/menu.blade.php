@@ -54,7 +54,7 @@
 		</div>
 	</li>
 
-	<li><a href="">FOROS</a></li>
+	<li><a href="/forum">FOROS</a></li>
 
 	<li><a href="/rincon-japones">RINCÓN JAPONES</a></li>
 

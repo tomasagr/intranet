@@ -35,4 +35,6 @@ Route::get('/informal/{id}', 'NewsController@show');
 Route::get('/institutional/{id}', 'NewsController@show');
 Route::get('/sector/{id}', 'NewsController@sector');
 Route::get('/rincon-japones', 'RinconController@index');
-
+Route::get('/forum', 'ForumController@index');
+Route::get('/forum/1', 'ForumController@show');
+Route::get('/topic/1', 'ForumController@topic');

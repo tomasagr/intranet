@@ -1,0 +1,42 @@
+.grey {
+	background: #515356;
+}
+
+.forum-header {
+	color: white;
+	padding: 1em 1.5em;
+	font-size: 14px;
+}
+
+.messages {
+	margin-bottom: 1em;
+	background: white;
+	padding-bottom: 1em;
+	header {
+		padding: 1em 1.5em;
+		display: flex;
+		justify-content: space-between;
+		color: $green;
+	}
+
+	.item {
+		header {
+			padding: 1em 1.5em;
+			font-size: 13px;
+			display: flex;
+			justify-content: space-between;
+			color: #444;
+
+			p {
+				margin-bottom: 0;
+				a {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	padding: 1em;
+}
