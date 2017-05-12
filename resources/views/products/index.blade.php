@@ -18,7 +18,7 @@
 					<div class="item-content">
 						<header>
 							<p>
-								<span class="date">26-01-2017 |</span><span class="title"> NOVEDAD</span>
+								<span class="date">26-01-2017 |</span><span class="title"> NO</span>
 							</p>
 						</header>
 						<article>
@@ -44,7 +44,7 @@
 					<div class="item-content">
 						<header>
 							<p>
-								<span class="date">26-01-2017 |</span><span class="title"> NOVEDAD</span>
+								<span class="date">26-01-2017 |</span><span class="title"> NO</span>
 							</p>
 						</header>
 						<article>
@@ -74,7 +74,7 @@
 					<div class="item-content">
 						<header>
 							<p>
-								<span class="date">26-01-2017 |</span><span class="title"> NOVEDAD</span>
+								<span class="date">26-01-2017 |</span><span class="title"> NO</span>
 							</p>
 						</header>
 						<article>

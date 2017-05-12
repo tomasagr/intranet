@@ -2,6 +2,7 @@
 @section('content')
 @include('layouts.header')
 
+<div class="manuals clearfix">
 	<div class="main-content">
 		<div class="title">Manuales</div>
 	</div>

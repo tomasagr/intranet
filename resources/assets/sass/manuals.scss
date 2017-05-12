@@ -17,7 +17,7 @@
 
 		.data {
 			padding-right: 6em;
-    	width: 597px;
+			width: 597px;
 
 			p {
 				margin-bottom: 2px;
@@ -27,6 +27,37 @@
 				color: #aaa
 			}
 		}
+	}
+
+	first {
+		padding: 0;
+		margin-bottom: 1em;
+		border-bottom: 1px solid #aaa;
+		.col-md-6 {
+			padding: 0;
+		}
+		.option {
+			color: #aaa;
+		}
+	}
+	.options {
+		padding-right: 5em;
+	}
+	.second {
+		padding: 0;
+		margin-bottom: 1em;
+		.option {
+			color: #aaa;
+		}
+
+		.col-md-6 {
+			padding: 0;
+		}
+	}
+
+
+	.search input {
+		border-radius: 20px !important;
 	}
 }
 
@@ -57,3 +88,6 @@
 }
 
 
+.search input {
+	border-radius: 20px;
+}
