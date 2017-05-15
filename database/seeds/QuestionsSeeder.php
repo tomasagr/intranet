@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Intranet\Question;
 
-class DatabaseSeeder extends Seeder
+class QuestionsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
-        $this->call(QuestionsSeeder::class);
+        Question::create([
+        	'name' => '¿Lugar favorito en el mundo?'
+        ]);
     }
 }

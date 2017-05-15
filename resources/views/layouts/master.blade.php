@@ -17,16 +17,21 @@
 	  	]); ?>
 	  </script>
 	  <script src="/js/app.js"></script>
-	
+
 		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 	  <script src="/bower_components/angular/angular.js"></script>
-	  <script src="/js/components/app.js"></script>
-	  <script src="/js/components/agenda/AgendaCalendarController.js"></script>
 	  <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
 	  <script type="text/javascript" src="/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 	  <script type="text/javascript" src="/bower_components/angular-ui-calendar/src/calendar.js"></script>
 	  <script type="text/javascript" src="/bower_components/fullcalendar/dist/gcal.js"></script>
 		 <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+
+		 <!-- APP -->
+		 <script src="/js/components/app.js"></script>
+
+		 <!-- CONTROLLERS -->
+	  <script src="/js/components/agenda/AgendaCalendarController.js"></script>
+	  <script src="/js/components/users/UsersController.js"></script>
 
 	</body>
 	</html>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container main-container">
+<div class="container main-container" ng-app="app" ng-controller="UsersController">
 	<div class="col-md-10 col-md-offset-1 logo-register">
 		<img src="/images/logo.svg" class="img-responsive" alt="">
 	</div>
@@ -11,14 +11,15 @@
 			<h1 class="top-title">Registro</h1>
 		</div>
 
-		<form action="/login">
+		<form name="registerForm" novalidate>
 			<div class="row upload-row">
 				<div class="col-md-2">
 					<img class="img-responsive user-image" src="/images/default.svg" alt="">
 				</div>
 				<div class="col-md-4">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Subir imagen" disabled>
+						<input type="text"
+									 class="form-control" placeholder="Subir imagen" disabled>
 						<span class="input-group-btn">
 							<button class="btn btn-default bg-orange" type="button"><i class="fa fa-upload"></i></button>
 						</span>
@@ -30,10 +31,14 @@
 				<div class="col-md-12">
 					<div class="form-inline inline-flex">
 						<div class="col-md-2">
-							<label>Sobre mí</label>
+							<label>Nombre completo</label>
 						</div>
 						<div class="col-md-5">
-							<input type="text" class="form-control inline-block-input" placeholder="Ingrese su nombre">
+							<input type="text"
+										 ng-model="user.fullname"
+										 required
+										 class="form-control inline-block-input"
+										 placeholder="Ingrese su nombre">
 						</div>
 					</div>
 				</div>
@@ -98,7 +103,7 @@
 			<hr class="col-md-8 col-md-offset-2">
 
 			<div class="col-md-8 col-md-offset-2 questions">
-				<h1>Preguntas</h1>
+				<h1>Sobre mí</h1>
 
 				<div class="questions-items">
 					@for($i = 0; $i < 5; $i++)
@@ -108,7 +113,9 @@
 			</div>
 
 			<div class="row button-center text-center"><br>
-				<button type="submit" class="btn btn-warning danger-alternative orange-alt">Guardar</button>
+				<button type="submit"
+								ng-disabled="registerForm.$invalid"
+				        class="btn btn-warning danger-alternative orange-alt">Guardar</button>
 			</div>
 		</form>
 	</div>

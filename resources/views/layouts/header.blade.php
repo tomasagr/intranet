@@ -13,7 +13,7 @@
 					<i class="fa fa-bell"></i>
 				</button>
 				<ul class="dropdown-menu custom-dropdown-list" aria-labelledby="dropdownMenu2">
-					<li class="item-title"><b class="title">NOTIFICACIONES</b> <div class="label-notification-warning">No leídas 5</div></li>
+					<li class="item-title"><b class="title">NOTIFICACIONES</b><div class="label-notification-warning">No leídas 5</div></li>
 					<li role="separator" class="divider"></li>
 					<li class="items-list">
 						<div class="title"><span class="label-notification danger">3</span> Respuestas del foro</div>
@@ -33,7 +33,7 @@
 						</div>
 					</li>
 				</ul>
-				<a href="" class="logouticon"><i class="fa fa-sign-out"></i></a>
+				<a href="/logout" class="logouticon"><i class="fa fa-sign-out"></i></a>
 			</div>
 		</div>
 	</div>

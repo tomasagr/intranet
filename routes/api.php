@@ -12,14 +12,3 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-$api = app('Dingo\Api\Routing\Router');
-
-$api->version('v1', function ($api) {
-    $api->post('auth', 'App\Http\Controllers\AuthController@auth');
-
-    $api->group(['middleware' => 'jwt.auth'], function ($api) {
-        // AUTH ROUTES
-        $api->get('me', 'App\Http\Controllers\AuthController@me');
-    });
-});

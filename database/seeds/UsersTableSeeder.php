@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use Intranet\User;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -15,11 +15,15 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'first_name' => 'Sys',
-            'last_name' => 'Admin',
-            'email' => 'Admin@Admin.com',
-            'username' => 'administrator',
-            'password' => Hash::make('administrator')
+            'fullname' => 'Sys Admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('administrator'),
+            'position' => 'administrador',
+            'unit_id' => null,
+            'sector_id' => null,
+            'bio' => 'Este es un administrador',
+            'rol_id' => null,
+            'status' => 1
         ]);
     }
 }

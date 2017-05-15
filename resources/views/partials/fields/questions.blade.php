@@ -5,7 +5,8 @@
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
-				placeholder="Ingrese su respuesta">
+							 placeholder="Ingrese su respuesta"
+							 ng-model="user.question">
 			</div>
 		</div>
 </div>
