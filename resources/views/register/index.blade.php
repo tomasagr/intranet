@@ -30,7 +30,7 @@
 				<div class="col-md-12">
 					<div class="form-inline inline-flex">
 						<div class="col-md-2">
-							<label>Nombre Completo</label>
+							<label>Sobre mí</label>
 						</div>
 						<div class="col-md-5">
 							<input type="text" class="form-control inline-block-input" placeholder="Ingrese su nombre">
@@ -78,6 +78,8 @@
 					</div>
 				</div>
 			</div>
+			<br>
+			@include('partials.fields.types')
 			<br>
 			<div class="row">
 				<div class="col-md-12">

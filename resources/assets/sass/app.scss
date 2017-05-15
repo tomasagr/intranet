@@ -133,7 +133,17 @@ input.form-control {
 	box-shadow: none;
 }
 
+select.form-control {
+	border-radius: 0;
+	padding: 1.3em 1em;
+	box-shadow: none;
+}
+
 input.inline-block-input {
+	width: 100% !important;
+}
+
+select.inline-block-input {
 	width: 100% !important;
 }
 
@@ -149,7 +159,7 @@ input.inline-block-input {
 .background-login {
 	width: 100%;
 	height: 100vh;
-	background: url('../img/bg-login.png');
+	background: url('../img/bg-login.jpg');
 	background-size: cover;
 	background-attachment: fixed;
 }

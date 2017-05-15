@@ -3,7 +3,7 @@
 @include('layouts.header')
 <div class="main-content" style="margin-bottom: 3em;">
 	<div class="title">
-		PRODUCTOS
+		Información de productos
 	</div>
 </div>
 

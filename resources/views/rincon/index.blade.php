@@ -106,7 +106,7 @@
 <div class="col-md-12" style="background: #f6f6f6;">
 	<div class="main-content" style="background: transparent;">
 		<h1 class="title">
-			Tambien puede interesarte
+			También puede interesarte
 		</h1>
 	</div>
 	@include('partials.sugerencias', [

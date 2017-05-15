@@ -9,7 +9,7 @@
 		</div>
 		<div class="col-md-9">
 			<div class="forum-header grey">
-				ULTIMOS TEMAS
+				ÚLTIMOS TEMAS
 			</div>
 
 			<div class="messages clearfix">

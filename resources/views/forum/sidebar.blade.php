@@ -39,7 +39,7 @@
 	
 		<div class="topic-sidebar">
 			<div class="forum-header green">
-				ULTIMOS COMENTARIOS
+				ÚLTIMOS COMENTARIOS
 			</div>
 
 			<div class="messages">

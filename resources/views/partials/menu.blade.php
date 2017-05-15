@@ -4,7 +4,7 @@
 						  data-toggle="dropdown"
 						  aria-haspopup="true"
 						  aria-expanded="false">
-				INFORMACION ÚTIL <i class="fa fa-chevron-down"></i>
+				INFORMACIÓN ÚTIL <i class="fa fa-chevron-down"></i>
 			</button>
 			<ul class="dropdown-menu">
 				<li><a class="menu-item" href="/about-us">Nosotros</a></li>
@@ -13,7 +13,7 @@
 				<li role="separator" class="divider"></li>
 				<li><a class="menu-item" href="/products">Info Productos</a></li>
 				<li role="separator" class="divider"></li>
-				<li><a class="menu-item" href="/jobs">Busqueda Laboral</a></li>
+				<li><a class="menu-item" href="/jobs">Búsqueda Laboral</a></li>
 			</ul>
 		</div>
 	</li>

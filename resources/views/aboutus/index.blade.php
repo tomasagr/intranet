@@ -81,12 +81,12 @@
 <div class="col-md-12">
 	<div class="main-content" style="background: transparent;">
 		<h1 class="title">
-			Tambien puede interesarte
+			También puede interesarte
 		</h1>
 	</div>
 	@include('partials.sugerencias', [
 		'titles' => ['Rincon Japones', 'Productos'],
-		'links' => ['/', '/']
+		'links' => ['/rincon-japones', '/products']
 	])
 </div>
 </div>

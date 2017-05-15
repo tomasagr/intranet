@@ -77,6 +77,8 @@
 				</div>
 			</div>
 			<br>
+			@include('partials.fields.types')
+			<br>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="form-inline inline-flex">
@@ -94,7 +96,7 @@
 			<hr class="col-md-8 col-md-offset-2">
 
 			<div class="col-md-8 col-md-offset-2 questions">
-				<h1>Preguntas</h1>
+				<h1>Sobre mí</h1>
 
 				<div class="questions-items">
 					@for($i = 0; $i < 5; $i++)
@@ -115,19 +117,19 @@
 			<div class="messages-list">
 				<div class="item clearfix" style="margin: 3em 0;">
 					<div class="col-md-8" style="padding-left: 0;">
-					<p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
-				</div>
-				<div class="col-md-4">
-					<button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
-				</div>
+						<p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
+					</div>
 				</div>
 				<div class="item clearfix" style="margin: 3em 0;">
 					<div class="col-md-8" style="padding-left: 0;">
-					<p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
-				</div>
-				<div class="col-md-4">
-					<button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
-				</div>
+						<p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
+					</div>
+					<div class="col-md-4">
+						<button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
+					</div>
 				</div>
 			</div>
 		</div>
