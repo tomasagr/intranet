@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return view('login.index');
+	return redirect('/home');
 });
 
 
