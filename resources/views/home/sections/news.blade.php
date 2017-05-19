@@ -1,14 +1,14 @@
-<section class="news-preview">
+<section class="news-preview" ng-controller="NewsController">
 		<div class="container">
-			<div class="text-slider">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			<div class="text-slider ticker-wrap">
+				<div class="ticker"><div class="ticker__item" ng-repeat="item in lastNews" style="padding: 0 2em;">@{{item.titulo}}</div></div>
 			</div>
 
 			@include('news.latests', ['link' => $link])
 		</div>
 	</section>
 
-	<section class="news-slider clearfix">
+	<section class="news-slider clearfix" ng-controller="NewsController">
 		<div class="container">
 			<div class="col-md-6">
 				<div class="col-md-12 title-top orange">
@@ -16,14 +16,15 @@
 				</div>
 
 				<div class="col-md-12 slider">
-					<div class="slider-item" style="background: url('/images/slider-image.png'); background-repeat: no-repeat;
-					background-size: 100%;">
+					<div class="slider-item" 
+					     ng-style="{'background-image': 'url(/storage/'+ institucionales.image +')', 'background-repeat': 'no-repeat','background-size': '100%'}"
+				 >
 					<div class="content">
 						<img class="elipse" src="/images/elipse.png" alt="">
 						<article>
-							<p class="title">MALEZAS: UN CONGRESO PARA ENCONTRAR LA MEJOR ESTRATEGIA</p>
+							<p class="title">@{{institucionales.titulo}}</p>
 							<p class="content-body">
-								la! Repellendus, ea iusto eveniet, autem veniam incidunt vitae illum,
+								@{{institucionales.cuerpo}}
 							</p>
 						</article>
 					</div>
@@ -44,14 +45,13 @@
 			</div>
 
 			<div class="col-md-12 slider">
-				<div class="slider-item" style="background: url('/images/slider-image.png'); background-repeat: no-repeat;
-				  background-size: 100%;">
+				<div class="slider-item" ng-style="{'background-image': 'url(/storage/'+ informales.image +')', 'background-repeat': 'no-repeat','background-size': '100%'}">
 				<div class="content">
 					<img class="elipse" src="/images/elipse.png" alt="">
 					<article>
-						<p class="title">MALEZAS: UN CONGRESO PARA ENCONTRAR LA MEJOR ESTRATEGIA</p>
+						<p class="title">@{{informales.titulo}}</p>
 						<p class="content-body">
-							la! Repellendus, ea iusto eveniet, autem veniam incidunt vitae illum,
+							@{{informales.cuerpo}}
 						</p>
 					</article>
 				</div>

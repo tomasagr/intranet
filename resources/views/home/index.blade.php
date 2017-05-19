@@ -1,3 +1,4 @@
+@inject('sectors', 'Intranet\Sector')
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
@@ -10,8 +11,7 @@
 
 	<div class="sectores clearfix">
 		<div class="container">
-			<div class="col-md-3">
-
+			<!-- <div class="col-md-3">
 				<article>
 					<h3>STAR ME UP</h3>
 					<img  class="img-responsive" src="/images/empleado.png" alt="">
@@ -23,18 +23,18 @@
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque minus, eius voluptas. Repellat tempore, voluptatem atque, recusandae mollitia consectetur molestias sunt repudiandae placeat temporibus eveniet consequuntur corporis rerum doloribus quidem.
 					</div>
 				</article>
-			</div>
-			<div class="col-md-9">
+			</div> -->
+			<div class="col-md-12">
 				<div class="sectores-lista">
 					<h2 class="title">Sectores</h2>
-					@for($i = 0; $i < 11; $i++)
+					@foreach($sectors->all() as $item)
 					<div class="col-md-4 sector-item">
-						<a href="/sector/1">
-							<h2>Ventas</h2>
+						<a href="/sector/{{$item->id}}">
+							<h2>{{$item->name}}</h2>
 							<small>Ingresar ></small>
 						</a>
 					</div>
-					@endfor
+					@endforeach
 				</div>
 			</div>
 		</div>

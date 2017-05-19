@@ -26,7 +26,7 @@ class AddSectorIdToNoticias extends Migration
     public function down()
     {
         Schema::table('noticias', function (Blueprint $table) {
-            
+            $table->dropColumn('sector_id');
         });
     }
 }

@@ -1,34 +1,35 @@
 
 	<div class="lastest-news">
-	<div class="selected">
+	<div class="selected" ng-style="{background: 'url(/storage/'+ selected.image +') no-repeat 0 0', 'background-size': 'cover'}">
 		<div class="content">
-			<p class="date">26-01-2007</p>
-			<p class="category">CONTABLE - COMERCIO EXTERIOR</p>
+			<p class="date">@{{selected.created_at | inDate | date:'dd-mm-yyyy'}}</p>
+			<p class="category" style="text-transform: uppercase">@{{selected.sector.name}}</p>
 			<h1>
-				Presencia de Sclerotina en lotes de  Soja en el Sudeste Bonaerense
+				@{{selected.titulo}}
 			</h1>
 		</div>
 	</div>
 	<div class="news-items">
-		@for($i = 0; $i < 4; $i++)
-		<div class="item">
-		<a href="/{{$link}}/1">
+	
+		<div class="item" ng-repeat="item in lastNews">
+		<a href="/individual/@{{item.id}}" ng-mouseover="changeSelected($index)">
 				<header>
 					<p>
-						<span class="date">26-01-2017 |</span><span class="title"> NOTICIA INSTITUCIONAL</span>
+						<span class="date">@{{item.created_at | inDate | date:'dd-mm-yyyy'}} |</span>
+						<span style="text-transform:uppercase" class="title"> @{{item.category.name}}</span>
 					</p>
 				</header>
 				<article>
-					<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+					<p>@{{item.cuerpo}}</p>
 				</article>
 				<footer>
-					<span class="label label-success tag">Ventas</span>
+					<span class="label label-success tag">@{{item.sector.name}}</span>
 					<div class="cover">
 						<span class="triangle"></span>
 					</div>
 				</footer>
 			</a>
 		</div>
-		@endfor
+
 	</div>
 </div>

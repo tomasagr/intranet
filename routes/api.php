@@ -20,3 +20,5 @@ Route::get('/units/{id}/sectors', 'UnitSectorsController@show');
 Route::post('/users', 'UsersController@register');
 Route::get('/users/{id}', 'UsersController@show');
 Route::post('/users/{id}/edit', 'UsersController@update');
+
+Route::get('/news','NewsController@index');
