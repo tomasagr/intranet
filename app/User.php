@@ -4,6 +4,9 @@ namespace Intranet;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Intranet\Profile;
+use Intranet\Unit;
+use Intranet\Sector;
 
 class User extends Authenticatable
 {
@@ -16,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'fullname', 'email', 'password', 'position',
-        'unit_id', 'sector_id', 'bio', 'rol_id'
+        'unit_id', 'sector_id', 'bio', 'rol_id', 'avatar'
     ];
 
     /**
@@ -27,4 +30,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($password) 
+    {
+        if (!empty($password)) {
+            $this->attributes['password'] = \Hash::make($password);
+        }
+    }
+
+    public function profile() 
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function unit() 
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+    public function sector() 
+    {
+        return $this->belongsTo(Sector::class);
+    }
 }

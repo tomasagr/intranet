@@ -3,9 +3,13 @@
 		<div class="container">
 			<div class="user-bar">
 				<a href="/profile">
-					<img class="user-top img-responsive" src="/images/default.svg" alt="" style="width: 30px; height: 30px;">
+					@if (!Auth::user()->avatar)
+						<img class="user-top img-responsive" src="/images/default.svg" alt="" style="width: 30px; height: 30px;">
+					@else
+						<img class="user-top img-responsive" src="{{asset('store/'.Auth::user()->avatar)}}" alt="" style="width: 30px; height: 30px;">
+					@endif
 				</a>
-				<span class="user-name"><a href="/profile" style="color: white">Lucas</a></span>
+				<span class="user-name"><a href="/profile" style="color: white">{{Auth::user()->fullname}}</a></span>
 				<div class="dropdown">
 					<button class="dropdown-toggle dropdown-btn-custom"
 					type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -11,17 +11,22 @@
             <h1 class="top-title">Registro</h1>
         </div>
 
-        <form name="registerForm" novalidate>
+        <form name="registerForm" novalidate ng-submit="store()">
             <div class="row upload-row">
                 <div class="col-md-2">
-                    <img class="img-responsive user-image" src="/images/default.svg" alt="">
+                    <img class="img-responsive user-image img-circle" ngf-thumbnail="file ||'/images/default.svg'" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="input-group">
                         <input type="text"
-                        class="form-control" placeholder="Subir imagen" disabled>
+                        class="form-control" placeholder="Cargar imagen" disabled>
                         <span class="input-group-btn">
-                            <button class="btn btn-default bg-orange" type="button"><i class="fa fa-upload"></i></button>
+                            <button class="btn btn-default bg-orange"
+                                    ngf-select ng-model="file" 
+                                    name="file" 
+                                    ngf-pattern="'image/*'"
+                                    ngf-accept="'image/*'"
+                                    gf-resize="{width: 100, height: 100}"><i class="fa fa-upload"></i></button>
                         </span>
                     </div>
                 </div>
@@ -38,7 +43,7 @@
                             ng-model="user.fullname"
                             required
                             class="form-control inline-block-input"
-                            placeholder="Ingrese su nombre">
+                            placeholder="Ingrese su nombre" autofocus>
                         </div>
                     </div>
                 </div>
@@ -69,6 +74,7 @@
                         <div class="col-md-5">
                             <input  type="password"
                                     ng-model="user.password"
+                                    required
                                     class="form-control inline-block-input"
                                     placeholder="Ingrese su contraseña">
                         </div>
@@ -103,7 +109,7 @@
                         </div>
                         <div class="col-md-5">
                             <textarea style="width: 100%!important; height: 100px;"
-                                        ng-model="bio" class="form-control"
+                                        ng-model="user.bio" class="form-control"
                                         required
                                         placeholder="Ingrese su bio"></textarea>
                         </div>
@@ -116,9 +122,7 @@
                 <h1>Sobre mí</h1>
 
                 <div class="questions-items">
-                    @for($i = 0; $i < 5; $i++)
-                    @include('partials.fields.questions')
-                    @endfor
+                   @include('partials.fields.questions')
                 </div>
             </div>
 

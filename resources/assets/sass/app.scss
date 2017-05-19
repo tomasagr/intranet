@@ -159,7 +159,7 @@ select.inline-block-input {
 .background-login {
 	width: 100%;
 	height: 100vh;
-	background: url('../img/bg-login.jpg');
+	background: url('../img/bg-login.png');
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -291,4 +291,12 @@ select.inline-block-input {
 			color: #aaa;
 		}
 	}
+}
+
+.ng-touched.ng-invalid {
+	border: 1px solid red;
+}
+
+.ng-touched.ng-valid {
+	border: 1px solid green;
 }

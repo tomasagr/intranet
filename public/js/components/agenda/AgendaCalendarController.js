@@ -1,5 +1,4 @@
-(function () {
-  angular.module('app.controllers', [])
+angular.module('app.agenda-controller', [])
   .controller('AgendaCalendarController', ['$scope', function ($scope) {
     $scope.test = 'angular'
 
@@ -34,4 +33,3 @@
       }, 300)
     }
   }])
-})()

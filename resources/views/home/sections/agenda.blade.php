@@ -1,4 +1,4 @@
-<div class="container" ng-app="app" ng-controller="AgendaCalendarController">
+<div class="container" ng-controller="AgendaCalendarController">
 	<ul class="nav nav-tabs" role="tablist">
 		<li role="presentation" class="active">
 			<a href="#events" aria-controls="events"
@@ -12,11 +12,11 @@
 
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="events">
-			@include('partials.calendar', 
+			@include('partials.calendar',
 				['modelName' => 'eventsCalendar', 'config' => 'eventConfig', 'title' => 'EVENTOS AGRO'])
 		</div>
 		<div role="tabpanel" class="tab-pane" id="vacations">
-			@include('partials.calendar', 
+			@include('partials.calendar',
 				['modelName' => 'vacationsCalendar', 'config' => 'vacationsConfig', 'title' => 'VACACIONES'])
 		</div>
 	</div>

@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
         User::create([
             'fullname' => 'Sys Admin',
             'email' => 'admin@admin.com',
-            'password' => Hash::make('administrator'),
+            'password' => 'administrator',
             'position' => 'administrador',
-            'unit_id' => null,
-            'sector_id' => null,
+            'unit_id' => 1,
+            'sector_id' => 1,
             'bio' => 'Este es un administrador',
-            'rol_id' => null,
+            'rol_id' => 1,
             'status' => 1
         ]);
     }

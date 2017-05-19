@@ -21,7 +21,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function panel()
+    {
+        return view('panel');
+    }
+
+     public function index()
     {
         return view('home.index');
     }

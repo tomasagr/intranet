@@ -22,8 +22,8 @@ class CreateUsersTable extends Migration
             $table->integer('unit_id')->nullable();
             $table->integer('sector_id')->nullable();
             $table->text('bio');
-            $table->string('avatar')->default('default.svg');
-            $table->integer('rol_id')->nullable();
+            $table->string('avatar')->nullable();
+            $table->integer('rol_id')->default(3);
             $table->boolean('status')->default(0);
             $table->rememberToken();
             $table->timestamps();
