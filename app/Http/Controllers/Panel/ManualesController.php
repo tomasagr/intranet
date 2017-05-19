@@ -79,9 +79,7 @@ class ManualesController extends AppBaseController
     {
         $manuales = $this->manualesRepository->findWithoutFail($id);
 
-        if ($request->file('file')) {
-            $input['file'] = $request->file('file')->store('noticias', 'public');
-        }
+        
 
         if (empty($manuales)) {
             Flash::error('Manuales no encontrado.');
@@ -123,14 +121,18 @@ class ManualesController extends AppBaseController
     public function update($id, UpdateManualesRequest $request)
     {
         $manuales = $this->manualesRepository->findWithoutFail($id);
-
+        $input = $request->all();
         if (empty($manuales)) {
             Flash::error('Manuales no encontrado.');
 
             return redirect(route('panel.manuales.index'));
         }
 
-        $manuales = $this->manualesRepository->update($request->all(), $id);
+        if ($request->file('file')) {
+            $input['file'] = $request->file('file')->store('noticias', 'public');
+        }
+
+        $manuales = $this->manualesRepository->update($input, $id);
 
         Flash::success('Manuales actualizado con exito.');
 
