@@ -20,9 +20,3 @@ angular.module('app.news-controlller', [])
       $scope.selected = $scope.lastNews[index]
     }
   }])
-
-.filter('inDate', function () {
-  return function (input) {
-    return new Date(input)
-  }
-})

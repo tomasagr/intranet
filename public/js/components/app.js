@@ -10,4 +10,8 @@ angular.module('app', [
   'ui.bootstrap',
   'ngFileUpload',
   'oitozero.ngSweetAlert'
-])
+]).filter('inDate', function () {
+  return function (input) {
+    return new Date(input)
+  }
+})
