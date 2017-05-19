@@ -31,17 +31,17 @@
 		 <script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
 
 		 <!-- APP -->
-		 <script src="/js/components/app.js"></script>
+		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>
 
 		 <!-- SERVICES -->
-		<script src="/js/components/users/UsersService.js"></script>
-		<script src="/js/components/sectors/SectorsService.js"></script> 
-		<script src="/js/components/units/UnitsService.js"></script> 
+		<script src="/js/components/users/UsersService.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/sectors/SectorsService.js?v=<?php echo time(); ?>"></script> 
+		<script src="/js/components/units/UnitsService.js?v=<?php echo time(); ?>"></script> 
 
 		 <!-- CONTROLLERS -->
-	  <script src="/js/components/agenda/AgendaCalendarController.js"></script>
-	  <script src="/js/components/users/UsersController.js"></script>
-		<script src="/js/components/users/UsersProfileController.js"></script>
-		<script src="/js/components/news/NewsController.js?v=1"></script>
+	  <script src="/js/components/agenda/AgendaCalendarController.js?v=<?php echo time(); ?>"></script>
+	  <script src="/js/components/users/UsersController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/users/UsersProfileController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/news/NewsController.js?v=<?php echo time(); ?>"></script>
 	</body>
 	</html>
