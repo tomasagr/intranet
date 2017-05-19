@@ -1,5 +1,4 @@
 angular.module('app.news-controlller', [])
-
   .controller('NewsController', ['$scope', '$http', function ($scope, $http) {
     $scope.background = '#ccc'
     $http.get('/api/news?limit=4')

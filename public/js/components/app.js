@@ -1,4 +1,4 @@
-angular.module('app', [
+var app = angular.module('app', [
   'app.agenda-controller',
   'app.user-controller',
   'app.user-profile-controller',
@@ -10,8 +10,13 @@ angular.module('app', [
   'ui.bootstrap',
   'ngFileUpload',
   'oitozero.ngSweetAlert'
-]).filter('inDate', function () {
+])
+
+app.filter('inDate', function () {
   return function (input) {
-    return new Date(input)
+    if (input) {
+      return new Date(input)
+    }
+    return input
   }
 })
