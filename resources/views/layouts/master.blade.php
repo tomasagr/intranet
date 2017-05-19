@@ -42,6 +42,6 @@
 	  <script src="/js/components/agenda/AgendaCalendarController.js"></script>
 	  <script src="/js/components/users/UsersController.js"></script>
 		<script src="/js/components/users/UsersProfileController.js"></script>
-		<script src="/js/components/news/NewsController.js"></script>
+		<script src="/js/components/news/NewsController.js?v=1"></script>
 	</body>
 	</html>
