@@ -1,7 +1,17 @@
 angular.module('app.news-controlller', [])
   .controller('NewsController', ['$scope', '$http', function ($scope, $http) {
     $scope.background = '#ccc'
-    $http.get('/api/news?limit=4')
+
+    var pathname = window.location.pathname
+    var url = '/api/news?limit=4'
+
+    if (pathname == '/institutional') {
+      url = '/api/news?limit=4&category=2'
+    } else if (pathname == '/informal')  {
+      url = '/api/news?limit=4&category=1'
+    }
+
+    $http.get(url)
       .then(function (response) {
         $scope.lastNews = response.data
         $scope.selected = response.data[0]
@@ -13,6 +23,9 @@ angular.module('app.news-controlller', [])
         $scope.informales = $scope.lastNews.find(function (element) {
           return element.category_id === 1
         })
+      })
+      .catch(function(error) {
+        console.log(error)
       })
 
     $scope.changeSelected = function (index) {

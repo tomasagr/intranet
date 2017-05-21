@@ -12,7 +12,7 @@
 	<div class="news-items">
 	
 		<div class="item" ng-repeat="item in lastNews">
-		<a href="/individual/@{{item.id}}" ng-mouseover="changeSelected($index)">
+		<a href="/{{$link}}/@{{item.id}}" ng-mouseover="changeSelected($index)">
 				<header>
 					<p>
 						<span class="date">@{{item.created_at | inDate | date:'dd-mm-yyyy'}} |</span>

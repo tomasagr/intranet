@@ -22,3 +22,5 @@ Route::get('/users/{id}', 'UsersController@show');
 Route::post('/users/{id}/edit', 'UsersController@update');
 
 Route::get('/news','NewsController@index');
+
+Route::get('/manuals', 'ManualsController@getAll');

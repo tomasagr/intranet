@@ -2,7 +2,7 @@
 @section('content')
 @include('layouts.header')
 
-<div class="manuals clearfix">
+<div class="manuals clearfix" ng-controller="ManualController">
 	<div class="main-content">
 		<div class="title">Manuales</div>
 	</div>
@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="search clearfix">
 			<p><b>BÚSQUEDA</b></p>
-			<input type="text" class="form-control" placeholder="Ingrese aquí su búsqueda">
+			<input type="text" ng-model="search.titulo" class="form-control" placeholder="Ingrese aquí su búsqueda">
 		</div>
 		<hr>
 		<div class="sectors filter">
@@ -21,152 +21,103 @@
 						SELECCIONAR <i class="fa fa-chevron-down"></i>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Marketing</a></li>
-						<li><a href="#">RRHH</a></li>
+					<li><a href="" ng-click="filterSector()">Todos</a></li>
+						<li><a href="" ng-repeat="sector in sectors" ng-click="filterSector(sector.id)">@{{sector.name}}</a></li>
 					</ul>
 				</div>
 		</div>
 		<hr>
 
 		<div class="manual-lists">
-			<section class="description">
+			<div class="manual-item" ng-repeat="item in manual | filter: search">
+			<section class="description" ng-if="item.type == 'PDF'">
 				<div class="image">
 					<img src="/images/pdf.png" alt="">
 				</div>
 				<div class="data">
-					<p><b>TITULO</b></p>
+					<p><b>@{{item.titulo}}</b></p>
 					<p class="content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quaerat voluptatibus libero rem molestiae eius accusantium fugit, eaque voluptate ipsa dolore officiis saepe quam architecto nulla ut. Quos, deserunt similique.
+						@{{item.cuerpo}}
 					</p>
 				</div>
 				<div class="options">
 					<div class="col-md-12 first">
 						<div class="col-md-6">
-							<p class="option">First Option</p>
+							<p class="option">Primera Opción</p>
 						</div>
 						<div class="col-md-6">
-							<p><b>First Specification</b></p>
+							<p><b>@{{item.opcion1}}</b></p>
 						</div>
 					</div>
 					<div class="col-md-12 second">
 						<div class="col-md-6">
-							<p class="class="option">Second Option</p>
+							<p class="option">Segunda Opción</p>
 						</div>
 						<div class="col-md-6">
-							<p><b>Second Specification</b></p>
+							<p><b>@{{item.opcion2}}</b></p>
 						</div>
 					</div>
 				</div>
 				<div class="download-link">
-					<a href="">
+					<a href="/storage/@{{item.file}}" target="_blank">
 						<img src="/images/download.png" alt="">
 					</a>
 				</div>
 			</section>
-			<hr>
-			<section class="description">
+	
+			<section class="description" ng-if="item.type == 'Video'">
 				<div class="image">
 					<img src="/images/video.png" alt="">
 				</div>
 				<div class="data">
-					<p><b>TITULO</b></p>
+					<p><b>@{{item.titulo}}</b></p>
 					<p class="content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quaerat voluptatibus libero rem molestiae eius accusantium fugit, eaque voluptate ipsa dolore officiis saepe quam architecto nulla ut. Quos, deserunt similique.
+						@{{item.cuerpo}}
 					</p>
 				</div>
 				<div class="options">
 					<div class="col-md-12 first">
 						<div class="col-md-6">
-							<p class="option">First Option</p>
+							<p class="option">Primera Opción</p>
 						</div>
 						<div class="col-md-6">
-							<p><b>First Specification</b></p>
+							<p><b>@{{item.opcion1}}</b></p>
 						</div>
 					</div>
 					<div class="col-md-12 second">
 						<div class="col-md-6">
-							<p class="class="option">Second Option</p>
+							<p class="option">Segunda Opción</p>
 						</div>
 						<div class="col-md-6">
-							<p><b>Second Specification</b></p>
+							<p><b>@{{item.opcion2}}</b></p>
 						</div>
 					</div>
 				</div>
 				<div class="download-link">
-					<a href="">
+					<a href="#" ng-click="modalData(item.link)" 
+						data-toggle="modal" data-target="#myModal" data-backdrop="static">
 						<img src="/images/play.png" alt="">
 					</a>
 				</div>
 			</section>
-			<section class="description">
-				<div class="image">
-					<img src="/images/pdf.png" alt="">
-				</div>
-				<div class="data">
-					<p><b>TITULO</b></p>
-					<p class="content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quaerat voluptatibus libero rem molestiae eius accusantium fugit, eaque voluptate ipsa dolore officiis saepe quam architecto nulla ut. Quos, deserunt similique.
-					</p>
-				</div>
-				<div class="options">
-					<div class="col-md-12 first">
-						<div class="col-md-6">
-							<p class="option">First Option</p>
+
+			<!-- Modal -->
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-body">
+							<iframe width="100%" height="300" src="@{{linkData}}" frameborder="0" allowfullscreen></iframe>
 						</div>
-						<div class="col-md-6">
-							<p><b>First Specification</b></p>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeModal()">Cerrar</button>
 						</div>
 					</div>
-					<div class="col-md-12 second">
-						<div class="col-md-6">
-							<p class="class="option">Second Option</p>
-						</div>
-						<div class="col-md-6">
-							<p><b>Second Specification</b></p>
-						</div>
-					</div>
+
 				</div>
-				<div class="download-link">
-					<a href="">
-						<img src="/images/download.png" alt="">
-					</a>
-				</div>
-			</section>
-			<hr>
-			<section class="description">
-				<div class="image">
-					<img src="/images/video.png" alt="">
-				</div>
-				<div class="data">
-					<p><b>TITULO</b></p>
-					<p class="content">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quaerat voluptatibus libero rem molestiae eius accusantium fugit, eaque voluptate ipsa dolore officiis saepe quam architecto nulla ut. Quos, deserunt similique.
-					</p>
-				</div>
-				<div class="options">
-					<div class="col-md-12 first">
-						<div class="col-md-6">
-							<p class="option">First Option</p>
-						</div>
-						<div class="col-md-6">
-							<p><b>First Specification</b></p>
-						</div>
-					</div>
-					<div class="col-md-12 second">
-						<div class="col-md-6">
-							<p class="class="option">Second Option</p>
-						</div>
-						<div class="col-md-6">
-							<p><b>Second Specification</b></p>
-						</div>
-					</div>
-				</div>
-				<div class="download-link">
-					<a href="">
-						<img src="/images/play.png" alt="">
-					</a>
-				</div>
-			</section>
+			</div>
+			</div>
 			<hr>
 		</div>
 	</div>

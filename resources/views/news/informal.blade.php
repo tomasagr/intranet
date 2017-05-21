@@ -1,32 +1,32 @@
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div class="main-content news-list">
+<div class="main-content news-list" ng-controller="NewsController">
 	<div class="container">
 		<div class="header-title green">
 			Noticias Informales
 		</div>
 		@include('news.latests', ['link' => 'informal'])
 		<div class="col-md-12" style="margin-top: 3em; padding: 0 0;">
-			@for($i = 0; $i < 8; $i++)
+			@foreach($informal as $item)
 			<div class="col-md-3" style="margin: 3em 0;">
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
-							<img class="img-responsive" src="/images/products.png" alt="">
+							<img class="img-responsive" src="{{asset('/storage/'. $item->image)}}" alt="">
 						</div>
 						<div class="item-content">
 							<header>
 								<p>
-									<span class="date">26-01-2017 |</span><span class="title"> NOTICIA INSTITUCIONAL</span>
+									<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span class="title" style="text-transform: uppercase"> {{$item->category->name}}</span>
 								</p>
 							</header>
 							<article>
-								<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+								<p>{{$item->titulo}}</p>
 							</article>
 							<footer>
-								<a href="">Ver mas</a>
-								<span class="label label-success tag">Ventas</span>
+								<a href="/informal/{{$item->id}}">Ver mas</a>
+								<span class="label label-success tag">{{$item->sector->name}}</span>
 								<div class="cover">
 									<span class="triangle"></span>
 								</div>
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			@endfor
+			@endforeach
 		</div>
 	</div>
 </div>

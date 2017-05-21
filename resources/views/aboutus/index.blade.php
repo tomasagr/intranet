@@ -7,13 +7,7 @@
 			<h1 class="title">Quienes Somos</h1>
 			<div class="content">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit beatae eveniet, impedit voluptates facere minus dignissimos consequatur placeat, earum mollitia fugiat obcaecati, est quod ratione iste quibusdam laborum! Repellendus, deserunt.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente saepe quas sed expedita sequi qui provident voluptatibus, nihil quaerat totam maiores pariatur delectus labore atque doloremque mollitia, voluptas quis blanditiis.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consectetur est quia accusantium sit eligendi enim dolorem soluta ab, eveniet vel cumque sapiente reiciendis, excepturi, suscipit! Fuga deserunt, officiis quam!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium odio debitis, vitae itaque sunt necessitatibus quidem aliquid qui fugit, praesentium fugiat nam eaque porro excepturi sint dolore nesciunt, delectus asperiores?
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente saepe quas sed expedita sequi qui provident voluptatibus, nihil quaerat totam maiores pariatur delectus labore atque doloremque mollitia, voluptas quis blanditiis.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consectetur est quia accusantium sit eligendi enim dolorem soluta ab, eveniet vel cumque sapiente reiciendis, excepturi, suscipit! Fuga deserunt, officiis quam!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium odio debitis, vitae itaque sunt necessitatibus quidem aliquid qui fugit, praesentium fugiat nam eaque porro excepturi sint dolore nesciunt, delectus asperiores?
+					{{$contenido->cuerpo}}
 				</p>
 			</div>
 		</div>
@@ -71,7 +65,7 @@
 
 		<div class="col-md-12">
 			<div class="slider">
-				<img src="/images/slider-quienes.png" alt="">
+				<img class="img-responsive" src="{{asset('/storage/'.$contenido->image)}}" alt="">
 			</div>
 		</div>
 	</div>

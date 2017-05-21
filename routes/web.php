@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/about-us', 'AboutUsController@index');
 	Route::get('/manuals', 'ManualsController@index');
 	Route::get('/products', 'ProductssController@index');
+	Route::get('/products/{id}', 'ProductssController@show');
 	Route::get('/jobs', 'JobsController@index');
 	Route::get('/jobs/{id}', 'JobsController@show');
 	Route::get('/solidaria', 'RSEController@solidaria');
@@ -31,7 +32,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/diary', 'DiaryController@index');
 	Route::get('/informal', 'NewsController@informal');
 	Route::get('/institutional', 'NewsController@institutional');
-	Route::get('/informal/{id}', 'NewsController@show');
+	Route::get('/informal/{id}', 'NewsController@showInformal');
+	Route::get('/institutional/{id}', 'NewsController@showInstitucional');
 	Route::get('/individual/{id}', 'NewsController@show');
 	Route::get('/sector/{id}', 'NewsController@sector');
 	Route::get('/rincon-japones', 'RinconController@index');

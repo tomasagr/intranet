@@ -4,7 +4,7 @@
 				<div class="ticker"><div class="ticker__item" ng-repeat="item in lastNews" style="padding: 0 2em;">@{{item.titulo}}</div></div>
 			</div>
 
-			@include('news.latests', ['link' => $link])
+			@include('news.latests', ['link' => 'individual'])
 		</div>
 	</section>
 
@@ -22,7 +22,7 @@
 					<div class="content">
 						<img class="elipse" src="/images/elipse.png" alt="">
 						<article>
-							<p class="title">@{{institucionales.titulo}}</p>
+							<p class="title" style="text-transform: uppercase">@{{institucionales.titulo}}</p>
 							<p class="content-body">
 								@{{institucionales.cuerpo}}
 							</p>
@@ -41,7 +41,7 @@
 		</div>
 		<div class="col-md-6">
 			<div class="col-md-12 title-top green">
-				<p class="title">NOTICIAS INSTITUCIONALES</p>
+				<p class="title">NOTICIAS INFORMALES</p>
 			</div>
 
 			<div class="col-md-12 slider">
@@ -49,7 +49,7 @@
 				<div class="content">
 					<img class="elipse" src="/images/elipse.png" alt="">
 					<article>
-						<p class="title">@{{informales.titulo}}</p>
+						<p class="title" style="text-transform: uppercase">@{{informales.titulo}}</p>
 						<p class="content-body">
 							@{{informales.cuerpo}}
 						</p>

@@ -3,33 +3,24 @@
 @include('layouts.header')
 <div class="main-content" style="padding-top: 1em; margin-top: 0; background: white;">
 	<div class="title" style="margin: 0; padding-bottom: 1em">
-		Alerta Rojo: un biotipo de nabo (Brassica rapa)
+		{{$noticia->titulo}}
 	</div>
 
 	<div class="rse" style="background: white;">
 		<div class="container">
 			<div class="col-md-12">
-				<img class="img-responsive" src="/images/individual.png" alt="" style="height: 320px!important;">
+				<img class="img-responsive" src="{{asset('/storage/'. $noticia->image)}}" alt="" style="height: 320px!important; width: 100%">
 
-				<p class="date" style="margin-bottom: 5px">20-01-2017 | <b style="color: black;">NOTICIAS INSTITUCIONALES</b></p>
+				<p class="date" style="margin-bottom: 5px">{{$noticia->created_at->format('d-m-Y')}} | <b style="color: black;text-transform:uppercase;">{{$noticia->category->name}}</b></p>
 
-				<span class="label label-success tag">RSE</span>
+				<span class="label label-success tag">{{$noticia->sector->name}}</span>
 				<div class="cover">
 					<span class="triangle"></span>
 				</div>
 				<br>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-					</p>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
+						{{$noticia->cuerpo}}
 					</p>
 				</div>
 			</div>
@@ -41,25 +32,29 @@
 			<h2>Otras noticias relacionadas</h2>
 
 			<div class="col-md-12" style="margin-top: 1em; padding: 0 0;">
-				@for($i = 0; $i < 4; $i++)
+				@foreach($ultimas as $item)
 				<div class="col-md-3" style="margin: 3em 0;">
 					<div class="products-items clearfix">
 						<div class="item clearfix">
 							<div class="image">
-								<img class="img-responsive" src="/images/products.png" alt="">
+								<img class="img-responsive" src="{{asset('/storage/'. $item->image)}}" alt="">
 							</div>
 							<div class="item-content">
 								<header>
-									<p>
-										<span style="color: white" class="date">26-01-2017 |</span><span class="title"> NOTICIA INSTITUCIONAL</span>
+							<p>
+										<span style="color: white" class="date">{{$item->created_at->format('d-m-Y')}} |</span><span class="title" style="text-transform: uppercase"> {{$item->category->name}}</span>
 									</p>
 								</header>
 								<article>
-									<p style="color: white">Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+									<p style="color: white">{{$item->titulo}}</p>
 								</article>
 								<footer>
-									<a href="/institutional" style="color: black;">Ver mas</a>
-									<span class="label label-success tag">Ventas</span>
+									@if ($item->category_id == 3)
+									 <a href="/products/{{$item->id}}" style="color: black;">Ver mas</a>
+									@else
+										<a href="/individual/{{$item->id}}" style="color: black;">Ver mas</a>
+									@endif
+									<span class="label label-success tag">{{$item->sector->name}}</span>
 									<div class="cover">
 										<span class="triangle"></span>
 									</div>
@@ -68,7 +63,7 @@
 						</div>
 					</div>
 				</div>
-				@endfor
+				@endforeach
 			</div>
 		</div>
 	</div>
