@@ -65,9 +65,9 @@
 				<div class="col-md-4">
 				<a href="" ng-if="!curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-active.png" alt=""></a>
 				<a href="" ng-if="curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-inactive.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
+				<p style="display: inline; text-transform: uppercase;"><b>@{{curiosidad.titulo}}</b></p>
 				<div style="width: 100%" class="curiosidad" ng-if="curiosidad.isOpen">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam provident magni qui, perferendis commodi magnam neque dignissimos, inventore assumenda voluptatem perspiciatis deleniti labore itaque similique ratione. Pariatur dolores officia mollitia.</p>
+					<p>@{{curiosidad.descripcion}}</p>
 				</div>
 			</div>
 			</div>
