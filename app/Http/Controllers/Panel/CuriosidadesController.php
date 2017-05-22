@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Intranet\Models\Panel\Curiosidades;
 
 class CuriosidadesController extends AppBaseController
 {
@@ -19,6 +20,13 @@ class CuriosidadesController extends AppBaseController
     public function __construct(CuriosidadesRepository $curiosidadesRepo)
     {
         $this->curiosidadesRepository = $curiosidadesRepo;
+    }
+
+    public function getAll() 
+    {
+        return Curiosidades::orderBy('created_at', 'desc')
+                           ->limit(6)
+                           ->get();
     }
 
     /**

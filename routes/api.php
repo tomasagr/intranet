@@ -27,3 +27,4 @@ Route::get('/manuals', 'ManualsController@getAll');
 
 Route::get('videos', 'Panel\VideosController@getAll');
 Route::get('informacion', 'Panel\InformacionController@getAll');
+Route::get('curiosidades', 'Panel\CuriosidadesController@getAll');

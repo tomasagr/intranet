@@ -12,15 +12,24 @@ angular.module('app.video-controller', [])
         $scope.info = response.data
       })
 
+    $http.get('/api/curiosidades')
+      .then(function(response) {
+        $scope.curiosidades = response.data
+      })
+
+    $scope.toggleCuriosidad = function(index) {
+      $scope.curiosidades[index].isOpen = !$scope.curiosidades[index].isOpen
+    }
+
     $scope.selectVideo = function(index) {
       $scope.videoSelected = true
       var link = $scope.videos[index].link
       $scope.link = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+ link)
     }
 
+    
+
     $scope.selectContent = function(index) {
       $scope.infoSelected = $scope.info[index]
     }
-
-    
   }])

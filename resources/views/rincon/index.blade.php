@@ -60,40 +60,17 @@
 	<div class="container curiosidades">
 		<h1>Curiosidades</h1>
 		<br><br>
-		<div class="col-md-12" style="padding: 0;">
-			<div class="col-md-4">
-				<a href=""><img src="/images/icon-active.png" alt=""></a>
+	
+			<div class="item" ng-repeat="curiosidad in curiosidades">
+				<div class="col-md-4">
+				<a href="" ng-if="!curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-active.png" alt=""></a>
+				<a href="" ng-if="curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-inactive.png" alt=""></a>
 				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-			</div>
-
-			<div class="col-md-4">
-				<a href=""><img src="/images/icon-active.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-			</div>
-
-			<div class="col-md-4">
-				<a href=""><img src="/images/icon-active.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-			</div>
-
-			<div class="col-md-4">
-				<a href=""><img src="/images/icon-active.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-			</div>
-
-			<div class="col-md-4">
-				<a href=""><img src="/images/icon-active.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-			</div>
-
-			<div class="col-md-4 open">
-				<a href=""><img src="/images/icon-inactive.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </b></p>
-				<div style="width: 100%" class="curiosidad">
+				<div style="width: 100%" class="curiosidad" ng-if="curiosidad.isOpen">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam provident magni qui, perferendis commodi magnam neque dignissimos, inventore assumenda voluptatem perspiciatis deleniti labore itaque similique ratione. Pariatur dolores officia mollitia.</p>
 				</div>
 			</div>
-
+			</div>
 		</div>
 	</div>
 </div>
