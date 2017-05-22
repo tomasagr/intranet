@@ -7,9 +7,20 @@ angular.module('app.video-controller', [])
         $scope.videos = response.data
       })
 
+    $http.get('/api/informacion')
+      .then(function(response) {
+        $scope.info = response.data
+      })
+
     $scope.selectVideo = function(index) {
       $scope.videoSelected = true
       var link = $scope.videos[index].link
       $scope.link = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+ link)
     }
+
+    $scope.selectContent = function(index) {
+      $scope.infoSelected = $scope.info[index]
+    }
+
+    
   }])

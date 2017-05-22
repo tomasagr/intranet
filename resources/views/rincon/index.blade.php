@@ -25,7 +25,7 @@
 	</div>
 
 	<div class="info">
-		<div class="container" style="position: relative; padding: 4em 0; height: 727px;">
+		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="!infoSelected">
 			<img class="img-responsive" src="/images/info.png" alt="" style="height: 632px;">
 			<div class="details">
 				<h1>Información</h1>
@@ -33,28 +33,23 @@
 			</div>
 		</div>
 
+		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="infoSelected">
+			<img class="img-responsive" src="/storage/@{{infoSelected.imagen}}" alt="" style="height: 632px;">
+			<div class="details">
+				<h1>@{{infoSelected.titulo}}</h1>
+				<p>@{{infoSelected.descripcion}}</p>
+			</div>
+		</div>
+
 		<div class="container items">
-			<div class="col-md-4 item">
-				<img class="img-responsive" src="/images/products.png" alt="">
+			<div class="col-md-4 item" 
+					ng-repeat="item in info" 
+					style="cursor:pointer" 
+					ng-mouseover="selectContent($index)">
+				<img class="img-responsive" src="/storage/@{{item.imagen}}" alt="">
 				<div class="description">
-					<p style="color: black;"><b>TITULO INFORMACION</b></p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem nulla asperiores, repellat itaque, placeat maxime omnis ut.</p>
-				</div>
-			</div>
-
-			<div class="col-md-4 item">
-				<img class="img-responsive" src="/images/products.png" alt="">
-				<div class="description">
-					<p style="color: black;"><b>TITULO INFORMACION</b></p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem nulla asperiores, repellat itaque, placeat maxime omnis ut.</p>
-				</div>
-			</div>
-
-			<div class="col-md-4 item">
-				<img class="img-responsive" src="/images/products.png" alt="">
-				<div class="description">
-					<p style="color: black;"><b>TITULO INFORMACION</b></p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem nulla asperiores, repellat itaque, placeat maxime omnis ut.</p>
+					<p style="color: black;text-transform:uppercase"><b>@{{item.titulo}}</b></p>
+					<p>@{{item.descripcion}}</p>
 				</div>
 			</div>
 		</div>

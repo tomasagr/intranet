@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Intranet\Models\Panel\Informacion;
 
 class InformacionController extends AppBaseController
 {
@@ -34,6 +35,13 @@ class InformacionController extends AppBaseController
 
         return view('panel.informacions.index')
             ->with('informacions', $informacions);
+    }
+
+    public function getAll() 
+    {
+        return Informacion::orderBy('created_at', 'desc')
+                           ->limit(3)
+                           ->get();
     }
 
     /**
