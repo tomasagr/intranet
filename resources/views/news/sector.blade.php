@@ -12,7 +12,7 @@
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
-							<img style="height: 400px" class="img-responsive" src="{{asset($item->image)}}" alt="">
+							<img style="height: 400px" class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
 						</div>
 						<div class="item-content">
 							<header>
@@ -48,7 +48,7 @@
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="{{asset($item->image)}}" alt="">
+									<img class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
 								</div>
 								<div class="item-content">
 									<header>
@@ -96,7 +96,7 @@
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="{{asset($item->image)}}" alt="">
+									<img class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
 								</div>
 								<div class="item-content">
 									<header>
