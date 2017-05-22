@@ -9,6 +9,6 @@ class UnitsController extends Controller
 {
     public function index()
     {
-        return Unit::all();
+        return Unit::with('sectors')->get();
     }
 }

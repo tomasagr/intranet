@@ -12,6 +12,6 @@ class Unit extends Model
 
     public function sectors()
     {
-    	return $this->hasMany(Sector::class);
+    	return $this->belongsToMany(Sector::class, 'sector_unit', 'unit_id', 'sector_id');
     }
 }

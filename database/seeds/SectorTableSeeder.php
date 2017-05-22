@@ -13,8 +13,7 @@ class SectorTableSeeder extends Seeder
     public function run()
     {
         Sector::create([
-        	'name' => 'Dirección',
-        	'unit_id' => 1,
+        	'name' => 'Dirección'
         ]);
 
         Sector::create([
@@ -70,21 +69,6 @@ class SectorTableSeeder extends Seeder
         Sector::create([
         	'name' => 'Investigación y Desarrollo',
         	'unit_id' => 2,
-        ]);
-
-        Sector::create([
-        	'name' => 'Ventas',
-        	'unit_id' => 3,
-        ]);
-
-        Sector::create([
-        	'name' => 'Marketing',
-        	'unit_id' => 3,
-        ]);
-
-        Sector::create([
-        	'name' => 'Investigación y Desarrollo',
-        	'unit_id' => 3,
         ]);
     }
 }

@@ -8,20 +8,19 @@ angular.module('app.user-controller', [])
         $scope.haveUnit = $scope.user.unit_id || false
 
         if ($scope.haveUnit) {
-          $scope.sectorSelected = $scope.sectors.filter(function (element) {
-            return $scope.user.unit_id === element.unit_id
+          $scope.unitSelected = $scope.units.filter(function (element) {
+            return $scope.user.unit_id === element.id
           })
         }
+        
+        $scope.sectorSelected = $scope.unitSelected[0].sectors
       }
 
       UnitsService.getAll()
         .then(function (response) {
           $scope.units = response
-          return SectorsService.getAll()
         })
-        .then(function (response) {
-          $scope.sectors = response
-        })
+
 
       $scope.store = function () {
         Upload.upload({
