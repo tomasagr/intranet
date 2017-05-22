@@ -3,23 +3,23 @@
 
 @include('layouts.header')
 
+<div ng-controller="VideosController">
 <div class="rincon clearfix">
 	<div class="main-content clearfix" style="padding-bottom: 3em; padding-top: 3em; margin-top: 0; background: white;">
 		<div class="container">
 			<h1 class="title-videos">Videos</h1>
 			<div class="videos col-md-6" id="customscroll">
-				@for($i = 0; $i < 6; $i++)
-				<div class="item">
+				<div class="item" ng-repeat="item in videos">
 					<img src="/images/image.png" alt="">
 					<div class="videos-desc">
-						<p><b><a href="">TITULO DE VIDEO</a></b></p>
+						<p><b><a ng-click="selectVideo($index)" href="" style="text-transform:uppercase">@{{item.titulo}}</a></b></p>
 					</div>
 				</div>
 				<hr>
-				@endfor
 			</div>
 			<div class="videos-preview col-md-6">
-				<img src="/images/video-prev.png" alt="">
+				<img src="/images/video-prev.png" alt="" ng-if="!videoSelected">
+				<iframe width="100%" height="300" src="@{{link}}" frameborder="0" allowfullscreen ng-if="videoSelected"></iframe>
 			</div>
 		</div>
 	</div>
@@ -115,6 +115,7 @@
 	])
 </div>
 
+</div>
 
 
 @include('layouts.footer')

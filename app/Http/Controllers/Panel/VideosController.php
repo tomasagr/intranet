@@ -16,9 +16,15 @@ class VideosController extends AppBaseController
     /** @var  VideosRepository */
     private $videosRepository;
 
+
     public function __construct(VideosRepository $videosRepo)
     {
         $this->videosRepository = $videosRepo;
+    }
+
+    public function getAll() 
+    {
+        return $this->videosRepository->all();
     }
 
     /**

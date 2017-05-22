@@ -44,5 +44,6 @@
 		<script src="/js/components/users/UsersProfileController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/news/NewsController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/manuales/ManualController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/videos/VideosController.js?v=<?php echo time(); ?>"></script>
 	</body>
 	</html>

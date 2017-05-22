@@ -24,3 +24,5 @@ Route::post('/users/{id}/edit', 'UsersController@update');
 Route::get('/news','NewsController@index');
 
 Route::get('/manuals', 'ManualsController@getAll');
+
+Route::get('videos', 'Panel\VideosController@getAll');
