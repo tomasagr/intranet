@@ -32,6 +32,17 @@ class NewsController extends Controller
                         ->orderBy('created_at', 'desc')->get();
     }
 
+    public function search(Request $request) 
+    {
+        if ($request->q) {
+            return Noticias::with(['sector', 'category'])
+                            ->where('titulo','LIKE', "%{$request->q}%")
+                            ->orderBy('created_at', 'desc')->get();
+        }
+
+        return Noticias::with(['sector', 'category'])->get();
+    }
+
     public function informal()
     {
         $informal = Noticias::with(['sector', 'category'])

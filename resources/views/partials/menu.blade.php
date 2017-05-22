@@ -1,3 +1,4 @@
+<ul class="main-menu" ng-controller="MenuController">
 	<li>
 		<div class="btn-group">
 			<button type="button" class="btn btn-default dropdown-toggle"
@@ -58,4 +59,21 @@
 
 	<li><a href="/rincon-japones">RINCÓN JAPONES</a></li>
 
-	<li><a href="/search"><i class="fa fa-search"></i></a></li>
+	<li style="position:relative; border: 0">
+		<a href="" ng-click="toggleBox()"><i class="fa fa-search"></i></a>
+		<form ng-submit="search()">
+			<input 
+				ng-show="isOpen"
+				type="text" class="form-control" 
+				ng-model="querySend"
+				placeholder="Ingrese su busqueda"
+				style="position: absolute;
+				transition: .3s all ease;
+				width: 300px;
+				left: -250px;
+				box-shadow: 2px 2px 3px rgba(0,0,0, 0.3);
+				top: 32px;">
+				<a href="" type="submit" ng-if="isOpen" style="position: absolute;top: 42px;left: -7px;-webkit-appearance:initial; opacity: 0"><i class="fa fa-search"></i></a>
+		</form>
+ </li>
+</ul>

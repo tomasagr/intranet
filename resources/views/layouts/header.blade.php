@@ -47,7 +47,7 @@
 	<div class="logo">
 		<a href="/home"><img src="/images/logo.svg" class="img-responsive" alt="" width="200"></a>
 	</div>
-	<ul class="main-menu">@include('partials.menu')</ul>
+	@include('partials.menu')
 </div>
 
 </header>
