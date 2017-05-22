@@ -3,14 +3,14 @@
 @include('layouts.header')
 <div class="main-content" style="padding-top: 1em; margin-top: 0; background: white;">
 	<div class="title" style="margin: 0; padding-bottom: 1em">
-		Summit Be Green
+		BeGreen
 	</div>
 </div>
 
 <div class="rse" style="background: white;">
 	<div class="container">
 		<div class="col-md-12">
-			<img width="100%" class="img-responsive" src="{{$contenido->image}}" alt="" style="height: 320px!important;">
+			<img width="100%" class="img-responsive" src="{{'/storage/'.$contenido->image}}" alt="" style="height: auto!important;">
 
 			<p class="date">{{$contenido->updated_at->format('d-m-Y')}}</p>
 
