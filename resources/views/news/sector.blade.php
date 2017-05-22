@@ -1,3 +1,4 @@
+@inject('model', 'Intranet\Sector')
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
@@ -142,14 +143,14 @@
 	<div class="container clearfix">
 		<div class="sectores-lista clearfix">
 			<h2 class="title">Sectores</h2>
-			@for($i = 0; $i < 11; $i++)
+			@foreach($model->all() as $sec)
 			<div class="col-md-4 sector-item">
-				<a href="/sector/1">
-					<h2>Ventas</h2>
+				<a href="/sector/{{$sec->id}}">
+					<h2>{{$sec->name}}</h2>
 					<small>Ingresar ></small>
 				</a>
 			</div>
-			@endfor
+			@endforeach
 		</div>
 	</div>
 </div>
