@@ -11,7 +11,7 @@
 </li>
 
 <li class="{{ Request::is('panel/rSES*') ? 'active' : '' }}">
-    <a href="{!! route('panel.rSES.index') !!}"><i class="fa fa-briefcase"></i><span>RSE</span></a>
+    <a href="{!! route('panel.rSES.index') !!}"><i class="fa fa-briefcase"></i><span>Búsqueda Laboral</span></a>
 </li>
 
 <li class="{{ Request::is('panel/eventos*') ? 'active' : '' }}">

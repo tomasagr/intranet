@@ -152,4 +152,10 @@ class RSEController extends AppBaseController
 
         return redirect(route('panel.rSES.index'));
     }
+
+    public function apply($id) 
+    {
+        $rSE = \Intranet\Models\Panel\RSE::with('users')->find($id);
+        return view('panel.r_s_e_s.apply', compact('rSE'));
+    }    
 }

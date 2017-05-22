@@ -4,6 +4,7 @@ namespace Intranet\Models\Panel;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Intranet\User;
 
 /**
  * Class RSE
@@ -51,5 +52,8 @@ class RSE extends Model
         'ubicacion' => 'required'
     ];
 
-    
+    public function users() 
+    {
+        return $this->belongsToMany(User::class, 'user_job', 'job_id', 'user_id');
+    }    
 }

@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/products/{id}', 'ProductssController@show');
 	Route::get('/jobs', 'JobsController@index');
 	Route::get('/jobs/{id}', 'JobsController@show');
+	Route::get('/jobs/{id}/apply', 'JobsController@apply');
 	Route::get('/solidaria', 'RSEController@solidaria');
 	Route::get('/regional', 'RSEController@regional');
 	Route::get('/begreen', 'RSEController@begreen');
@@ -82,6 +83,7 @@ Route::patch('rSES/{rSES}', ['as'=> 'panel.rSES.update', 'uses' => 'Panel\RSECon
 Route::delete('rSES/{rSES}', ['as'=> 'panel.rSES.destroy', 'uses' => 'Panel\RSEController@destroy']);
 Route::get('rSES/{rSES}', ['as'=> 'panel.rSES.show', 'uses' => 'Panel\RSEController@show']);
 Route::get('rSES/{rSES}/edit', ['as'=> 'panel.rSES.edit', 'uses' => 'Panel\RSEController@edit']);
+Route::get('rSES/{id}/apply', 'Panel\RSEController@apply');
 
 
 Route::get('eventos', ['as'=> 'panel.eventos.index', 'uses' => 'Panel\EventosController@index']);
