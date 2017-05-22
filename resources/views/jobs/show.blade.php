@@ -12,7 +12,7 @@
 		<div class="col-md-8 col-md-offset-2">
 			<header class="clearfix">
 			<div class="title-jobs clearfix">
-				<h2>{{$job->title}}</h2>
+				<h2>{{$job->titulo}}</h2>
 				<div class="square green">{{substr($job->puesto,0,1)}}</div>
 			</div>
 
