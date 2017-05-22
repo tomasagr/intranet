@@ -7,24 +7,25 @@
 	</div>
 	<div class="container clearfix">
 		<div class="col-md-12">
-			<div class="col-md-6">
+			@foreach($sector as $item)
+				<div class="col-md-6">
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
-							<img style="height: 400px" class="img-responsive" src="/images/products.png" alt="">
+							<img style="height: 400px" class="img-responsive" src="{{asset($item->image)}}" alt="">
 						</div>
 						<div class="item-content">
 							<header>
 								<p>
-									<span class="date">26-01-2017 |</span><span class="title"> NOTICIA FORMAL</span>
+									<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span class="title" style="text-transform: uppercase"> {{$item->category->name}}</span>
 								</p>
 							</header>
 							<article>
-								<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+								<p>{{$item->titulo}}</p>
 							</article>
 							<footer>
-								<a href="">Ver mas</a>
-								<span class="label label-success tag">Ventas</span>
+								<a href="/individual/{{$item->id}}">Ver mas</a>
+								<span class="label label-success tag">{{$item->sector->name}}</span>
 								<div class="cover">
 									<span class="triangle"></span>
 								</div>
@@ -33,32 +34,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="products-items clearfix">
-					<div class="item clearfix">
-						<div class="image">
-							<img style="height: 400px" class="img-responsive" src="/images/products.png" alt="">
-						</div>
-						<div class="item-content">
-							<header>
-								<p>
-									<span class="date">26-01-2017 |</span><span class="title"> NOTICIA FORMAL</span>
-								</p>
-							</header>
-							<article>
-								<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
-							</article>
-							<footer>
-								<a href="">Ver mas</a>
-								<span class="label label-success tag">RSE</span>
-								<div class="cover">
-									<span class="triangle"></span>
-								</div>
-							</footer>
-						</div>
-					</div>
-				</div>
-			</div>
+			@endforeach
 		</div>
 
 		<div class="col-md-12" style="margin-top: 3em;">
@@ -67,25 +43,25 @@
 					<p class="title" style="text-align: left;">NOTICIAS INSTITUCIONALES</p>
 				</div>
 				<div class="row">
-					@for($i = 0; $i < 4; $i++)
+					@forelse($institutional as $item)
 					<div class="col-md-6" style="margin: 1em 0;">
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="/images/products.png" alt="">
+									<img class="img-responsive" src="{{asset($item->image)}}" alt="">
 								</div>
 								<div class="item-content">
 									<header>
 										<p>
-											<span class="date">26-01-2017 |</span><span class="title"> NOTICIAS INSTITUCIONALES</span>
+											<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span class="title" style="text-transform: uppercase"> {{$item->category->name}}</span>
 										</p>
 									</header>
 									<article>
-										<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+										<p>{{$item->titulo}}</p>
 									</article>
 									<footer>
-										<a href="/institutional/1">Ver mas</a>
-										<span class="label label-success tag">RSE</span>
+										<a href="/institutional/{{$item->id}}">Ver mas</a>
+										<span class="label label-success tag">{{$item->sector->name}}</span>
 										<div class="cover">
 											<span class="triangle"></span>
 										</div>
@@ -94,7 +70,11 @@
 							</div>
 						</div>
 					</div>
-					@endfor
+					@empty
+						<div class="col-md-12"><br>
+								<div class="alert alert-info clearfix">No hay noticias de este sector</div>
+							</div>
+					@endforelse
 					<div class="row">
 						<div class="button-center text-center"><br>
 							<button type="submit" class="btn btn-warning danger-alternative orange-alt"
@@ -111,25 +91,25 @@
 					<p class="title" style="text-align: left;">NOTICIAS INFORMALES</p>
 				</div>
 				<div class="row">
-					@for($i = 0; $i < 4; $i++)
+						@forelse($informal as $item)
 					<div class="col-md-6" style="margin: 1em 0;">
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="/images/products.png" alt="">
+									<img class="img-responsive" src="{{asset($item->image)}}" alt="">
 								</div>
 								<div class="item-content">
 									<header>
 										<p>
-											<span class="date">26-01-2017 |</span><span class="title"> NOTICIAS INFORMALES</span>
+											<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span class="title" style="text-transform: uppercase"> {{$item->category->name}}</span>
 										</p>
 									</header>
 									<article>
-										<p>Presencia de  Sclerotina en lotes de Soja en el Sudeste Bonarence</p>
+										<p>{{$item->titulo}}</p>
 									</article>
 									<footer>
-										<a href="/informal/1">Ver mas</a>
-										<span class="label label-success tag">RSE</span>
+										<a href="/informal/{{$item->id}}">Ver mas</a>
+										<span class="label label-success tag">{{$item->sector->name}}</span>
 										<div class="cover">
 											<span class="triangle"></span>
 										</div>
@@ -138,7 +118,11 @@
 							</div>
 						</div>
 					</div>
-					@endfor
+					@empty
+						<div class="col-md-12"><br>
+								<div class="alert alert-info clearfix">No hay noticias de este sector</div>
+							</div>
+					@endforelse
 					<div class="row">
 						<div class="button-center text-center"><br>
 							<button type="submit" class="btn btn-warning danger-alternative orange-alt"

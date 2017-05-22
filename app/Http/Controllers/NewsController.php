@@ -98,7 +98,10 @@ class NewsController extends Controller
 
     public function sector($id) 
     {
-    	return view('news.sector');
+        $institutional = Noticias::where('category_id', 2)->where('sector_id', $id)->get();
+        $informal = Noticias::where('category_id', 1)->where('sector_id', $id)->get();
+        $sector = Noticias::limit(2)->where('sector_id', $id)->get();
+    	return view('news.sector', compact('institutional', 'informal', 'sector'));
     }
 
 }
