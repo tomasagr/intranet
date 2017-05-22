@@ -10,23 +10,12 @@
 <div class="rse" style="background: white;">
 	<div class="container">
 		<div class="col-md-12">
-			<img class="img-responsive" src="/images/header-rse.png" alt="" style="height: 320px!important;">
+			<img width="100%" class="img-responsive" src="{{$contenido->image}}" alt="" style="height: 320px!important;">
 
-			<p class="date">20-01-2017</p>
+			<p class="date">{{$contenido->updated_at->format('d-m-Y')}}</p>
 
 			<div class="content">
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur facere, a distinctio, saepe ratione consequuntur neque ipsum? Repellendus neque id ex, iste nemo sunt. At id a veniam inventore est!
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut officia ex enim error optio est quibusdam quisquam accusamus, pariatur perspiciatis corporis amet facere possimus rerum ratione ad ut. Corrupti.
-				</p>
+				<p>{{$contenido->cuerpo}}</p>
 			</div>
 		</div>
 	</div>
