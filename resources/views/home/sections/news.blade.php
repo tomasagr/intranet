@@ -2,7 +2,9 @@
   <div class="container">
     <div class="text-slider ticker-wrap">
       <div class="ticker">
-        <div class="ticker__item" ng-repeat="item in lastNews" style="padding: 0 2em;">@{{item.titulo}}</div>
+        <div class="ticker__item" ng-repeat="item in lastNews" style="padding: 0 2em;">
+					<a href="/individual/@{{item.id}}" style="color: white">@{{item.titulo}}</a>
+				</div>
       </div>
     </div>
     @include('news.latests', ['link' => 'individual'])
@@ -22,7 +24,9 @@
             <div class="content">
               <img class="elipse" src="/images/elipse.png" alt="">
               <article>
-                <p class="title" style="text-transform: uppercase"><a href="/institutional/@{{item.id}}" style="color: green; text-decoration-none">@{{item.titulo}}</a></p>
+                <p class="title" style="text-transform: uppercase">
+									<a style="color: green" href="/institutional/@{{item.id}}">@{{item.titulo}}</a>
+								</p>
                 <p class="content-body">@{{item.cuerpo}}</p>
               </article>
             </div>

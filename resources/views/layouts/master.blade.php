@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider.css">
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider-dots.css">
 </head>
-<body class="main background-main">
+<body class="main background-main" ng-cloak>
 	@yield('content')
 	<script>
 	  // rename myToken as you like

@@ -4,10 +4,12 @@
 						<div id="<?php echo $modelName; ?>" ui-calendar="<?php echo $config; ?>.calendar"
 						class="span8 calendar" ng-model="<?php echo $modelName; ?>"></div>
 					</div>
-					<div class="col-md-12 ticks">
+					@if($title != 'VACACIONES')
+						<div class="col-md-12 ticks">
 						<span><i class="fa fa-circle" style="color: red;margin-right: 10px"></i> EVENTOS AGRO</span>
 						<span><i class="fa fa-circle" style="color:green;;margin-right: 10px"></i> EVENTOS SUMMIT</span>
 					</div>
+					@endif
 				</div>
 				<div class="col-md-6">
 					<div class="header-list">
@@ -17,7 +19,9 @@
 					<div class="items">
 						<div class="item">
 							<header style="background-color: transparent;">
+							@if($title != 'VACACIONES')
 								<p class="hour">10:30 hs.</p>
+							@endif
 								<p class="event-title">TITULO DEL EVENTO<p>
 								<p class="event-description">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam molestiae, commodi optio omnis

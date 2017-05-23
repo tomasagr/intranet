@@ -2,11 +2,11 @@
 	<ul class="nav nav-tabs" role="tablist">
 		<li role="presentation" class="active">
 			<a href="#events" aria-controls="events"
-			role="tab" data-toggle="tab">EVENTOS</a>
+			   role="tab" data-toggle="tab">EVENTOS</a>
 		</li>
 		<li role="presentation">
 			<a href="#vacations" aria-controls="vacations"
-			role="tab" data-toggle="tab"  ng-click="renderCalendar()">VACACIONES</a>
+			   role="tab" data-toggle="tab"  ng-click="renderCalendar()">VACACIONES</a>
 		</li>
 	</ul>
 

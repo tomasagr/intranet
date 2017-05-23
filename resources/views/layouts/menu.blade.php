@@ -31,7 +31,7 @@
 </li>
 
 <li class="{{ Request::is('panel/informacion*') ? 'active' : '' }}">
-    <a href="{!! route('panel.informacions.index') !!}"><i class="fa fa-edit"></i><span>Informacions</span></a>
+    <a href="{!! route('panel.informacions.index') !!}"><i class="fa fa-edit"></i><span>Información</span></a>
 </li>
 
 <li class="{{ Request::is('panel/curiosidades*') ? 'active' : '' }}">
