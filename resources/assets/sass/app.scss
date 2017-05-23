@@ -356,3 +356,34 @@ $duration: 20s;
   padding-left: 100%;  // offset items to begin 
   
 }
+
+.unslider {
+	width: 100% !important;
+	position: relative!important;
+}
+
+.unslider-nav ol li.unslider-active {
+    background: transparent;
+    cursor: default;
+    border: 2px solid white;
+		width: 10px;
+		height: 10px;
+}
+
+.unslider-nav ol li {
+    background: transparent;
+    cursor: default;
+    border: 2px solid white;
+		width: 9px !important;
+		height: 9px !important;
+}
+
+.unslider-nav {
+	position: absolute !important;
+  top: 13em !important;
+  width: 96% !important;
+
+	ol {
+		  text-align: right!important;
+	}
+}

@@ -7,7 +7,7 @@ angular.module('app.news-controlller', [])
 
     if (pathname == '/institutional') {
       url = '/api/news?limit=4&category=2'
-    } else if (pathname == '/informal')  {
+    } else if (pathname == '/informal') {
       url = '/api/news?limit=4&category=1'
     }
 
@@ -16,15 +16,15 @@ angular.module('app.news-controlller', [])
         $scope.lastNews = response.data
         $scope.selected = response.data[0]
 
-        $scope.institucionales = $scope.lastNews.find(function (element) {
+        $scope.institucionales = $scope.lastNews.filter(function (element) {
           return element.category_id === 2
         })
 
-        $scope.informales = $scope.lastNews.find(function (element) {
+        $scope.informales = $scope.lastNews.filter(function (element) {
           return element.category_id === 1
         })
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error)
       })
 
