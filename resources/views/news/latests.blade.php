@@ -2,7 +2,7 @@
 	<div class="lastest-news">
 	<div class="selected" ng-style="{background: 'url(/storage/'+ selected.image +') no-repeat 0 0', 'background-size': 'cover'}">
 		<div class="content">
-			<p class="date">@{{selected.created_at | inDate | date:'dd-mm-yyyy'}}</p>
+			<p class="date">@{{selected.created_at | inDate | date:'dd-MM-yyyy'}}</p>
 			<p class="category" style="text-transform: uppercase">@{{selected.sector.name}}</p>
 			<h1>
 				@{{selected.titulo}}
@@ -15,7 +15,7 @@
 		<a href="/{{$link}}/@{{item.id}}" ng-mouseover="changeSelected($index)">
 				<header>
 					<p>
-						<span class="date">@{{item.created_at | inDate | date:'dd-mm-yyyy'}} |</span>
+						<span class="date">@{{item.created_at | inDate | date:'dd-MM-yyyy'}} |</span>
 						<span style="text-transform:uppercase" class="title"> @{{item.category.name}}</span>
 					</p>
 				</header>
