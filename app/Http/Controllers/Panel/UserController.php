@@ -115,14 +115,21 @@ class UserController extends AppBaseController
     public function update($id, UpdateUserRequest $request)
     {
         $user = $this->userRepository->findWithoutFail($id);
-
+        $input = $request->all();
+        $file = $input['file'] ?? null;
+        
         if (empty($user)) {
             Flash::error('Usuario no encontrado');
-
             return redirect(route('panel.users.index'));
         }
 
-        $user = $this->userRepository->update($request->all(), $id);
+        if (!is_null($request["file"])) {
+            $path = $input["file"]->store('avatars', 'public');
+            
+            $input['avatar'] = $path;
+        }
+
+        $user = $this->userRepository->update($input, $id);
 
         Flash::success('User actualizado con exito.');
 

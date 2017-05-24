@@ -3,7 +3,7 @@
 namespace Intranet\Http\Requests\Panel;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Intranet\Models\Panel\User;
+use Intranet\User;
 
 class UpdateUserRequest extends FormRequest
 {
@@ -25,6 +25,6 @@ class UpdateUserRequest extends FormRequest
      */
     public function rules()
     {
-        return User::$rules;
+        return [];
     }
 }

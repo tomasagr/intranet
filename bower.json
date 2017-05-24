@@ -19,6 +19,7 @@
     "angular": "^1.6.4",
     "angular-bootstrap": "^2.5.0",
     "ng-file-upload": "^12.2.13",
-    "ngSweetAlert": "angular-sweetalert#^1.1.2"
+    "ngSweetAlert": "angular-sweetalert#^1.1.2",
+    "trumbowyg": "^2.5.1"
   }
 }
