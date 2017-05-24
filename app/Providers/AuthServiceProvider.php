@@ -25,6 +25,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('show-user', function($user) {
+            return $user->rol->permissions->first(function($element) {
+                return $element->tag == 'SHOW_USERS';
+            });
+        });
+
+        Gate::define('edit-user', function($user) {
+            return $user->rol->permissions->first(function($element) {
+                return $element->tag == 'UPDATE_USERS';
+            });
+        });
     }
 }

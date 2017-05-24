@@ -57,5 +57,6 @@ class Kernel extends HttpKernel
         'guest' => \Intranet\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
+        'isAdminOrEditor' => \Intranet\Http\Middleware\IsAdminOrEditor::class
     ];
 }

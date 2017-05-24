@@ -19,6 +19,11 @@ angular.module('app.user-profile-controller', [])
         UsersService.getAll($scope.profileid)
         .then(function (response) {
           $scope.user = response
+          if ($scope.user.avatar) {
+            $scope.fileAvatar = '/storage/' + $scope.user.avatar
+          } else {
+            $scope.fileAvatar = '/images/default.svg'
+          }
           $scope.toogleSectorSelect()
         })
       }, 400)

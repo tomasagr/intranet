@@ -13,7 +13,7 @@
 		 <form name="registerForm" novalidate ng-submit="store()">
             <div class="row upload-row">
                 <div class="col-md-2">
-                    <img class="img-responsive user-image img-circle" ngf-thumbnail="file ||'/images/default.svg'" alt="">
+                    <img class="img-responsive user-image img-circle" ngf-thumbnail="file || fileAvatar" alt="">
                 </div>
                 <div class="col-md-4">
                     <div class="input-group">

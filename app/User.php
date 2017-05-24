@@ -7,12 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Intranet\Profile;
 use Intranet\Unit;
 use Intranet\Sector;
+use Intranet\Rol;
+use Intranet\Permissions;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
+    /*
      * The attributes that are mass assignable.
      *
      * @var array
@@ -41,6 +43,11 @@ class User extends Authenticatable
     public function profile() 
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function rol() 
+    {
+        return $this->belongsTo(Rol::class);
     }
 
     public function unit() 

@@ -1,3 +1,4 @@
+@inject('roles', 'Intranet\Rol')
 <!-- Fullname Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fullname', 'Nombre:') !!}
@@ -30,8 +31,8 @@
 
 <!-- Rol Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('rol_id', 'Rol Id:') !!}
-    {!! Form::select('rol_id', [], null,  ['class' => 'form-control']) !!}
+    {!! Form::label('rol_id', 'Roles:') !!}
+    {!! Form::select('rol_id', $roles->all()->pluck('name','id'), null,  ['class' => 'form-control']) !!}
 </div>
 
 <!-- Avatar Field -->
@@ -54,19 +55,13 @@
         {!! Form::file('file', null, ['class' => 'form-control']) !!}
     </div>
     </div>
-
 </div>
-
 
 <!-- Avatar Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('bio', 'Bio:') !!}
     {!! Form::textarea('bio', null, ['class' => 'form-control']) !!}
 </div>
-
-
-
-
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Illuminate\Support\Facades\Gate;
 
 class UserController extends AppBaseController
 {
@@ -29,6 +30,10 @@ class UserController extends AppBaseController
      */
     public function index(Request $request)
     {
+        if (Gate::denies('show-user')) {
+            return redirect('/panel');
+        }
+
         $this->userRepository->pushCriteria(new RequestCriteria($request));
         $users = $this->userRepository->all();
 
@@ -93,6 +98,10 @@ class UserController extends AppBaseController
      */
     public function edit($id)
     {
+        if (Gate::denies('edit-user')) {
+            return redirect('/panel');
+        }
+
         $user = $this->userRepository->findWithoutFail($id);
 
         if (empty($user)) {
