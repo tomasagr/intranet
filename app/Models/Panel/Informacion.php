@@ -44,7 +44,6 @@ class Informacion extends Model
      */
     public static $rules = [
         'titulo' => 'required',
-        'imagen' => 'required',
         'descripcion' => 'required'
     ];
 
