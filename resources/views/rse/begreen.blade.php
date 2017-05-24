@@ -15,7 +15,7 @@
 			<p class="date">{{$contenido->updated_at->format('d-m-Y')}}</p>
 
 			<div class="content">
-				<p>
+				<p style="column-count: 2;">
 					{{$contenido->cuerpo}}
 				</p>
 			</div>
