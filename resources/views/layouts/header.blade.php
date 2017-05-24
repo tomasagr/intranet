@@ -20,7 +20,7 @@
 					<li class="item-title"><b class="title">NOTIFICACIONES</b><div class="label-notification-warning">No leídas 0</div></li>
 					<li role="separator" class="divider"></li>
 					<li class="items-list">
-						<div class="title"><span class="label-notification danger">3</span> Respuestas del foro</div>
+						<div class="title"><span class="label-notification danger">0</span> Respuestas del foro</div>
 						<div class="notify-items">
 							<a href="#">Another action</a>
 							<a href="#">Another action</a>
