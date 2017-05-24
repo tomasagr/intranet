@@ -3,7 +3,11 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Noticias
+            @if (Request::is('panel/productos/*')) 
+                Productos
+            @else
+                Noticias
+            @endif
         </h1>
     </section>
     <div class="content">

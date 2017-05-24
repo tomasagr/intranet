@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Intranet\Models\Panel\Noticias;
 
 class NoticiasController extends AppBaseController
 {
@@ -30,9 +31,18 @@ class NoticiasController extends AppBaseController
     public function index(Request $request)
     {
         $this->noticiasRepository->pushCriteria(new RequestCriteria($request));
-        $noticias = $this->noticiasRepository->all();
+        $noticias = Noticias::where('category_id', '!=', 3)->get();
 
         return view('panel.noticias.index')
+            ->with('noticias', $noticias);
+    }
+
+    public function indexProductos(Request $request)
+    {
+        $this->noticiasRepository->pushCriteria(new RequestCriteria($request));
+        $noticias = Noticias::where('category_id', 3)->get();
+
+        return view('panel.noticias.index-productos')
             ->with('noticias', $noticias);
     }
 

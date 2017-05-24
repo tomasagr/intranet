@@ -56,13 +56,22 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('users/{users}/edit', ['as'=> 'panel.users.edit', 'uses' => 'Panel\UserController@edit']);
 
 		Route::get('noticias', ['as'=> 'panel.noticias.index', 'uses' => 'Panel\NoticiasController@index']);
-Route::post('noticias', ['as'=> 'panel.noticias.store', 'uses' => 'Panel\NoticiasController@store']);
-Route::get('noticias/create', ['as'=> 'panel.noticias.create', 'uses' => 'Panel\NoticiasController@create']);
-Route::put('noticias/{noticias}', ['as'=> 'panel.noticias.update', 'uses' => 'Panel\NoticiasController@update']);
-Route::patch('noticias/{noticias}', ['as'=> 'panel.noticias.update', 'uses' => 'Panel\NoticiasController@update']);
-Route::delete('noticias/{noticias}', ['as'=> 'panel.noticias.destroy', 'uses' => 'Panel\NoticiasController@destroy']);
-Route::get('noticias/{noticias}', ['as'=> 'panel.noticias.show', 'uses' => 'Panel\NoticiasController@show']);
-Route::get('noticias/{noticias}/edit', ['as'=> 'panel.noticias.edit', 'uses' => 'Panel\NoticiasController@edit']);
+		Route::post('noticias', ['as'=> 'panel.noticias.store', 'uses' => 'Panel\NoticiasController@store']);
+		Route::get('noticias/create', ['as'=> 'panel.noticias.create', 'uses' => 'Panel\NoticiasController@create']);
+		Route::put('noticias/{noticias}', ['as'=> 'panel.noticias.update', 'uses' => 'Panel\NoticiasController@update']);
+		Route::patch('noticias/{noticias}', ['as'=> 'panel.noticias.update', 'uses' => 'Panel\NoticiasController@update']);
+		Route::delete('noticias/{noticias}', ['as'=> 'panel.noticias.destroy', 'uses' => 'Panel\NoticiasController@destroy']);
+		Route::get('noticias/{noticias}', ['as'=> 'panel.noticias.show', 'uses' => 'Panel\NoticiasController@show']);
+		Route::get('noticias/{noticias}/edit', ['as'=> 'panel.noticias.edit', 'uses' => 'Panel\NoticiasController@edit']);
+
+		Route::get('productos', ['as'=> 'panel.productos.index', 'uses' => 'Panel\NoticiasController@indexProductos']);
+		Route::post('productos', ['as'=> 'panel.productos.store', 'uses' => 'Panel\NoticiasController@store']);
+		Route::get('productos/create', ['as'=> 'panel.productos.create', 'uses' => 'Panel\NoticiasController@create']);
+		Route::put('productos/{productos}', ['as'=> 'panel.productos.update', 'uses' => 'Panel\NoticiasController@update']);
+		Route::patch('productos/{productos}', ['as'=> 'panel.productos.update', 'uses' => 'Panel\NoticiasController@update']);
+		Route::delete('productos/{productos}', ['as'=> 'panel.productos.destroy', 'uses' => 'Panel\NoticiasController@destroy']);
+		Route::get('productos/{productos}', ['as'=> 'panel.productos.show', 'uses' => 'Panel\NoticiasController@show']);
+		Route::get('productos/{productos}/edit', ['as'=> 'panel.productos.edit', 'uses' => 'Panel\NoticiasController@edit']);
 
 
 Route::get('contenidos', ['as'=> 'panel.contenidos.index', 'uses' => 'Panel\ContenidoController@index']);

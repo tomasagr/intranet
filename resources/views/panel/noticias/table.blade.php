@@ -14,7 +14,11 @@
             <td>
                 {!! Form::open(['route' => ['panel.noticias.destroy', $noticias->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
-                    <a href="{!! route('panel.noticias.edit', [$noticias->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    @if ($noticias->category_id)
+                         <a href="{!! route('panel.productos.edit', [$noticias->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    @else
+                        <a href="{!! route('panel.noticias.edit', [$noticias->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
+                    @endif
                     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                 </div>
                 {!! Form::close() !!}

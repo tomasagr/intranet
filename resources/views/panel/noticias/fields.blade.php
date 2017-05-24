@@ -17,10 +17,15 @@
     {!! Form::select('sector_id',  $sectors->all()->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
 </div>
 
-<div class="form-group col-sm-12 col-lg-12">
+@if (Request::is('panel/productos/*')) 
+    {!! Form::hidden('category_id', 3) !!}
+@else
+    <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('category_id', 'Categoria:') !!}
     {!! Form::select('category_id', $category->all()->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
 </div>
+@endif
+
 
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('image', 'Imagen:') !!}

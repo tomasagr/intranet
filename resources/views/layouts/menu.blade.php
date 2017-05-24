@@ -6,6 +6,10 @@
     <a href="{!! route('panel.noticias.index') !!}"><i class="fa fa-newspaper-o"></i><span>Noticias</span></a>
 </li>
 
+<li class="{{ Request::is('panel/productos*') ? 'active' : '' }}">
+    <a href="{!! route('panel.productos.index') !!}"><i class="fa fa-cubes"></i><span>Productos</span></a>
+</li>
+
 <li class="{{ Request::is('panel/contenidos*') ? 'active' : '' }}">
     <a href="{!! route('panel.contenidos.index') !!}"><i class="fa fa-file-text"></i><span>Contenidos</span></a>
 </li>
