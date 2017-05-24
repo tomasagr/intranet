@@ -145,5 +145,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
 
     @yield('scripts')
+    <script>
+    ;(function() {
+        var $videoField = jQuery('.video__field');
+        var $imageField = jQuery('.file__field');
+
+        $imageField.hide()
+
+        jQuery('[name="type"]').change(function() {
+            var $typeField = jQuery('[name="type"]')
+            console.log($typeField.val())
+
+            if ($typeField.val() === 'Video') {
+                $videoField.show()
+                $imageField.hide()
+            } else if ($typeField.val() === 'PDF') {
+                 $imageField.show()
+                 $videoField.hide()
+            }
+        })
+    })()
+</script>
 </body>
 </html>

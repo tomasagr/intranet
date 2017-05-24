@@ -36,13 +36,13 @@
 </div>
 
 <!-- Link Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-6 video__field">
     {!! Form::label('link', 'Codigo youtube:') !!}
     {!! Form::text('link', null, ['class' => 'form-control', 'placeholder' => 'mlJj0DVbVBY']) !!}
 </div>
 
 <!-- File Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-6 file__field">
     {!! Form::label('file', 'PDF:') !!}
     {!! Form::file('file') !!}
 </div>
