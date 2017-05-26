@@ -63,7 +63,7 @@ class UsersController extends Controller
         $res = $user->update(['status' => !$user->status]);
         
         if ($res) {
-            \Mail::to($adminsMails)->send(new ActivateUser($user));
+            \Mail::to($user)->send(new ActivateUser($user));
             return redirect()->back();
         }
     }
