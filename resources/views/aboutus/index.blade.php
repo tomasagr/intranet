@@ -47,7 +47,8 @@
 		<div class="col-md-12">
 			<div class="pearsons-list">
 				<div class="col-md-3 pearson text-center" ng-repeat="user in users">
-					<img   class="img-responsive img-circle" src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
+					<img  ng-if="user.avatar && user.avatar != 'null'"  class="img-responsive img-circle" ng-src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
+					<img  ng-if="user.avatar == 'null' || !user.avatar"  class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<p class="name">@{{user.fullname}}</p>
 					<p class="charge">@{{user.position}}</p>
 					<p class="description">@{{user.bio}}</p>

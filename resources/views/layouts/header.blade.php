@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="user-bar">
 				<a href="/profile">
-					@if (!Auth::user()->avatar)
+					@if (!Auth::user()->avatar || Auth::user()->avatar == "null")
 						<img class="user-top img-responsive" src="/images/default.svg" alt="" style="width: 30px; height: 30px;">
 					@else
 						<img class="user-top img-responsive img-circle" src="{{asset('/storage/'.Auth::user()->avatar)}}" alt="" style="width: 30px; height: 30px;">
