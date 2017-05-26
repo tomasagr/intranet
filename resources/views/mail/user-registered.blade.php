@@ -7,6 +7,6 @@
   <title>Registrado con éxito. Recibirás un email cuando tu cuenta este activa</title>
 </head>
 <body>
-  Registrado con en <a href="https://somossummit.com.ar">somossummit.com.ar</a> éxito. Recibirás un email cuando tu cuenta este activa
+  Registrado con éxito en <a href="http://somossummit.com.ar">somossummit.com.ar</a>. Recibirás un email cuando tu cuenta esté activa.
 </body>
 </html>
