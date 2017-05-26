@@ -5,6 +5,9 @@ namespace Intranet\Http\Controllers;
 use Illuminate\Http\Request;
 use Intranet\User;
 use Intranet\Profile;
+use Intranet\Mail\ToUserRegistered;
+use Intranet\Mail\ToAdminUser;
+use Intranet\Mail\ActivateUser;
 
 class UsersController extends Controller
 {
@@ -31,6 +34,14 @@ class UsersController extends Controller
         }
 
         $result = User::create($user);
+      
+        $adminsMails = User::where('rol_id', 1)
+                            ->where('status', 1)
+                            ->get()
+                            ->pluck('email');
+
+        \Mail::to($result)->send(new ToUserRegistered($result));
+       \Mail::to($adminsMails)->send(new ToAdminUser($result));
 
         if ($result instanceof User) {
             if (isset($user['profile'])) {
@@ -41,9 +52,24 @@ class UsersController extends Controller
         }
     }
 
+    public function toggleStatus($id) 
+    {
+        $user = User::find($id);
+        $adminsMails = User::where('rol_id', 1)
+                            ->where('status', 1)
+                            ->get()
+                            ->pluck('email');
+
+        $res = $user->update(['status' => !$user->status]);
+        
+        if ($res) {
+            \Mail::to($adminsMails)->send(new ActivateUser($user));
+            return redirect()->back();
+        }
+    }
+
     public function update(Request $request, $id) 
     {
-       
         $data = $request->all();
         $model = User::find($id);
 

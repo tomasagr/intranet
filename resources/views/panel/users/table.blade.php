@@ -5,6 +5,7 @@
         <th>Posición</th>
         <th>Unidad</th>
         <th>Sector</th>
+        <th>Estado</th>
         <th colspan="3">Acción</th>
     </thead>
     <tbody>
@@ -15,6 +16,13 @@
             <td>{!! $user->position !!}</td>
             <td>{!! $user->unit->name !!}</td>
             <td>{!! $user->sector->name !!}</td>
+            <td>
+                @if ($user->status)
+                    <a href="/panel/users/{{$user->id}}/toggle" class="btn btn-xs btn-danger">Desactivar</a>
+                @else
+                    <a href="/panel/users/{{$user->id}}/toggle" class="btn btn-xs btn-success">Activar</a>
+                @endif
+            </td>
             <td>
                 {!! Form::open(['route' => ['panel.users.destroy', $user->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

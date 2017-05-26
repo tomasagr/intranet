@@ -19,7 +19,9 @@
             </div>
             @if ($errors->has('email'))
                 <span class="help-block">
-                    <strong>Las credenciales son invalidas.</strong>
+                    <strong style="color: white">
+                        Las credenciales son invalidas, o el usuario no esta activo.
+                    </strong>
                 </span>
             @endif
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -29,7 +31,7 @@
                 <button type="submit" class="btn btn-warning danger-alternative">ENVIAR</button>
             </div>
         </form>
-        <p class="default-text">Si aún no tienes cuenta, registrate haciendo <a href="/register">click aquí</a></p>
+        <p class="default-text">Si aún no tienes cuenta, registrate haciendo <a href="/register" style="color:white;text-decoration:underline">click aquí</a></p>
 
         <p class="default-text copy">© Copyright Summit Agro 2017</p>
     </div>

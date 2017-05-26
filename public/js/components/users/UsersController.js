@@ -4,7 +4,7 @@ angular.module('app.user-controller', [])
       $scope.user = {}
       $scope.user.profile = {}
 
-      $scope.toogleSectorSelect = function () {
+      $scope.toggleSectorSelect = function () {
         $scope.haveUnit = $scope.user.unit_id || false
 
         if ($scope.haveUnit) {
@@ -12,8 +12,8 @@ angular.module('app.user-controller', [])
             return $scope.user.unit_id === element.id
           })
         }
-        
-        $scope.sectorSelected = $scope.unitSelected[0].sectors
+        {{$scope.sectors}}
+        $scope.sectors = $scope.unitSelected[0].sectors
       }
 
       UnitsService.getAll()

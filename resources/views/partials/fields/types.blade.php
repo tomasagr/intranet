@@ -8,7 +8,7 @@
 				<select ng-model="user.unit_id"
 								ng-options="item.id as item.name for item in units"
 				        required
-								ng-change="toogleSectorSelect()"
+								ng-change="toggleSectorSelect()"
 				        class="inline-block-input form-control">
 					<option value="">Seleccionar unidad</option>
 				</select>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="col-md-5">
 				<select ng-model="user.sector_id" 
-								ng-options="item.id as item.name for item in sectorSelected"
+								ng-options="item.id as item.name for item in sectors"
 								ng-required="haveUnit" 
 								class="inline-block-input form-control">
 					<option value="">Seleccionar sector</option>

@@ -42,7 +42,16 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-
         return redirect('/login');
+    }
+
+     protected function attemptLogin(Request $request)
+    {
+        $credentials = $this->credentials($request);
+        $credentials["status"] = 1;
+
+        return $this->guard()->attempt(
+            $credentials, $request->has('remember')
+        );
     }
 }

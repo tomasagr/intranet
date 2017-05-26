@@ -8,10 +8,11 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Intranet\User;
 
-class ActivateUser extends Mailable
+class ToAdminUser extends Mailable
 {
     use Queueable, SerializesModels;
 
+    
     public $user;
     /**
      * Create a new message instance.
@@ -30,8 +31,8 @@ class ActivateUser extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.activate')
-        ->subject('Se a activado su usuario.')
-        ->from('postmaster@summitsamurai.com.ar');
+        return $this->view('mail.user-registered-notify')
+                    ->subject('Se ha registrado un nuevo usuario.')
+                    ->from('postmaster@summitsamurai.com.ar');
     }
 }

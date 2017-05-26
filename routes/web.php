@@ -45,6 +45,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::group(['prefix' => 'panel', 'middleware' => ['auth', 'isAdminOrEditor']], function() {
 		Route::get('/', 'HomeController@panel');
 
+		Route::get('users/{id}/toggle', 'UsersController@toggleStatus');
+
 		Route::get('users', ['as'=> 'panel.users.index', 'uses' => 'Panel\UserController@index']);
 		Route::post('users', ['as'=> 'panel.users.store', 'uses' => 'Panel\UserController@store']);
 		Route::get('users/create', ['as'=> 'panel.users.create', 'uses' => 'Panel\UserController@create']);

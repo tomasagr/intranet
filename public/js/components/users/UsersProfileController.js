@@ -5,14 +5,14 @@ angular.module('app.user-profile-controller', [])
       $scope.user = {}
       $scope.user.profile = {}
 
-      $scope.toogleSectorSelect = function () {
+      $scope.toggleSectorSelect = function () {
         $scope.haveUnit = $scope.user.unit_id || false
-
-        if ($scope.haveUnit) {
-          $scope.sectorSelected = $scope.sectors.filter(function (element) {
-            return $scope.user.unit_id === element.unit_id
+        
+        $scope.unitSelected = $scope.units.filter(function (element, index) {     
+            return $scope.user.unit_id === element.id
           })
-        }
+
+          $scope.sectors = $scope.unitSelected[0].sectors
       }
 
       setTimeout(function () {
@@ -24,13 +24,14 @@ angular.module('app.user-profile-controller', [])
           } else {
             $scope.fileAvatar = '/images/default.svg'
           }
-          $scope.toogleSectorSelect()
+          $scope.toggleSectorSelect()
         })
       }, 400)
 
       UnitsService.getAll()
         .then(function (response) {
           $scope.units = response
+          
           return SectorsService.getAll()
         })
         .then(function (response) {

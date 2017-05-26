@@ -9,6 +9,6 @@ class SectorsController extends Controller
 {
     public function index()
     {
-        return Sector::all();
+        return Sector::with('units')->get();
     }
 }

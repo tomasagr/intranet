@@ -1,7 +1,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>Mi familia esta compuesta por:</label>
+				<label>Mi familia está compuesta por:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -43,7 +43,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>Mis tareas en summit son:</label>
+				<label>Mis tareas en Summit son:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -57,7 +57,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>Un Libro:</label>
+				<label>Un libro:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -71,7 +71,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>Un Color:</label>
+				<label>Un color:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -85,7 +85,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>Una pelicula:</label>
+				<label>Una pélicula:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -127,7 +127,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>¿Que llevarias a una isla desierta?:</label>
+				<label>¿Que llevarías a una isla desierta?:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
@@ -154,7 +154,7 @@
 <div class="row">
 		<div class="inline-flex">
 		<div class="col-md-12">
-				<label>¿Playa o Montaña?:</label>
+				<label>¿Playa o montaña?:</label>
 			</div>
 			<div class="col-md-12">
 				<input type="text" class="form-control inline-block-input"
