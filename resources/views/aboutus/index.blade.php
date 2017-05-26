@@ -26,6 +26,9 @@
 						UNIDAD <i class="fa fa-chevron-down"></i>
 					</button>
 					<ul class="dropdown-menu">
+						<li>
+							<a href="" ng-click="clearFilter()">Todos</a>
+						</li>
 						<li ng-repeat="unit in units">
 							<a href="" ng-click="changeUnit($index)">@{{unit.name}}</a>
 						</li>
@@ -39,14 +42,16 @@
 				</button>
 				<ul class="dropdown-menu">
 					<li ng-if="!sectors.length"><a href="">Seleccionar unidad</a></li>
-					<li ng-repeat="sector in sectors"><a href="">@{{sector.name}}</a></li>
+					<li ng-if="sectors.length" ng-click="search.sector_id = ''"><a href="">Todos</a></li>
+					<li ng-repeat="sector in sectors" ng-click="changeSector($index)"><a href="">@{{sector.name}}</a></li>
 				</ul>
 			</div>
 		</div>
 		<hr>
 		<div class="col-md-12">
 			<div class="pearsons-list">
-				<div class="col-md-3 pearson text-center" ng-repeat="user in users">
+				<div ng-if="!filteredUser.length" class="alert alert-info">No hay personas para el filtro aplicado.</div>
+				<div class="col-md-3 pearson text-center" ng-repeat="user in filteredUser = (users | filter:search)">
 					<img  ng-if="user.avatar && user.avatar != 'null'"  class="img-responsive img-circle" ng-src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<img  ng-if="user.avatar == 'null' || !user.avatar"  class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<p class="name">@{{user.fullname}}</p>
