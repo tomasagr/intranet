@@ -51,7 +51,7 @@
 					<img  ng-if="user.avatar == 'null' || !user.avatar"  class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<p class="name">@{{user.fullname}}</p>
 					<p class="charge">@{{user.position}}</p>
-					<p class="description">@{{user.bio | limit:161}}</p>
+					<p class="description">@{{user.bio | limitTo:161}}</p>
 					<a href="" style="color:orange">Ver mas</a>
 				</div>
 			</div>
