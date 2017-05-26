@@ -13,7 +13,7 @@
 		</div>
 	</div>
 
-	<div class="main-content clearfix pearsons">
+	<div class="main-content clearfix pearsons" ng-controller="PersonsController">
 		<h1 class="title" style="padding-top: 1em">Personas</h1>
 		<div class="col-md-12">
 			<div class="container">
@@ -23,43 +23,36 @@
 					<div class="btn-group">
 						<button type="button"
 						class="btn btn-default dropdown-toggle btn-summit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						SECTOR <i class="fa fa-chevron-down"></i>
+						UNIDAD <i class="fa fa-chevron-down"></i>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
+						<li ng-repeat="unit in units">
+							<a href="" ng-click="changeUnit($index)">@{{unit.name}}</a>
+						</li>
 					</ul>
 				</div>
 
 				<div class="btn-group">
 					<button type="button"
 					class="btn btn-default dropdown-toggle btn-summit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					UNIDAD <i class="fa fa-chevron-down"></i>
+					SECTOR <i class="fa fa-chevron-down"></i>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#">Action</a></li>
-					<li><a href="#">Another action</a></li>
-					<li><a href="#">Something else here</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="#">Separated link</a></li>
+					<li ng-if="!sectors.length"><a href="">Seleccionar unidad</a></li>
+					<li ng-repeat="sector in sectors"><a href="">@{{sector.name}}</a></li>
 				</ul>
 			</div>
 		</div>
 		<hr>
 		<div class="col-md-12">
 			<div class="pearsons-list">
-				@for($i = 0; $i < 8; $i ++)
-				<div class="col-md-3 pearson text-center">
-					<img width="100" class="img-responsive" src="/images/default.svg" alt="" style="display: inline-block;" >
-					<p class="name">Lucas Michailian</p>
-					<p class="charge">Cargo</p>
-					<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis dignissimos ipsa quod, suscipit iure veritatis, perferendis aspernatur. Velit iure aliquam aspernatur, labore deleniti architecto dolorum nostrum sunt ipsum, ipsa quidem.</p>
-					
+				<div class="col-md-3 pearson text-center" ng-repeat="user in users">
+					<img   class="img-responsive img-circle" src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
+					<p class="name">@{{user.fullname}}</p>
+					<p class="charge">@{{user.position}}</p>
+					<p class="description">@{{user.bio}}</p>
+					<a href="" style="color:orange">Ver mas</a>
 				</div>
-				@endfor
 			</div>
 		</div>
 

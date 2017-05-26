@@ -16,6 +16,11 @@ class UsersController extends Controller
     	return view('users.profile');
     }
 
+    public function index() 
+    {
+        return User::with('profile')->get();
+    }
+
     public function show($id) 
     {
         return User::with('profile')->find($id);

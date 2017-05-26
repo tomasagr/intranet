@@ -14,7 +14,7 @@ angular.module('app.user-profile-controller', [])
 
           $scope.sectors = $scope.unitSelected[0].sectors
       }
-
+      console.log($scope.profileid)
       setTimeout(function () {
         UsersService.getAll($scope.profileid)
         .then(function (response) {

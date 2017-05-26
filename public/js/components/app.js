@@ -4,6 +4,7 @@ var app = angular.module('app', [
   'app.user-profile-controller',
   'app.news-controlller',
   'app.search-controller',
+  'app.persons-controller',
   'app.video-controller',
   'app.manual-controller',
   'app.users-service',

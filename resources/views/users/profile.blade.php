@@ -4,7 +4,7 @@
 <div class="container main-container"  ng-app="app" 
      ng-controller="UsersProfileController">
 	<br><br>
-	<div class="col-md-10 col-md-offset-1 card" ng-init="profileid=1">
+	<div class="col-md-10 col-md-offset-1 card" ng-init="profileid={{Auth::user()->id}}">
 		<div class="row">
 			<br>
 			<h1 class="top-title">Mi Perfil</h1>

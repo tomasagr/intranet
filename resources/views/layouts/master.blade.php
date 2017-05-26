@@ -51,6 +51,7 @@
 		<script src="/js/components/manuales/ManualController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/videos/VideosController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/MenuController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/users/PersonsController.js?v=<?php echo time(); ?>"></script>
 
 		<script>
 			jQuery(document).ready(function($) {

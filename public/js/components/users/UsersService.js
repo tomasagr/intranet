@@ -12,6 +12,16 @@
         })
     }
 
+    vm.index = function (id) {
+      return $http.get('/api/users')
+        .then(function (response) {
+          return response.data
+        })
+        .catch(function (error) {
+          return error
+        })
+    }
+
     vm.getAll = function (id) {
       return $http.get('/api/users/' + id)
         .then(function (response) {
