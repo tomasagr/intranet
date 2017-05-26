@@ -52,7 +52,7 @@
     <div style="display:flex;">
     @if(isset($user)) 
      <div>
-        @if ($user->avatar)
+        @if ($user->avatar && $user->avatar != "null")
             <img style="width: 50px; height: 50px"
                 class="img-responsive img-circle" src="{{asset('storage/'.$user->avatar)}}" alt="">
         @else
