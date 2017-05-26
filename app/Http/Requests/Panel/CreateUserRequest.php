@@ -25,6 +25,30 @@ class CreateUserRequest extends FormRequest
      */
     public function rules()
     {
-        return [];
+        return [
+            'fullname' => 'required',
+            'email' => 'required',
+            'bio' => 'required',
+            'position' => 'required',
+            'rol_id' => 'required',
+            'status' => 'required',
+            'sector_id' => 'required',
+            'unit_id' => 'required',
+            'password' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'fullname.required' => 'Nombre requerido',
+            'email.required' => 'Email requerido',
+            'bio.required' => 'Bio requerida',
+            'position.required' => 'Posición requerida',
+            'rol_id.required' => 'Rol requerido',
+            'status.required' => 'Estado requerido',
+            'sector_id.required' => 'Sector requerido',
+            'unit_id.required' => 'Unidad requerida'
+        ];
     }
 }

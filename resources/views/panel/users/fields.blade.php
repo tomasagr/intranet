@@ -1,4 +1,6 @@
 @inject('roles', 'Intranet\Rol')
+@inject('units', 'Intranet\Unit')
+@inject('sectors', 'Intranet\Sector')
 <!-- Fullname Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fullname', 'Nombre:') !!}
@@ -33,6 +35,16 @@
 <div class="form-group col-sm-6">
     {!! Form::label('rol_id', 'Roles:') !!}
     {!! Form::select('rol_id', $roles->all()->pluck('name','id'), null,  ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('unit_id', 'Unidad:') !!}
+    {!! Form::select('unit_id', $units->all()->pluck('name', 'id'),  null,  ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('sector_id', 'Sector:') !!}
+    {!! Form::select('sector_id', $sectors->all()->pluck('name', 'id'),  null,  ['class' => 'form-control']) !!}
 </div>
 
 <!-- Avatar Field -->
