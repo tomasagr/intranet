@@ -50,14 +50,15 @@
 		<hr>
 		<div class="col-md-12">
 			<div class="pearsons-list">
-				<div ng-if="!filteredUser.length" class="alert alert-info">No hay personas para el filtro aplicado.</div>
+				<div ng-cloak ng-show="!filteredUser.length" class="alert alert-info">No hay personas para el filtro aplicado.</div>
 				<div class="col-md-3 pearson text-center" ng-repeat="user in filteredUser = (users | filter:search)">
 					<img  ng-if="user.avatar && user.avatar != 'null'"  class="img-responsive img-circle" ng-src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<img  ng-if="user.avatar == 'null' || !user.avatar"  class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<p class="name">@{{user.fullname}}</p>
 					<p class="charge">@{{user.position}}</p>
 					<p class="description">@{{user.bio | limitTo:161}}</p>
-					<a href="" style="color:orange">Ver mas</a>
+					<a ng-if="user.id != {{Auth::user()->id}}" href="/profile/@{{user.id}}" style="color:orange">Ver mas</a>
+					<a ng-if="user.id == {{Auth::user()->id}}" href="/profile" style="color:orange">Ver mas</a>
 				</div>
 			</div>
 		</div>

@@ -9,6 +9,7 @@ use Intranet\Unit;
 use Intranet\Sector;
 use Intranet\Rol;
 use Intranet\Permissions;
+use Intranet\UserVote;
 
 class User extends Authenticatable
 {
@@ -21,7 +22,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'fullname', 'email', 'password', 'position',
-        'unit_id', 'sector_id', 'bio', 'rol_id', 'avatar', 'status'
+        'unit_id', 'sector_id', 'bio', 'rol_id', 'avatar', 'status', 'star'
     ];
 
     /**
@@ -58,5 +59,10 @@ class User extends Authenticatable
     public function sector() 
     {
         return $this->belongsTo(Sector::class);
+    }
+
+    public function voting() 
+    {
+        return $this->hasMany('Intranet\UserVote', 'profile_id');
     }
 }

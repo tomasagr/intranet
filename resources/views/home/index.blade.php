@@ -11,26 +11,33 @@
 
 	<div class="sectores clearfix">
 		<div class="container">
-			<!-- <div class="col-md-3">
+			@if(count($started))
+				<div class="col-md-3">
 				<article>
 					<h3>STAR ME UP</h3>
-					<img  class="img-responsive" src="/images/empleado.png" alt="">
+					<br>
+					@if (!$started->avatar || $started->avatar == 'null' )
+						<img src="/images/default.svg" alt="" class="img-responsive">
+					@else
+						<img  class="img-responsive" src="{{asset('/storage/'.$started->avatar)}}" alt="">
+					@endif
 					<div class="title">
-						<p class="name">MARCELO SANCHEZ</p>
-						<p class="departamento">Departamento QA</p>
+						<p class="name">{{$started->fullname}}</p>
+						<p class="departamento">{{$started->position}}</p>
 					</div>
 					<div class="description">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque minus, eius voluptas. Repellat tempore, voluptatem atque, recusandae mollitia consectetur molestias sunt repudiandae placeat temporibus eveniet consequuntur corporis rerum doloribus quidem.
+						{{$started->bio}}
 					</div>
 				</article>
-			</div> -->
-			<div class="col-md-12">
+			</div>
+			@endif
+			<div class="@if (count($started)) {{'col-md-9'}} @else {{'col-md-12'}} @endif">
 				<div class="sectores-lista">
 					<h2 class="title">Sectores</h2>
 					@foreach($sectors->all() as $item)
-					<div class="col-md-4 sector-item">
-						<a href="/sector/{{$item->id}}">
-							<h2>{{$item->name}}</h2>
+					<div class="col-md-4 sector-item" >
+						<a href="/sector/{{$item->id}}" style="height: 93px">
+							<h2 style="font-size: 20px;">{{$item->name}}</h2>
 							<small>Ingresar ></small>
 						</a>
 					</div>

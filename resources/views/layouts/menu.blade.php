@@ -3,6 +3,9 @@
    <a href="{!! route('panel.users.index') !!}"><i class="fa fa-user"></i><span>Usuarios</span></a>
 </li>
 @endcan
+<li class="{{ Request::is('panel/starmeup*') ? 'active' : '' }}">
+   <a href="{!! route('panel.starmeup.index') !!}"><i class="fa fa-star-o"></i><span>Star me up</span></a>
+</li>
 <li class="treeview {{ Request::is('panel/noticias*') || Request::is('panel/productos*') ||  Request::is('panel/contenidos*') ? 'active menu-open' : '' }}">
    <a href="#"><i class="fa fa-file-text-o"></i>
    <span>Contenidos del sito</span>

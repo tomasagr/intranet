@@ -4,6 +4,7 @@ namespace Intranet\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intranet\User;
+use Intranet\UserVote;
 use Intranet\Profile;
 use Intranet\Mail\ToUserRegistered;
 use Intranet\Mail\ToAdminUser;
@@ -18,12 +19,14 @@ class UsersController extends Controller
 
     public function index() 
     {
-        return User::with('profile')->get();
+        return User::with(['profile', 'unit', 'sector', 'voting'])->get();
     }
 
     public function show($id) 
     {
-        return User::with('profile')->find($id);
+        $user = User::with(['voting','profile', 'unit', 'sector'])->find($id);
+    
+        return $user;
     }
 
     public function register(Request $request) 
@@ -72,6 +75,24 @@ class UsersController extends Controller
             return redirect()->back();
         }
     }
+
+    public function vote($id) 
+    {
+        $user = UserVote::where('user_id', \Auth::user()->id)
+                         ->where('profile_id', $id)->get();
+
+        if (count($user)) {
+            \Flash::error('Votado anteriormente');
+            return redirect()->back();
+        }
+
+        UserVote::create(['user_id' => \Auth::user()->id, 'profile_id' => $id]);
+
+
+        \Flash::success('Votación realizada éxito.');
+        return redirect("/profile/$id");
+    }
+
 
     public function update(Request $request, $id) 
     {

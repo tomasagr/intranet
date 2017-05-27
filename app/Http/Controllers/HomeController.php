@@ -3,7 +3,7 @@
 namespace Intranet\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Intranet\User;
 class HomeController extends Controller
 {
     /**
@@ -28,6 +28,7 @@ class HomeController extends Controller
 
      public function index()
     {
-        return view('home.index');
+        $started = User:: where('star', 1)->first();
+        return view('home.index', compact('started'));
     }
 }

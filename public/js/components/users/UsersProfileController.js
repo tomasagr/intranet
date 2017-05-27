@@ -14,12 +14,16 @@ angular.module('app.user-profile-controller', [])
 
           $scope.sectors = $scope.unitSelected[0].sectors
       }
-      console.log($scope.profileid)
+      
       setTimeout(function () {
         UsersService.getAll($scope.profileid)
         .then(function (response) {
           $scope.user = response
           
+          $scope.isVoted = $scope.user.voting.find(function(element) {
+            return element.user_id == $scope.authid
+          })
+
           if ($scope.user.avatar && $scope.user.avatar != "null") {
             $scope.fileAvatar = '/storage/' + $scope.user.avatar
           } else {

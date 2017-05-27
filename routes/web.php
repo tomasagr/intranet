@@ -17,8 +17,10 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function() {
+	Route::get('users/{id}/vote', 'UsersController@vote');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/profile', 'UsersController@profile');
+	Route::get('/profile/{id}', 'ProfileController@show');
 	Route::get('/search', 'SearchController@search');
 	Route::get('/about-us', 'AboutUsController@index');
 	Route::get('/manuals', 'ManualsController@index');
@@ -113,6 +115,19 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::delete('vacaciones/{vacaciones}', ['as'=> 'panel.vacaciones.destroy', 'uses' => 'Panel\VacacionesController@destroy']);
 		Route::get('vacaciones/{vacaciones}', ['as'=> 'panel.vacaciones.show', 'uses' => 'Panel\VacacionesController@show']);
 		Route::get('vacaciones/{vacaciones}/edit', ['as'=> 'panel.vacaciones.edit', 'uses' => 'Panel\VacacionesController@edit']);
+
+
+		Route::get('starmeup', ['as'=> 'panel.starmeup.index', 'uses' => 'Panel\StarmeupController@index']);
+		Route::post('starmeup', ['as'=> 'panel.starmeup.store', 'uses' => 'Panel\StarmeupController@store']);
+		Route::get('starmeup/create', ['as'=> 'panel.starmeup.create', 'uses' => 'Panel\StarmeupController@create']);
+		Route::put('starmeup/{starmeup}', ['as'=> 'panel.starmeup.update', 'uses' => 'Panel\StarmeupController@update']);
+		Route::patch('starmeup/{starmeup}', ['as'=> 'panel.starmeup.update', 'uses' => 'Panel\StarmeupController@update']);
+		Route::delete('starmeup/{starmeup}', ['as'=> 'panel.starmeup.destroy', 'uses' => 'Panel\StarmeupController@destroy']);
+		Route::get('starmeup/{starmeup}', ['as'=> 'panel.starmeup.show', 'uses' => 'Panel\StarmeupController@show']);
+		Route::get('starmeup/{starmeup}/edit', ['as'=> 'panel.starmeup.edit', 'uses' => 'Panel\StarmeupController@edit']);
+
+		Route::get('/votos/refresh', 'Panel\StarmeupController@refresh');
+		Route::get('/users/{id}/star', 'Panel\StarmeupController@star');
 
 
 		Route::get('manuales', ['as'=> 'panel.manuales.index', 'uses' => 'Panel\ManualesController@index']);
