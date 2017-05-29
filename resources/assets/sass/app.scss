@@ -398,3 +398,15 @@ $duration: 20s;
 		  text-align: right!important;
 	}
 }
+
+#modalVotes {
+	.modal-header {
+		text-align: center;
+		border-bottom: 0;
+
+		.modal-title {
+			font-weight: 600;	
+			font-size: 3em;
+		}
+	}
+}

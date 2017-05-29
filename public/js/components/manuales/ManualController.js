@@ -1,29 +1,29 @@
 angular.module('app.manual-controller', [])
-.controller('ManualController', ['$scope', '$http', '$sce', 'SectorsService',  function($scope, $http, $sce, SectorsService) {
+.controller('ManualController', ['$scope', '$http', '$sce', 'SectorsService', function ($scope, $http, $sce, SectorsService) {
   $scope.search = {}
-  $scope.link = ""
+  $scope.link = ''
   $http.get('/api/manuals')
-    .then(function(response) {
+    .then(function (response) {
       $scope.manual = response.data
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.error(error)
     })
 
-  $scope.modalData = function(link) {
-    $scope.linkData = $sce.trustAsResourceUrl('https://www.youtube.com/embed/'+link)
+  $scope.modalData = function (link) {
+    $scope.linkData = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + link)
   }
 
   SectorsService.getAll()
-    .then(function(response) {
+    .then(function (response) {
       $scope.sectors = response
     })
 
-  $scope.filterSector = function(id) {
+  $scope.filterSector = function (id) {
     $scope.search.sector_id = id || ''
   }
 
-  $scope.closeModal = function() {
-    $scope.linkData = ""
+  $scope.closeModal = function () {
+    $scope.linkData = ''
   }
 }])

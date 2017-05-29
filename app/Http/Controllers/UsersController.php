@@ -9,12 +9,15 @@ use Intranet\Profile;
 use Intranet\Mail\ToUserRegistered;
 use Intranet\Mail\ToAdminUser;
 use Intranet\Mail\ActivateUser;
+use Intranet\Notifications\VotingNotify;
 
 class UsersController extends Controller
 {
     public function profile()
     {
-    	return view('users.profile');
+        $voting = \Auth::user()->voting;
+        
+    	return view('users.profile', compact('voting'));
     }
 
     public function index() 
@@ -24,8 +27,8 @@ class UsersController extends Controller
 
     public function show($id) 
     {
-        $user = User::with(['voting','profile', 'unit', 'sector'])->find($id);
-    
+        $user = User::with(['voting','profile', 'unit', 'sector'])
+                     ->find($id);
         return $user;
     }
 
@@ -48,7 +51,7 @@ class UsersController extends Controller
                             ->get()
                             ->pluck('email');
 
-        \Mail::to($result)->send(new ToUserRegistered($result));
+       \Mail::to($result)->send(new ToUserRegistered($result));
        \Mail::to($adminsMails)->send(new ToAdminUser($result));
 
         if ($result instanceof User) {
@@ -76,7 +79,7 @@ class UsersController extends Controller
         }
     }
 
-    public function vote($id) 
+    public function vote(Request $request, $id) 
     {
         $user = UserVote::where('user_id', \Auth::user()->id)
                          ->where('profile_id', $id)->get();
@@ -86,8 +89,13 @@ class UsersController extends Controller
             return redirect()->back();
         }
 
-        UserVote::create(['user_id' => \Auth::user()->id, 'profile_id' => $id]);
+        $userVote = UserVote::create([
+            'user_id' => \Auth::user()->id, 
+            'profile_id' => $id,
+            'comments' => $request->comments
+        ]);
 
+        User::find($id)->notify(new VotingNotify($userVote));
 
         \Flash::success('Votación realizada éxito.');
         return redirect("/profile/$id");

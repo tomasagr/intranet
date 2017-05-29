@@ -1,30 +1,30 @@
 angular.module('app.user-profile-controller', [])
   .controller('UsersProfileController',
-  ['$scope', 'SectorsService', 'UnitsService', 'UsersService', 'Upload', 'SweetAlert', '$window',
-    function ($scope, SectorsService, UnitsService, UsersService, Upload, SweetAlert, $window) {
+  ['$scope', 'SectorsService', 'UnitsService', 'UsersService', 'Upload', 'SweetAlert', '$window', '$sce',
+    function ($scope, SectorsService, UnitsService, UsersService, Upload, SweetAlert, $window, $sce) {
       $scope.user = {}
       $scope.user.profile = {}
 
       $scope.toggleSectorSelect = function () {
         $scope.haveUnit = $scope.user.unit_id || false
-        
-        $scope.unitSelected = $scope.units.filter(function (element, index) {     
-            return $scope.user.unit_id === element.id
-          })
 
-          $scope.sectors = $scope.unitSelected[0].sectors
+        $scope.unitSelected = $scope.units.filter(function (element, index) {
+          return $scope.user.unit_id === element.id
+        })
+
+        $scope.sectors = $scope.unitSelected[0].sectors
       }
-      
+
       setTimeout(function () {
         UsersService.getAll($scope.profileid)
         .then(function (response) {
           $scope.user = response
-          
-          $scope.isVoted = $scope.user.voting.find(function(element) {
+
+          $scope.isVoted = $scope.user.voting.find(function (element) {
             return element.user_id == $scope.authid
           })
 
-          if ($scope.user.avatar && $scope.user.avatar != "null") {
+          if ($scope.user.avatar && $scope.user.avatar != 'null') {
             $scope.fileAvatar = '/storage/' + $scope.user.avatar
           } else {
             $scope.fileAvatar = '/images/default.svg'
@@ -36,7 +36,7 @@ angular.module('app.user-profile-controller', [])
       UnitsService.getAll()
         .then(function (response) {
           $scope.units = response
-          
+
           return SectorsService.getAll()
         })
         .then(function (response) {

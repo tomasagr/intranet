@@ -29,6 +29,23 @@ class HomeController extends Controller
      public function index()
     {
         $started = User:: where('star', 1)->first();
+
+
         return view('home.index', compact('started'));
+    }
+
+    public function mark($uid) 
+    {
+        $user = \Auth::user();
+
+        $notification = $user->unreadNotifications->first(function($element) use ($uid) {
+            return $element->id == $uid;
+        });
+
+        $notification->markAsRead();
+
+        if ($notification->type == 'Intranet\Notifications\VotingNotify') {
+            return redirect('/profile#votes');
+        }
     }
 }

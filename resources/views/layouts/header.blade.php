@@ -13,11 +13,11 @@
 				<div class="dropdown">
 					<button class="dropdown-toggle dropdown-btn-custom"
 					type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="badge">0</span>
+					<span class="badge">{{count(Auth::user()->unreadNotifications)}}</span>
 					<i class="fa fa-bell"></i>
 				</button>
 				<ul class="dropdown-menu custom-dropdown-list" aria-labelledby="dropdownMenu2">
-					<li class="item-title"><b class="title">NOTIFICACIONES</b><div class="label-notification-warning">No leídas 0</div></li>
+					<li class="item-title"><b class="title">NOTIFICACIONES</b><div class="label-notification-warning">No leídas {{count(Auth::user()->unreadNotifications)}}</div></li>
 					<li role="separator" class="divider"></li>
 					<li class="items-list">
 						<div class="title"><span class="label-notification danger">0</span> Respuestas del foro</div>
@@ -29,11 +29,13 @@
 					</li>
 					<li role="separator" class="divider"></li>
 					<li class="items-list">
-						<div class="title"><span class="label-notification success">0</span> Puntajes</div>
+						<div class="title"><span class="label-notification success">
+						{{getCount('voting')}}
+						</span> Puntajes</div>
 						<div class="notify-items">
-							<a href="#">Another action</a>
-							<a href="#">Another action</a>
-							<a href="#">Another action</a>
+							@foreach(Auth::user()->unreadNotifications as $item)
+								<a href="/notification/{{$item->id}}/mark">{{substr($item->data["comments"], 0, 20)}}...</a>
+							@endforeach
 						</div>
 					</li>
 				</ul>

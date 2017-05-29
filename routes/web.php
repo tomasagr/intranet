@@ -17,8 +17,9 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function() {
-	Route::get('users/{id}/vote', 'UsersController@vote');
+	Route::post('users/{id}/vote', 'UsersController@vote');
 	Route::get('/home', 'HomeController@index');
+	Route::get('/notification/{uid}/mark', 'HomeController@mark');
 	Route::get('/profile', 'UsersController@profile');
 	Route::get('/profile/{id}', 'ProfileController@show');
 	Route::get('/search', 'SearchController@search');

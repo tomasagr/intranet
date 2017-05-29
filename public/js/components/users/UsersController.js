@@ -12,7 +12,7 @@ angular.module('app.user-controller', [])
             return $scope.user.unit_id === element.id
           })
         }
-        {{$scope.sectors}}
+
         $scope.sectors = $scope.unitSelected[0].sectors
       }
 
@@ -20,7 +20,6 @@ angular.module('app.user-controller', [])
         .then(function (response) {
           $scope.units = response
         })
-
 
       $scope.store = function () {
         Upload.upload({
