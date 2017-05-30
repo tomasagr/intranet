@@ -32,6 +32,6 @@ class UserVoted extends Mailable
     {
         return $this->view('mail.user-voted')
             ->subject('¡Felicitaciones!, has sido destacado por tus compañeros de SummitAgro.')
-            ->from('postmaster@summitsamurai.com.ar');
+            ->from('admin@somossummit.com.ar');
     }
 }

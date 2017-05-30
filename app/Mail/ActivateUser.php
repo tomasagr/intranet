@@ -32,6 +32,6 @@ class ActivateUser extends Mailable
     {
         return $this->view('mail.activate')
         ->subject('Se ha activado su usuario.')
-        ->from('postmaster@summitsamurai.com.ar');
+        ->from('postmaster@somossummit.com.ar');
     }
 }

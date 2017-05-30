@@ -13,7 +13,8 @@ var app = angular.module('app', [
   'ui.calendar',
   'ui.bootstrap',
   'ngFileUpload',
-  'oitozero.ngSweetAlert'
+  'oitozero.ngSweetAlert',
+  'mwl.calendar'
 ])
 
 app.filter('inDate', function () {
@@ -24,3 +25,7 @@ app.filter('inDate', function () {
     return input
   }
 })
+
+app.config(['calendarConfig', function (calendarConfig) {
+  calendarConfig.dateFormatter = 'moment' // use moment to format dates
+}])

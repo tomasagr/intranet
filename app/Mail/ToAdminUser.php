@@ -33,6 +33,6 @@ class ToAdminUser extends Mailable
     {
         return $this->view('mail.user-registered-notify')
                     ->subject('Se ha registrado un nuevo usuario.')
-                    ->from('postmaster@summitsamurai.com.ar');
+                    ->from('admin@somossummit.com.ar');
     }
 }

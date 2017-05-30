@@ -33,6 +33,6 @@ class ToUserRegistered extends Mailable
     {
         return $this->view('mail.user-registered')
                     ->subject('Registrado con éxito')
-                    ->from('postmaster@summitsamurai.com.ar');
+                    ->from('admin@somossummit.com.ar');
     }
 }

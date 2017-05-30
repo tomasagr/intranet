@@ -52,8 +52,9 @@
 		border: 0;
 	}
 
-	button.fc-next-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right {
+	button.fc-next-button.fc-button.fc-state-default.fc-corner-left.fc-corner-right, .btn-calendar {
 		background: transparent;
+		padding: 0;
 		box-shadow: none;
 		border: 0;
 	}
@@ -122,4 +123,30 @@
   		}
   	}
   }
+}
+
+#cal-week-box {
+  display: none;
+}
+
+mwl-calendar .cal-month-box [class*=cal-cell] {
+	min-height: 70px !important;
+}
+
+mwl-calendar .cal-month-day {
+	height: 70px!important;
+}
+
+mwl-calendar .cal-month-box {
+	min-height: 70px!important;
+}
+
+mwl-calendar span[data-cal-date] {
+	margin-top: 34%;
+  margin-right: 33%;
+	pointer-events: none;
+}
+
+.cal-cell1 {
+	text-transform: capitalize;
 }

@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css"></link>
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider.css">
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider-dots.css">
+	<link href="/bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+
 </head>
 <body class="main background-main" ng-cloak>
 	@yield('content')
@@ -25,6 +27,7 @@
 		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 	  <script src="/bower_components/angular/angular.js"></script>
 	  <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/es.js"></script>
 	  <script type="text/javascript" src="/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 	  <script type="text/javascript" src="/bower_components/angular-ui-calendar/src/calendar.js"></script>
 	  <script type="text/javascript" src="/bower_components/fullcalendar/dist/gcal.js"></script>
@@ -34,6 +37,7 @@
 		 <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
 		 <script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
 		 <script src="/js/libs/unslider-master/dist/js/unslider-min.js"></script>
+		 <script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
 
 		 <!-- APP -->
 		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>
