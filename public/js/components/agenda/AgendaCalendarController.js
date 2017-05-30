@@ -23,12 +23,15 @@ angular.module('app.agenda-controller', [])
           .then(function (response) {
             if (type === 'eventos') {
               var data = response.data.eventos
-              $scope.frontEvents = data
             } else {
               var data = response.data.vacaciones
-              $scope.frontEvents = data
-              console.log(data)
             }
+
+            var daySelected = options.calendarDate || moment()
+
+            $scope.frontEvents = data.filter(function (element) {
+              return moment(element.fecha).isSame(daySelected, 'day')
+            })
 
             if (!list) {
               $scope.events = data.map(function (element) {
@@ -55,6 +58,8 @@ angular.module('app.agenda-controller', [])
       $scope.timespanClicked = function (date, type) {
         $scope.daySelected = moment(date).format('DD [de] MMMM')
         var q = moment(date).format('YYYY-MM-DD [00:00:00]')
-        $scope.getEvents({url: '/api/events/' + q, list: true, type: type})
+        $scope.getEvents(
+          {url: '/api/events/' + q, list: true, type: type, calendarDate: q}
+        )
       }
     }])

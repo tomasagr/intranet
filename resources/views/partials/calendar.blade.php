@@ -36,12 +36,15 @@
     </div>
     @endif
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" >
     <div class="header-list">
       <h2 style="color:black;">{{$title}}</h2>
       <h3>@{{daySelected}}</h3>
     </div>
-    <div class="items">
+    <div class="items" style="
+    overflow-y: scroll;
+    height: 320px;
+">
       <div class="alert alert-info" ng-if="!frontEvents.length">
         No hay eventos para el día seleccionado
       </div>
