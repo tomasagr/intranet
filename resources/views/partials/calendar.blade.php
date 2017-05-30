@@ -1,8 +1,7 @@
 <div class="calendar-module">
   <div class="col-md-6 calendar-item">
     <div class="col-md-12">
-      <!-- <div id="<?php echo $modelName; ?>" ui-calendar="<?php echo $config; ?>.calendar"
-        class="span8 calendar" ng-model="<?php echo $modelName; ?>"></div> -->
+  
       <div class="controls" 
 				style="display: flex; align-items:center; justify-content: space-between; margin: 0em 0 1.5em 0">
         <button
@@ -26,7 +25,8 @@
         view-date="viewDate"
         events="events"
         view-title="calendarTitle"
-        cell-auto-open-disabled="true">
+        cell-auto-open-disabled="true"
+        on-timespan-click="timespanClicked(calendarDate, '{{$type}}')">
       </mwl-calendar>
     </div>
     @if($title != 'VACACIONES')
@@ -38,22 +38,30 @@
   </div>
   <div class="col-md-6">
     <div class="header-list">
-      <h2>{{$title}}</h2>
-      <h3>14 de Febrero</h3>
+      <h2 style="color:black;">{{$title}}</h2>
+      <h3>@{{daySelected}}</h3>
     </div>
     <div class="items">
-      <div class="item">
+      <div class="alert alert-info" ng-if="!frontEvents.length">
+        No hay eventos para el día seleccionado
+      </div>
+      <div class="item" ng-repeat ="item in frontEvents">
         <header style="background-color: transparent;">
           @if($title != 'VACACIONES')
-          <p class="hour">10:30 hs.</p>
+          <p class="hour">@{{item.hora}}</p>
+          @else 
+            <p class="hour">Usuario: @{{item.user.fullname}}</p>
           @endif
-          <p class="event-title">TITULO DEL EVENTO
+
+          <p class="event-title" style="text-transform: uppercase">
+            <i ng-if="item.tipo == 'AGRO'" class="fa fa-circle" style="color: red;margin-right: 10px"></i>
+            <i ng-if="item.tipo == 'SUMMIT'" class="fa fa-circle" style="color: green;margin-right: 10px"></i>@{{item.titulo}}
           <p>
           <p class="event-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam molestiae, commodi optio omnis
-            iusto ullam laboriosam ea dignissimos rerum modi enim facere autem
+            @{{item.cuerpo}}
           </p>
         </header>
+        <hr>
       </div>
     </div>
   </div>

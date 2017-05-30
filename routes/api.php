@@ -27,6 +27,9 @@ Route::get('/news/search','NewsController@search');
 
 Route::get('/manuals', 'ManualsController@getAll');
 
+Route::get('/events', 'EventsApiController@index');
+Route::get('/events/{date}', 'EventsApiController@show');
+
 Route::get('videos', 'Panel\VideosController@getAll');
 Route::get('informacion', 'Panel\InformacionController@getAll');
 Route::get('curiosidades', 'Panel\CuriosidadesController@getAll');

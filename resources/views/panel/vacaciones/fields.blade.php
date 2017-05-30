@@ -17,12 +17,6 @@
     {!! Form::date('fecha', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Hora Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('hora', 'Hora:') !!}
-    {!! Form::time('hora', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_id', 'Usuario:') !!}

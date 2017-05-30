@@ -4,6 +4,7 @@ namespace Intranet\Models\Panel;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Intranet\User;
 
 /**
  * Class Vacaciones
@@ -49,9 +50,11 @@ class Vacaciones extends Model
         'titulo' => 'required',
         'cuerpo' => 'required',
         'fecha' => 'required',
-        'hora' => 'required',
         'user_id' => 'required'
     ];
 
-    
+    public function user() 
+    {
+        return $this->belongsTo(User::class);
+    }
 }

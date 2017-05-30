@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div ng-app="app" ng-controller="AgendaCalendarController">
+<div ng-app="app">
 	
 	<div class="main-content salas" style="padding: 2em 0; margin-top: 0; background: white;">
 		<div class="title" style="margin: 0; padding-bottom: 1em">
