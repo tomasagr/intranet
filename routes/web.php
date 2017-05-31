@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function() {
+	Route::post('/foro/{foro}/tema/{tema}/comentario', 'TemaComentarioController@store');
 	Route::post('users/{id}/vote', 'UsersController@vote');
 	Route::get('/home', 'HomeController@index');
 	Route::get('/notification/{uid}/mark', 'HomeController@mark');
@@ -42,8 +43,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/sector/{id}', 'NewsController@sector');
 	Route::get('/rincon-japones', 'RinconController@index');
 	Route::get('/forum', 'ForumController@index');
-	Route::get('/forum/1', 'ForumController@show');
-	Route::get('/topic/1', 'ForumController@topic');
+	Route::get('/forum/{id}', 'ForumController@show');
+	Route::get('/topic/{id}', 'ForumController@topic');
 
 	Route::group(['prefix' => 'panel', 'middleware' => ['auth', 'isAdminOrEditor']], function() {
 		Route::get('/', 'HomeController@panel');
@@ -177,6 +178,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('reservas', ['as'=> 'panel.reservas.index', 'uses' => 'ReservasController@index']);
 
 		Route::get('franja/{id}/delete', 'FranjaController@delete');
+
 		
 	});
 });
@@ -184,3 +186,6 @@ Route::group(['middleware' => 'auth'], function() {
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
+
+
+Route::resource('foros', 'ForoController');

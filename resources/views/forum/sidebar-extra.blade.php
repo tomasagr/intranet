@@ -1,8 +1,12 @@
+<?php Carbon\Carbon::setLocale('es') ?>
+@inject('foros', 'Intranet\Models\Foro')
+@inject('comentarios', 'Intranet\Models\Comentario')
+
 <div class="forumsidebar">
 	<div class="main">
 		<div class="topic-sidebar">
 		<div class="forum-header grey">
-				FORO: NUEVAS IDEAS
+				FORO: {{$foro->nombre}}
 			</div>
 			<div class="messages">
 				<header>
@@ -12,24 +16,44 @@
 
 				<div class="item">
 					<header>
-						<p><a href="">NUEVAS IDEAS</a></p>
-						<p>1000</p>
+						<p><a href="">TEMAS</a></p>
+						<p>{{$foro->temas->count()}}</p>
 					</header>
 					<hr>
 				</div>
 
 				<div class="item">
 					<header>
-						<p><a href="">SERVICIOS</a></p>
-						<p>1000</p>
+						<p><a href="">RESPUESTAS</a></p>
+						<p>{{$comentarios->where('foro_id', $foro->id)->count()}}</p>
 					</header>
 					<hr>
 				</div>
 
 				<div class="item">
 					<header>
-						<p><a href="">PRODUCTOS</a></p>
-						<p>1000</p>
+						<p><a href="">ULTIMO POST</a></p>
+						<p>
+							@if (count($foro->temas()->orderBy('created_at', 'desc')->first()))
+								{{$foro->temas()->orderBy('created_at', 'desc')->first()->autor->fullname}}
+							@else
+								Ninguno
+							@endif
+						</p>
+					</header>
+					<hr>
+				</div>
+			
+				<div class="item">
+					<header>
+						<p><a href="">ULTIMA ACTIVIDAD</a></p>
+						<p>
+							@if (count($foro->temas()->orderBy('created_at', 'desc')->first()))
+								{{$foro->temas()->orderBy('created_at', 'desc')->first()->created_at->diffForHumans()}}
+							@else
+								Ninguna
+							@endif
+						</p>
 					</header>
 				</div>
 			</div>
@@ -43,28 +67,15 @@
 					<p>MENSAJES</p>
 				</header>
 
-				<div class="item">
+				@foreach($foros->all() as $item)
+					<div class="item">
 					<header>
-						<p><a href="">NUEVAS IDEAS</a></p>
-						<p>1000</p>
+						<p><a href="/forum/{{$item->id}}">{{$item->nombre}}</a></p>
+						<p>{{$item->temas->count()}}</p>
 					</header>
 					<hr>
 				</div>
-
-				<div class="item">
-					<header>
-						<p><a href="">SERVICIOS</a></p>
-						<p>1000</p>
-					</header>
-					<hr>
-				</div>
-
-				<div class="item">
-					<header>
-						<p><a href="">PRODUCTOS</a></p>
-						<p>1000</p>
-					</header>
-				</div>
+				@endforeach
 			</div>
 			<br>
 		</div>
@@ -77,8 +88,8 @@
 			<div class="messages">
 				<div class="item">
 					<header>
-						<p><a href="">MAS POPULARES</a></p>
-						<p>1000</p>
+						<p>MAS POPULARES</a>
+						<p>{{$comentarios->where('foro_id', $foro->id)->count()}}</p>
 					</header>
 					<hr>
 				</div>
@@ -86,13 +97,16 @@
 				<div class="item">
 					<header>
 						<p><a href="">NO RESPONDIDOS</a></p>
-						<p>1000</p>
+						<p>{{$foro->temas->where('response', 0)->count()}}</p>
 					</header>
 				</div>
 			</div>
 
 			<div>
-				<input placeholder="Buscar..." type="text" class="form-control" style="border-radius:20px;">
+				<form action="/forum/{{$foro->id}}">
+					<input placeholder="Buscar..." type="text" name="q" class="form-control" style="border-radius:20px;">
+					<button type="submit" style="display:none"></button>
+				</form>
 				<br>
 				<button type="submit" class="btn btn-warning danger-alternative"
 									style="width: 100%; padding: inherit 1em;"

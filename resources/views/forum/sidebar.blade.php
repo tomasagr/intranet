@@ -1,3 +1,6 @@
+@inject('comentarios', 'Intranet\Models\Comentario')
+@inject('temas', 'Intranet\Models\Tema')
+<?php Carbon\Carbon::setLocale('es') ?>
 <div class="forumsidebar">
 	<div class="main">
 		<div class="topic-sidebar">
@@ -11,28 +14,15 @@
 					<p>MENSAJES</p>
 				</header>
 
-				<div class="item">
+				@foreach($foros as $foro)
+					<div class="item">
 					<header>
-						<p><a href="">NUEVAS IDEAS</a></p>
-						<p>1000</p>
+						<p><a href="/forum/{{$foro->id}}">{{$foro->nombre}}</a></p>
+						<p>{{$foro->temas->count()}}</p>
 					</header>
 					<hr>
 				</div>
-
-				<div class="item">
-					<header>
-						<p><a href="">SERVICIOS</a></p>
-						<p>1000</p>
-					</header>
-					<hr>
-				</div>
-
-				<div class="item">
-					<header>
-						<p><a href="">PRODUCTOS</a></p>
-						<p>1000</p>
-					</header>
-				</div>
+				@endforeach
 			</div>
 			<br>
 		</div>
@@ -45,24 +35,27 @@
 			<div class="messages">
 				<div class="item">
 					<header>
-						<p><a href="">MAS POPULARES</a></p>
-						<p>1000</p>
+						<p>MAS POPULARES</p>
+						<p>{{$comentarios->count()}}</p>
 					</header>
 					<hr>
 				</div>
 
 				<div class="item">
 					<header>
-						<p><a href="">NO RESPONDIDOS</a></p>
-						<p>1000</p>
+						<p>NO RESPONDIDOS</p>
+						<p>{{$temas->where('response', 0)->count()}}</p>
 					</header>
 				</div>
 			</div>
 
 			<div>
-				<input placeholder="Buscar..." type="text" class="form-control" style="border-radius:20px;">
+				<form action="/forum">
+					<input placeholder="Buscar..." type="text" name="q" class="form-control" style="border-radius:20px;">
+					<button type="submit" style="display:none"></button>
+				</form>
 				<br>
-				<button type="submit" class="btn btn-warning danger-alternative"
+				<button type="button" class="btn btn-warning danger-alternative"
 									style="width: 100%; padding: inherit 1em;"
 									onclick="window.location='/'">NUEVO TEMA</button>
 			</div>

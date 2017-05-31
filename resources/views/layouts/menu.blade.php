@@ -70,4 +70,7 @@
 </li>
 <li class="{{ Request::is('panel/curiosidades*') ? 'active' : '' }}">
   <a href="{!! route('panel.curiosidades.index') !!}"><i class="fa fa-smile-o"></i><span>Curiosidades</span></a>
+</li><li class="{{ Request::is('foros*') ? 'active' : '' }}">
+    <a href="{!! route('foros.index') !!}"><i class="fa fa-edit"></i><span>Foros</span></a>
 </li>
+

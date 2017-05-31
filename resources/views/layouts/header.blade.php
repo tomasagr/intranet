@@ -20,11 +20,13 @@
 					<li class="item-title"><b class="title">NOTIFICACIONES</b><div class="label-notification-warning">No leídas {{count(Auth::user()->unreadNotifications)}}</div></li>
 					<li role="separator" class="divider"></li>
 					<li class="items-list">
-						<div class="title"><span class="label-notification danger">0</span> Respuestas del foro</div>
+						<div class="title"><span class="label-notification danger">	{{getCount('responses')}}</span> Respuestas del foro</div>
 						<div class="notify-items">
-							<a href="#">Another action</a>
-							<a href="#">Another action</a>
-							<a href="#">Another action</a>
+							@foreach(Auth::user()->unreadNotifications as $item)
+								@if ($item->type == 'Intranet\Notifications\ComentarioNotificacion')
+									<a href="/notification/{{$item->id}}/mark">{{substr($item->data["comentario"], 0, 20)}}...</a>
+								@endif
+							@endforeach
 						</div>
 					</li>
 					<li role="separator" class="divider"></li>
@@ -34,7 +36,9 @@
 						</span> Puntajes</div>
 						<div class="notify-items">
 							@foreach(Auth::user()->unreadNotifications as $item)
-								<a href="/notification/{{$item->id}}/mark">{{substr($item->data["comments"], 0, 20)}}...</a>
+								@if ($item->type == 'Intranet\Notifications\VotingNotify')
+									<a href="/notification/{{$item->id}}/mark">{{substr($item->data["comments"], 0, 20)}}...</a>
+								@endif
 							@endforeach
 						</div>
 					</li>

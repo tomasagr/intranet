@@ -39,3 +39,9 @@ Route::get('/reservas/{id}/delete', 'ReservasController@delete');
 Route::get('videos', 'Panel\VideosController@getAll');
 Route::get('informacion', 'Panel\InformacionController@getAll');
 Route::get('curiosidades', 'Panel\CuriosidadesController@getAll');
+
+
+Route::resource('foros', 'ForoAPIController');
+Route::resource('temas', 'TemaAPIController');
+Route::resource('usuario_temas', 'UsuarioTemaAPIController');
+Route::resource('comentarios', 'ComentarioAPIController');

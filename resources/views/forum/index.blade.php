@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('content')
-
+<?php \Carbon\Carbon::setLocale('es'); ?>
 @include('layouts.header')
 <div class="row">
 	<div class="container" style="padding: 2em 0;">
 		<div class="col-md-3">
-			@include('forum.sidebar')
+			@include('forum.sidebar', ['foros' => $foros])
 		</div>
 		<div class="col-md-9">
 			<div class="forum-header grey">
@@ -22,47 +22,28 @@
 						<th>ÚLTIMA ACTUALIZACIÓN</th>
 					</thead>
 					<tbody>
-						<tr>
+						@foreach($temas as $key => $tema)
+							<tr>
 							<td>
-								<b><a style="color: black;" href="/topic/1">REFORMAS</a></b>
-								<p>Iniciado por: Lucas Michailian</p>
+								<b><a style="color: black; text-transform: uppercase;" href="/topic/{{$tema->id}}">{{$tema->nombre}}</a></b>
+								<p>Iniciado por: {{$tema->autor->fullname}}</p>
 							</td>
 							<td>
-								<button type="submit" class="btn btn-warning danger-alternative"
-									style="width: 100%; padding: inherit 1em;"
-									onclick="window.location='/forum/1'">NUEVAS IDEAS</button>
+								<button type="submit" class="btn @if($key % 2 == 0 ) {{'btn-success'}}  @else {{'btn-warning'}} @endif danger-alternative"
+									style="width: 100%; padding: inherit 1em; @if($key % 2 == 0 ) {{'background: #74B956'}}  @endif"
+									onclick="window.location='/forum/{{$tema->foro_id}}'">{{$tema->foro->nombre}}</button>
 							</td>
 							<td style="text-align:center;">
-								20
+								{{$tema->comentario->count()}}
 							</td>
 							<td style="text-align:center;">
-								20
+								{{$tema->comentario->count()}}
 							</td>
 							<td>
-								Hace 31 horas
+								{{$tema->updated_at->diffForHumans()}}
 							</td>
 						</tr>
-
-						<tr>
-							<td>
-								<b><a style="color: black;" href="/topic/1">REFORMAS</a></b>
-								<p>Iniciado por: Lucas Michailian</p>
-							</td>
-							<td>
-								<button type="submit" class="btn btn-success danger-alternative"
-									style="width: 100%; padding: inherit 1em; background: #74b956"
-									onclick="window.location='/forum/1'">NUEVAS IDEAS</button>
-							</td>
-							<td style="text-align:center;">
-								20
-							</td>
-							<td style="text-align:center;">
-								20
-							</td>
-							<td>
-								Hace 31 horas
-							</td>
-						</tr>
+						@endforeach
 					</tbody>
 				</table>
 			</div>

@@ -46,6 +46,8 @@ class HomeController extends Controller
 
         if ($notification->type == 'Intranet\Notifications\VotingNotify') {
             return redirect('/profile#votes');
+        } else if ($notification->type == 'Intranet\Notifications\ComentarioNotificacion') {
+            return redirect('/topic/'. $notification->notifiable_id);
         }
     }
 }
