@@ -3,6 +3,7 @@ var app = angular.module('app', [
   'app.user-controller',
   'app.user-profile-controller',
   'app.news-controlller',
+  'app.salas-controller',
   'app.search-controller',
   'app.persons-controller',
   'app.video-controller',

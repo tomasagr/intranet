@@ -170,6 +170,14 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('curiosidades/{curiosidades}', ['as'=> 'panel.curiosidades.show', 'uses' => 'Panel\CuriosidadesController@show']);
 		Route::get('curiosidades/{curiosidades}/edit', ['as'=> 'panel.curiosidades.edit', 'uses' => 'Panel\CuriosidadesController@edit']);
 
+		Route::get('salas', ['as'=> 'panel.salas.index', 'uses' => 'SalasController@index']);
+		Route::get('salas/{id}', ['as'=> 'panel.salas.show', 'uses' => 'SalasController@show']);
+		Route::post('salas/{id}/franja', 'SalaFranjaController@store');
+
+		Route::get('reservas', ['as'=> 'panel.reservas.index', 'uses' => 'ReservasController@index']);
+
+		Route::get('franja/{id}/delete', 'FranjaController@delete');
+		
 	});
 });
 

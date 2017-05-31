@@ -30,6 +30,12 @@ Route::get('/manuals', 'ManualsController@getAll');
 Route::get('/events', 'EventsApiController@index');
 Route::get('/events/{date}', 'EventsApiController@show');
 
+Route::get('/salas/{tag}', 'SalasController@byTag');
+Route::get('/salas/{tag}/reservas/{date}', 'SalasReservasController@show');
+Route::post('/franja/{id}/reservation', 'FranjaController@store');
+
+Route::get('/reservas/{id}/delete', 'ReservasController@delete');
+
 Route::get('videos', 'Panel\VideosController@getAll');
 Route::get('informacion', 'Panel\InformacionController@getAll');
 Route::get('curiosidades', 'Panel\CuriosidadesController@getAll');

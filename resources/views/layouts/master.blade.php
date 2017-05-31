@@ -38,6 +38,7 @@
 		 <script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
 		 <script src="/js/libs/unslider-master/dist/js/unslider-min.js"></script>
 		 <script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+		 <script src="/bower_components/underscore/underscore-min.js"></script>
 
 		 <!-- APP -->
 		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>
@@ -56,6 +57,7 @@
 		<script src="/js/components/videos/VideosController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/MenuController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/users/PersonsController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/salas/SalasController.js?v=<?php echo time(); ?>"></script>
 
 		<script>
 			jQuery(document).ready(function($) {

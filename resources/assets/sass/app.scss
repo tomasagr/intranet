@@ -89,6 +89,23 @@ select {
 	}
 }
 
+.btn-summit.active {
+	box-shadow: none;
+	background: orange;
+	color: white;
+
+	&:hover {
+		background: $orange;
+		color: white;
+	}
+
+	&:focus {
+		background: $orange;
+		color: white;
+		outline: 0px;
+	}
+}
+
 
 // Overrides
 .danger-alternative {

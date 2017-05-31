@@ -16,5 +16,6 @@ mix.browserSync({
 })
 .js('resources/assets/js/app.js', 'public/js/app.js')
 .sass('resources/assets/sass/app.scss', 'public/css')
+.sass('resources/assets/sass/back.scss', 'public/css/back.css')
 
 mix.copy('resources/assets/img', 'public/images', false)

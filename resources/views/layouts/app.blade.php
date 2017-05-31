@@ -13,6 +13,9 @@
 
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="/css/back.css?v=<?php echo time(); ?>">
+    <link href="/bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
 
     @yield('css')
 </head>
@@ -166,5 +169,15 @@
         })
     })()
 </script>
+
+<script src="/bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/es.js"></script>
+<script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script>
+<script src="/bower_components/ngSweetAlert/SweetAlert.js"></script>
+<script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+
+<script src="/js/components/back.js?v=<?php echo time(); ?>"></script>
+<script src="/js/components/reservas/ReservasController.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

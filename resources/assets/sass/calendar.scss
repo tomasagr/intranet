@@ -150,3 +150,14 @@ mwl-calendar span[data-cal-date] {
 .cal-cell1 {
 	text-transform: capitalize;
 }
+
+.btn-calendar {
+		background: transparent;
+		padding: 0;
+		box-shadow: none;
+		border: 0;
+	}
+
+.btn {
+	outline: none !important;
+}

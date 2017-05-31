@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div ng-app="app">
+<div ng-app="app" ng-controller="SalasController">
 	
 	<div class="main-content salas" style="padding: 2em 0; margin-top: 0; background: white;">
 		<div class="title" style="margin: 0; padding-bottom: 1em">
@@ -12,10 +12,10 @@
 			<div class="container">
 				<p><b>SALAS:</b></p>
 				
-				<button class="btn btn-default btn-summit alt"><b>TOKYO</b> | SALA GRANDE</button>
-				<button class="btn btn-default btn-summit alt"><b>OSAKA</b> | SALA INTERMEDIA</button>
-				<button class="btn btn-default btn-summit alt"><b>KYOTO </b>| SALA NARANJA</button>
-				<button class="btn btn-default btn-summit alt"><b>NARA </b>| SALA VERDE</button>
+				<button class="btn btn-default btn-summit alt" ng-class="{active: tab == 'TOKYO'}" ng-click="setTab('TOKYO', calendarDate)"><b>TOKYO</b> | SALA GRANDE</button>
+				<button class="btn btn-default btn-summit alt" ng-class="{active: tab == 'OSAKA'}" ng-click="setTab('OSAKA', calendarDate)"><b>OSAKA</b> | SALA INTERMEDIA</button>
+				<button class="btn btn-default btn-summit alt" ng-class="{active: tab == 'KYOTO'}" ng-click="setTab('KYOTO', calendarDate)"><b>KYOTO </b>| SALA NARANJA</button>
+				<button class="btn btn-default btn-summit alt" ng-class="{active: tab == 'NARA'}" ng-click="setTab('NARA', calendarDate)"><b>NARA </b>| SALA VERDE</button>
 				<hr>
 			</div>
 		</div>
