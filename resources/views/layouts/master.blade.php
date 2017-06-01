@@ -81,7 +81,21 @@
 					radioClass: 'icheckbox_square-orange',
 					increaseArea: '5%' // optional
 				});
+
+				 $('[name="privado"]').on('ifChecked', function() { 
+					
+					if ($(this).val() == 1) {
+						$('.users').css('display', 'block')
+					} else {
+						$('.users').css('display', 'none')
+					}
+				
+       	})
 			});
+			
 		</script>
+
+
+
 	</body>
 	</html>

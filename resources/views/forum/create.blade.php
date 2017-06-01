@@ -12,7 +12,7 @@
 				CREAR TEMA
 			</div>
 
-			<div class="content-list" style="background: white; padding: 2em;">
+			<div class="content-list" style="background: white; padding: 2em;" ng-controller="UserSelectorController">
 				<form action="/topic" method="POST">
         {{csrf_field()}}
           <div class="row">
@@ -53,22 +53,24 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form group" style="display: flex;">
-                <p style="margin:0;margin-right: 2em;"><input value="0" name="privado" type="radio" checked> Tema público</p>
-                <p style="margin:0;"><input type="radio" value="1" name="privado"> Tema privado</p>
+                <p style="margin:0;margin-right: 2em;">
+                  <input value="0" name="privado" value="0" type="radio" checked> Tema público</p>
+                <p style="margin:0;">
+                  <input type="radio" value="1" name="privado"> Tema privado</p>
               </div>
             </div>
           </div>
           <br>
           
-          <div class="users" ng-controller="UserSelectorController">
+          <div class="users" style="display:none">
             <div class="row" ng-repeat="item in fields">
               <div class="col-md-12">
                 <div class="form-group" style="display:flex; align-items:center">
                   <input type="text" name="user_id[@{{$index}}][]" 
-                         class="form-control" placeholder="Ingrese el nombre de usuario" style="width: 94%; margin-right: 1em;">
+                         class="form-control" placeholder="Ingrese el nombre de usuario" 
+                         style="width: 94%; margin-right: 1em;" required>
                 
-
-                  <a ng-show="!$last && !first" href="" ng-click="addField($index)" class="orange" 
+                  <a ng-show="!$last && !first" href="" ng-click="removeField($index)" class="orange" 
                     style="color: white; border-radius: 100%; padding: .5em .7em">
                     <i class="fa fa-minus"></i>
                   </a>
@@ -96,3 +98,4 @@
 </div>
 @include('layouts.footer')
 @stop
+
