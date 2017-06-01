@@ -110,7 +110,7 @@
 				<br>
 				<button type="submit" class="btn btn-warning danger-alternative"
 									style="width: 100%; padding: inherit 1em;"
-									onclick="window.location='/'">NUEVO TEMA</button>
+									onclick="window.location='/forum/create'">NUEVO TEMA</button>
 			</div>
 		</div>
 	</div>

@@ -43,8 +43,10 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/sector/{id}', 'NewsController@sector');
 	Route::get('/rincon-japones', 'RinconController@index');
 	Route::get('/forum', 'ForumController@index');
+	Route::get('/forum/create', 'ForumController@create');
 	Route::get('/forum/{id}', 'ForumController@show');
 	Route::get('/topic/{id}', 'ForumController@topic');
+	Route::post('/topic', 'ForumController@store');
 
 	Route::group(['prefix' => 'panel', 'middleware' => ['auth', 'isAdminOrEditor']], function() {
 		Route::get('/', 'HomeController@panel');

@@ -4,6 +4,9 @@
 @include('layouts.header')
 <div class="row">
 	<div class="container" style="padding: 2em 0;">
+		<div class="col-md-12">
+			@include('flash::message')
+		</div>
 		<div class="col-md-3">
 			@include('forum.sidebar', ['foros' => $foros])
 		</div>

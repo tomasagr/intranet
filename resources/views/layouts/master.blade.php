@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider.css">
 	<link rel="stylesheet" href="/js/libs/unslider-master/dist/css/unslider-dots.css">
 	<link href="/bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/bower_components/iCheck/skins/square/_all.css">
+	<link rel="stylesheet" href="/bower_components/trumbowyg/dist/ui/trumbowyg.css">
 
 </head>
 <body class="main background-main" ng-cloak>
@@ -39,6 +41,8 @@
 		 <script src="/js/libs/unslider-master/dist/js/unslider-min.js"></script>
 		 <script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
 		 <script src="/bower_components/underscore/underscore-min.js"></script>
+		 <script src="/bower_components/iCheck/icheck.js"></script>
+		 <script src="/bower_components/trumbowyg/dist/trumbowyg.js"></script>
 
 		 <!-- APP -->
 		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>
@@ -58,6 +62,7 @@
 		<script src="/js/components/MenuController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/users/PersonsController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/salas/SalasController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/users/UserSelectorController.js?v=<?php echo time(); ?>"></script>
 
 		<script>
 			jQuery(document).ready(function($) {
@@ -66,7 +71,16 @@
 					arrows: false,
 					autoplay: true
 				});
+
+				$('.edit-area').trumbowyg({
+					btns: [['removeformat'],['bold', 'italic'], ['link'], ['formatting'], 'btnGrp-justify','btnGrp-lists']
+				});
 				}, 1000)
+				 
+				$('input').iCheck({
+					radioClass: 'icheckbox_square-orange',
+					increaseArea: '5%' // optional
+				});
 			});
 		</script>
 	</body>

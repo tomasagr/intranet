@@ -24,7 +24,8 @@ class Tema extends Model
         'nombre',
         'cuerpo',
         'privado',
-        'author_id'
+        'author_id',
+        'foro_id'
     ];
 
     /**

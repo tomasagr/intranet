@@ -8,6 +8,7 @@ var app = angular.module('app', [
   'app.persons-controller',
   'app.video-controller',
   'app.manual-controller',
+  'app.user-selector-controller',
   'app.users-service',
   'app.units-service',
   'app.sectors-service',

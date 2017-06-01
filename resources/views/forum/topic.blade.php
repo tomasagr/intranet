@@ -22,7 +22,7 @@
 
 				<div class="col-md-9">
 					<p style"color:#444">
-						{{$tema->cuerpo}}
+						{!!$tema->cuerpo!!}
 					</p>
 				</div>
 			</div>
