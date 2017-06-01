@@ -161,10 +161,15 @@ class UserController extends AppBaseController
 
             return redirect(route('panel.users.index'));
         }
+        
+        if (count($user->voting)) {
+            Flash::error('El usuario no se puede eliminar el mismo tiene votos asociados.');
+        } else {
+            $this->userRepository->delete($id);
+            Flash::success('Usuario eliminado con exito.');
+        }
 
-        $this->userRepository->delete($id);
-
-        Flash::success('Usuario eliminado con exito.');
+        
 
         return redirect(route('panel.users.index'));
     }
