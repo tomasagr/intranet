@@ -66,9 +66,9 @@
             <div class="row" ng-repeat="item in fields">
               <div class="col-md-12">
                 <div class="form-group" style="display:flex; align-items:center">
-                  <input type="text" name="user_id[@{{$index}}][]" 
+                  <input type="text" name="user_id[]" 
                          class="form-control" placeholder="Ingrese el nombre de usuario" 
-                         style="width: 94%; margin-right: 1em;" required>
+                         style="width: 94%; margin-right: 1em;">
                 
                   <a ng-show="!$last && !first" href="" ng-click="removeField($index)" class="orange" 
                     style="color: white; border-radius: 100%; padding: .5em .7em">
