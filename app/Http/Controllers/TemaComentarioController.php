@@ -27,8 +27,9 @@ class TemaComentarioController extends Controller
             
         if ($tema->autor->id != \Auth::user()->id) {
             \Mail::to($tema->autor)->send(new ComentarioNuevo($tema));
-            $tema->autor->notify(new ComentarioNotificacion($comentario));
         }
+
+        $tema->autor->notify(new ComentarioNotificacion($comentario));
 
         return redirect()->back();
     }

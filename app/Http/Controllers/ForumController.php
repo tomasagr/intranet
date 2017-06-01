@@ -83,15 +83,24 @@ class ForumController extends Controller
 
     public function delete($id) 
     {
-        Tema::find($id)->delete();
-        
+        $tema = Tema::find($id);
+
+        if (count($tema->comentario)) {
+            $tema->comentario()->delete();
+            User::find($tema->author_id)
+                ->notifications()
+                ->where('type', 'Intranet\Notifications\ComentarioNotificacion')
+                ->delete();
+        }
+
+        $tema->delete();
+
         return redirect()->back();
     }
 
     public function deleteComent($id) 
     {
         Comentario::find($id)->delete();
-        
         return redirect()->back();
     }
 }
