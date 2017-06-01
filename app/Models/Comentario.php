@@ -24,7 +24,8 @@ class Comentario extends Model
     public $fillable = [
         'user_id',
         'cuerpo',
-        'tema_id'
+        'tema_id',
+        'foro_id'
     ];
 
     /**
