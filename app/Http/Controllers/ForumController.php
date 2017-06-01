@@ -5,12 +5,12 @@ namespace Intranet\Http\Controllers;
 use Illuminate\Http\Request;
 use Intranet\Models\Foro;
 use Intranet\Models\Tema;
+use Intranet\Models\Comentario;
 
 class ForumController extends Controller
 {
     public function index(Request $request)
     {
-    
         $foros = Foro::all();
         if ($request->q) {
             $temas = Tema::with('autor', 'foro')
@@ -79,5 +79,19 @@ class ForumController extends Controller
             \Flash::success('Tema creado con éxito');
             return redirect('/forum');
         }
+    }
+
+    public function delete($id) 
+    {
+        Tema::find($id)->delete();
+        
+        return redirect()->back();
+    }
+
+    public function deleteComent($id) 
+    {
+        Comentario::find($id)->delete();
+        
+        return redirect()->back();
     }
 }

@@ -5,6 +5,7 @@ namespace Intranet\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Intranet\User;
+use Intranet\Models\Tema;
 
 /**
  * Class Comentario
@@ -54,5 +55,10 @@ class Comentario extends Model
     {
         return $this->belongsTo(User::class, 'user_id')
             ->orderBy('created_at', 'desc');
+    }
+
+    public function tema() 
+    {
+        return $this->belongsTo(Tema::class);
     }
 }

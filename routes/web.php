@@ -47,6 +47,8 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/forum/{id}', 'ForumController@show');
 	Route::get('/topic/{id}', 'ForumController@topic');
 	Route::post('/topic', 'ForumController@store');
+	Route::get('/topic/{id}/delete', 'ForumController@delete');
+	Route::get('/comentario/{id}/delete', 'ForumController@deleteComent');
 
 	Route::group(['prefix' => 'panel', 'middleware' => ['auth', 'isAdminOrEditor']], function() {
 		Route::get('/', 'HomeController@panel');

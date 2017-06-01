@@ -1,3 +1,5 @@
+@inject('comentario', 'Intranet\Models\Comentario')
+
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
@@ -148,22 +150,18 @@
       <h1 style="color: #f3922c;">Tu actividad en el foro</h1>
       <p style="margin: 2em 0;"><b>RESPONDIERON TU MENSAJE</b></p>
       <div class="messages-list">
-        <div class="item clearfix" style="margin: 3em 0;">
-          <div class="col-md-8" style="padding-left: 0;">
-            <p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
+        @foreach(Auth::user()->notifications as $item) 
+          @if ($item->type == 'Intranet\Notifications\ComentarioNotificacion')
+            <div class="item clearfix" style="margin: 3em 0;">
+            <div class="col-md-8" style="padding-left: 0;">
+              <p style="color:#ccc">{{$item->data["comentario"]}}</p>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-warning danger-alternative orange-alt" onclick="window.location='/topic/{{$comentario->findOrFail((int)$item->notifiable_id)->tema_id}}'">IR A MENSAJE</button>
+            </div>
           </div>
-          <div class="col-md-4">
-            <button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
-          </div>
-        </div>
-        <div class="item clearfix" style="margin: 3em 0;">
-          <div class="col-md-8" style="padding-left: 0;">
-            <p style="color:#ccc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vero aliquam minima neque. Molestiae, consequuntur, doloremque? Rem quae quam, excepturi sequi saepe cupiditate, dignissimos voluptatem at dolore, in magnam tempora!</p>
-          </div>
-          <div class="col-md-4">
-            <button class="btn btn-warning danger-alternative orange-alt">IR A MENSAJE</button>
-          </div>
-        </div>
+          @endif
+       @endforeach
       </div>
     </div>
   </div>

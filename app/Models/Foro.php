@@ -47,4 +47,10 @@ class Foro extends Model
         return $this->hasMany(Tema::class, 'foro_id')
             ->orderBy('created_at', 'desc');
     }
+
+    public function foro() 
+    {
+        return $this->belongsTo(Foro::class, 'foro_id')
+            ->orderBy('created_at', 'desc');
+    }
 }

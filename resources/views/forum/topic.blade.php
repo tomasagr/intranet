@@ -32,6 +32,9 @@
 					@foreach($tema->comentario as $item)
 						<p><b>{{$item->user->fullname}}</b> {{$item->created_at->diffForHumans()}}</p>
 						<p>{{$item->cuerpo}}</p>
+						@if (Auth::user()->rol_id == 1)
+							<p><a href="/comentario/{{$item->id}}/delete" class="btn btn-xs btn-danger">Borrar</a></p>
+						@endif
 						<hr>
 					@endforeach
 				</div>

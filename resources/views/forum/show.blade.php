@@ -19,6 +19,9 @@
 						<th>PARTICIPANTES</th>
 						<th>RESPUESTAS</th>
 						<th>ÚLTIMA ACTUALIZACIÓN</th>
+						@if (Auth::user()->rol_id == 1)
+							<th></th>
+						@endif
 					</thead>
 					<tbody>
 							@foreach($temas as $key => $tema)
@@ -40,6 +43,11 @@
 							</td>
 							<td>
 								{{$tema->updated_at->diffForHumans()}}
+							</td>
+							<td>
+								@if (Auth::user()->rol_id == 1)
+									<td><a href="/topic/{{$tema->id}}/delete" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+								@endif
 							</td>
 						</tr>
 						@endforeach
