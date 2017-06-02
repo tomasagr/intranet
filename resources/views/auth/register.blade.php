@@ -25,7 +25,7 @@
                                     ngf-pattern="'image/*'"
                                     ngf-accept="'image/*'"
                                     gf-resize="{width: 100, height: 100}">
-                                    
+
                         <span class="input-group-btn">
                             <button class="btn btn-default bg-orange"
                                     ngf-select ng-model="file" 
