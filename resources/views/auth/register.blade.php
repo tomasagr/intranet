@@ -19,7 +19,13 @@
                 <div class="col-md-4">
                     <div class="input-group">
                         <input type="text"
-                        class="form-control" placeholder="Cargar imagen" disabled>
+                        class="form-control" placeholder="Cargar imagen" readonly 
+                                    ngf-select ng-model="file" 
+                                    name="file" 
+                                    ngf-pattern="'image/*'"
+                                    ngf-accept="'image/*'"
+                                    gf-resize="{width: 100, height: 100}">
+                                    
                         <span class="input-group-btn">
                             <button class="btn btn-default bg-orange"
                                     ngf-select ng-model="file" 
