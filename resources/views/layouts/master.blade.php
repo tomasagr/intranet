@@ -28,6 +28,7 @@
 
 		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
 	  <script src="/bower_components/angular/angular.js"></script>
+		<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 	  <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/es.js"></script>
 	  <script type="text/javascript" src="/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
@@ -83,16 +84,13 @@
 				});
 
 				 $('[name="privado"]').on('ifChecked', function() { 
-					
 					if ($(this).val() == 1) {
 						$('.users').css('display', 'block')
 					} else {
 						$('.users').css('display', 'none')
 					}
-				
        	})
 			});
-			
 		</script>
 
 

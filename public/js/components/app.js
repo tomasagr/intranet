@@ -16,7 +16,8 @@ var app = angular.module('app', [
   'ui.bootstrap',
   'ngFileUpload',
   'oitozero.ngSweetAlert',
-  'mwl.calendar'
+  'mwl.calendar',
+  'ngSanitize'
 ])
 
 app.filter('inDate', function () {

@@ -20,7 +20,7 @@
 				<br>
 				<div class="content">
 					<p>
-						{{$noticia->cuerpo}}
+						{!! $noticia->cuerpo !!}
 					</p>
 				</div>
 			</div>
