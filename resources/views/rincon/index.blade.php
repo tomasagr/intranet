@@ -10,7 +10,7 @@
 			<h1 class="title-videos">Videos</h1>
 			<div class="videos col-md-6" id="customscroll">
 				<div class="item" ng-repeat="item in videos">
-					<img src="/images/image.png" alt="">
+					<img ng-src="https://i.ytimg.com/vi/@{{item.link}}/hqdefault.jpg" alt="" width="56px" height="43px">
 					<div class="videos-desc">
 						<p><b><a ng-click="selectVideo($index)" href="" style="text-transform:uppercase">@{{item.titulo}}</a></b></p>
 					</div>
@@ -25,19 +25,10 @@
 	</div>
 
 	<div class="info">
-		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="!infoSelected">
-			<img class="img-responsive" src="/images/info.png" alt="" style="height: 632px;">
+		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" >
+			<img class="img-responsive" src="/storage/@{{info[0].imagen}}" alt="" style="height: 632px;">
 			<div class="details">
-				<h1>Información</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio ex quasi officiis quibusdam corporis dignissimos iure velit? Quaerat quod ratione molestias</p>
-			</div>
-		</div>
 
-		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="infoSelected">
-			<img class="img-responsive" src="/storage/@{{infoSelected.imagen}}" alt="" style="height: 632px;">
-			<div class="details">
-				<h1>@{{infoSelected.titulo}}</h1>
-				<p>@{{infoSelected.descripcion}}</p>
 			</div>
 		</div>
 

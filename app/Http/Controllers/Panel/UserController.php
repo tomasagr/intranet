@@ -168,9 +168,6 @@ class UserController extends AppBaseController
             $this->userRepository->delete($id);
             Flash::success('Usuario eliminado con exito.');
         }
-
-        
-
         return redirect(route('panel.users.index'));
     }
 }
