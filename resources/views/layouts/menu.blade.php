@@ -8,7 +8,7 @@
   <a href="{!! route('panel.starmeup.index') !!}"><i class="fa fa-star-o"></i><span>STAR ME UP</span></a>
 </li>
 
-<li class="treeview {{ Request::is('panel/noticias*') ? 'active menu-open' : '' }}">
+<li class="treeview {{ Request::is('panel/noticias*') || Request::is('panel/avisos*')  ? 'active menu-open' : '' }}">
   <a href="#"><i class="fa fa fa-newspaper-o"></i>
   <span>NOTICIAS</span>
   <span class="pull-right-container">
@@ -16,6 +16,9 @@
   </span>
   </a>
   <ul class="treeview-menu">
+    <li class="{{ Request::is('panel/avisos*') ? 'active' : '' }}">
+      <a href="{!! route('panel.avisos.index') !!}"><i class="fa fa-edit"></i><span>Avisos cortos</span></a>
+    </li>
     <li class="{{ Request::is('panel/noticias*') ? 'active' : '' }}">
       <a href="{!! route('panel.noticias.index') !!}"><i class="fa fa-newspaper-o"></i><span>Noticias</span></a>
     </li>
@@ -122,4 +125,6 @@
 <li class="{{ Request::is('foros*') ? 'active' : '' }}">
     <a href="{!! route('foros.index') !!}"><i class="fa fa-comment"></i><span>FOROS</span></a>
 </li>
+
+
 

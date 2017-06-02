@@ -1,10 +1,13 @@
+@inject('avisos', 'Intranet\Models\Panel\Avisos')
 <section class="news-preview" ng-controller="NewsController">
   <div class="container">
     <div class="text-slider ticker-wrap">
       <div class="ticker">
-        <div class="ticker__item" ng-repeat="item in lastNews" style="padding: 0 2em;">
-					<a href="/individual/@{{item.id}}" style="color: white">@{{item.titulo}}</a>
-				</div>
+        @foreach($avisos->all() as $item)
+          <div class="ticker__item" style="padding: 0 2em;">
+					  <p>{{$item->titulo}}</p>
+				  </div>
+        @endforeach
       </div>
     </div>
     @include('news.latests', ['link' => 'individual'])

@@ -193,3 +193,12 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 
 Route::resource('foros', 'ForoController');
+
+Route::get('panel/avisos', ['as'=> 'panel.avisos.index', 'uses' => 'Panel\AvisosController@index']);
+Route::post('panel/avisos', ['as'=> 'panel.avisos.store', 'uses' => 'Panel\AvisosController@store']);
+Route::get('panel/avisos/create', ['as'=> 'panel.avisos.create', 'uses' => 'Panel\AvisosController@create']);
+Route::put('panel/avisos/{avisos}', ['as'=> 'panel.avisos.update', 'uses' => 'Panel\AvisosController@update']);
+Route::patch('panel/avisos/{avisos}', ['as'=> 'panel.avisos.update', 'uses' => 'Panel\AvisosController@update']);
+Route::delete('panel/avisos/{avisos}', ['as'=> 'panel.avisos.destroy', 'uses' => 'Panel\AvisosController@destroy']);
+Route::get('panel/avisos/{avisos}', ['as'=> 'panel.avisos.show', 'uses' => 'Panel\AvisosController@show']);
+Route::get('panel/avisos/{avisos}/edit', ['as'=> 'panel.avisos.edit', 'uses' => 'Panel\AvisosController@edit']);
