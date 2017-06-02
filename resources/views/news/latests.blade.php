@@ -23,7 +23,7 @@
 					</p>
 				</header>
 				<article>
-					<p>@{{item.cuerpo}}</p>
+					<p>@{{item.cuerpo | limitTo: 100}}...</p>
 				</article>
 				<footer>
 					<span class="label label-success tag">@{{item.sector.name}}</span>

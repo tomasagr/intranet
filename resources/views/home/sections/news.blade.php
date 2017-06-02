@@ -30,7 +30,7 @@
                 <p class="title" style="text-transform: uppercase">
 									<a style="color: green" href="/institutional/@{{item.id}}">@{{item.titulo}}</a>
 								</p>
-                <p class="content-body">@{{item.cuerpo}}</p>
+                <p class="content-body">@{{item.cuerpo | limitTo: 180}}</p>
               </article>
             </div>
           </li>
@@ -59,7 +59,7 @@
                 <p class="title" style="text-transform: uppercase">
 									<a href="/informal/@{{item.id}}" style="color: green; text-decoration-none">@{{item.titulo}}</a>
 								</p>
-                <p class="content-body">@{{item.cuerpo}}</p>
+                <p class="content-body">@{{item.cuerpo | limitTo: 180}}...</p>
               </article>
             </div>
           </li>
