@@ -24,16 +24,15 @@
 		</div>
 	</div>
 
-	<div class="info" ng-if="!infoSelected">
-		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" >
+	<div class="info">
+		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="!infoSelected">
 			<img class="img-responsive" src="/storage/@{{info[0].imagen}}" alt="" style="height: 632px;">
 			<div class="details">
 
 			</div>
 		</div>
 
-		<div class="info" ng-if="infoSelected">
-		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" >
+		<div class="container" style="position: relative; padding: 4em 0; height: 727px;" ng-if="infoSelected">
 			<img class="img-responsive" src="/storage/@{{infoSelected.imagen}}" alt="" style="height: 632px;">
 			<div class="details">
 
