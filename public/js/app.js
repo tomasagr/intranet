@@ -24541,7 +24541,7 @@ __webpack_require__(110);
 /* 108 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n\tfont-family: \"Lato\"font-size: 11px;\n                   ^\n      Invalid CSS after '...\"Lato\"font-size': expected \"}\", was \": 11px;\"\n      in /Users/lucas/Code/brandbox/intranet/resources/assets/sass/app.scss (line 92, column 21)\n    at runLoaders (/Users/lucas/Code/brandbox/intranet/node_modules/webpack/lib/NormalModule.js:192:19)\n    at /Users/lucas/Code/brandbox/intranet/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /Users/lucas/Code/brandbox/intranet/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/Users/lucas/Code/brandbox/intranet/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/Users/lucas/Code/brandbox/intranet/node_modules/sass-loader/lib/loader.js:51:13)\n    at Object.<anonymous> (/Users/lucas/Code/brandbox/intranet/node_modules/sass-loader/node_modules/async/dist/async.js:2262:31)\n    at apply (/Users/lucas/Code/brandbox/intranet/node_modules/sass-loader/node_modules/async/dist/async.js:20:25)\n    at Object.<anonymous> (/Users/lucas/Code/brandbox/intranet/node_modules/sass-loader/node_modules/async/dist/async.js:56:12)\n    at Object.callback (/Users/lucas/Code/brandbox/intranet/node_modules/sass-loader/node_modules/async/dist/async.js:944:16)\n    at options.error (/Users/lucas/Code/brandbox/intranet/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 109 */
