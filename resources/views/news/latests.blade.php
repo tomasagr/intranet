@@ -23,16 +23,14 @@
 					</p>
 				</header>
 				<article>
-					<p ng-bind-html="item.cuerpo | limitTo: 100">...</p>
+					<p ng-bind-html="item.cuerpo | limitTo: 100"></p>
 				</article>
 				<footer>
-					<span class="label label-success tag">@{{item.sector.name}}</span>
-					<div class="cover">
-						<span class="triangle"></span>
-					</div>
+					<span class="tag">
+						<p>@{{item.sector.name}}</p>
+					</span>
 				</footer>
 			</a>
 		</div>
-
 	</div>
 </div>

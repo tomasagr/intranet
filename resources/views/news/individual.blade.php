@@ -48,15 +48,14 @@
 								<article>
 									<p style="color: white">{{$item->titulo}}</p>
 								</article>
-								<footer>
+								<footer display="display: flex">
 									@if ($item->category_id == 3)
 									 <a href="/products/{{$item->id}}" style="color: black;">Ver mas</a>
 									@else
 										<a href="/individual/{{$item->id}}" style="color: black;">Ver mas</a>
 									@endif
-									<span class="label label-success tag">{{$item->sector->name}}</span>
-									<div class="cover">
-										<span class="triangle"></span>
+									<div class="tag-orange">
+										<p>{{$item->sector->name}}</p>
 									</div>
 								</footer>
 							</div>

@@ -66,16 +66,59 @@ select {
 	color: white;
 }
 
-.label.tag {
-	position: relative;
-    padding: .5em 0em .5em .6em;
-    text-align: left;
-    width: 62px !important;
-    display: inline-block;
-    height: 25px;
-    font-weight: 300;
-    background-color: transparent;
-    background: url(/images/tag.png?57da30f6c803f7fb132d72095f326fb5) no-repeat;
+.tag {
+  background: $green;
+  border-radius: 3px 0 0 3px;
+  color: white;
+  display: inline-block;
+  height: 26px;
+	font-size: 11px;
+	font-family: "Lato";
+	font-weight: 300;
+  line-height: 26px;
+  padding: 0 20px 0 10px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag-orange {
+  background: $orange;
+  border-radius: 3px 0 0 3px;
+  color: white;
+  display: inline-block;
+  height: 26px;
+	font-family: "Lato"font-size: 11px;
+	font-weight: 300;
+  line-height: 26px;
+  padding: 0 20px 0 10px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+
+	&::after {
+		background: $green;
+		border-bottom: 13px solid transparent;
+		border-left: 10px solid $orange;
+		border-top: 13px solid transparent;
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid $green;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .btn-summit {
