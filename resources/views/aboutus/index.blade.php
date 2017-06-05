@@ -57,8 +57,8 @@
 					<p class="name">@{{user.fullname}}</p>
 					<p class="charge">@{{user.position}}</p>
 					<p class="description">@{{user.bio | limitTo:161}}</p>
-					<a ng-if="user.id != {{Auth::user()->id}}" href="/profile/@{{user.id}}" style="color:orange">Ver mas</a>
-					<a ng-if="user.id == {{Auth::user()->id}}" href="/profile" style="color:orange">Ver mas</a>
+					<a ng-if="user.id != {{Auth::user()->id}}" href="/profile/@{{user.id}}" style="color:orange">Ver más</a>
+					<a ng-if="user.id == {{Auth::user()->id}}" href="/profile" style="color:orange">Ver más</a>
 				</div>
 			</div>
 		</div>
