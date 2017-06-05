@@ -63,6 +63,8 @@
 			</div>
 		</div>
 
+		
+
 		<div class="col-md-12">
 			<div class="slider">
 				<img width="100%" class="img-responsive" src="{{asset('/storage/'.$contenido->image)}}" alt="">
