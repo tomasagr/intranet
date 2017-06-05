@@ -12,7 +12,7 @@ class ProfileController extends Controller
         if ($id == \Auth::user()->id) {
             return redirect('/profile');
         }
-        $user = User::with(['sector', 'unit', ['profile']])->find($id);
+        $user = User::with(['sector', 'unit', 'profile'])->find($id);
         return view('profile.show', compact('user'));
     }
 }

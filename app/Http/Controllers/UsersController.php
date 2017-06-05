@@ -27,7 +27,7 @@ class UsersController extends Controller
 
     public function show($id) 
     {
-        $user = User::with(['voting','profile', 'unit', 'sector'])
+        $user = User::with(['voting', 'profile', 'unit', 'sector'])
                      ->find($id);
         return $user;
     }
