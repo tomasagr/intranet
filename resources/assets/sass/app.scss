@@ -472,8 +472,18 @@ $duration: 20s;
 	}
 }
 
+#forum-sidebar-mobile {
+		display: none;
+	}
 
 @media all and (max-width: 375px) {
+	.content-list {
+		padding: 0 1em;
+	}
+
+	.forum-header{
+		margin: 0em 1em;
+	}
 	.background-login {
 		.login-container {
 			width: 80%;
@@ -583,4 +593,48 @@ $duration: 20s;
     text-align: center;
 }
 	}
+
+
+.jobs-detail .options {
+    width: 90%;
+}
+
+.rse-images .description {
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.salas .sala-tabs {
+	text-align: center;
+		button {
+			margin: 0;
+			margin-bottom: 10px;
+		}
+	}
+.calendar-module {
+	text-align: center;
+
+	.hour-range {
+		align-items: center;
+	}
+}
+
+	#forum-sidebar-desktop {
+		display: none;
+	}
+
+	.messages {
+		margin: 0 1em;
+	}
+
+		#forum-sidebar-mobile {
+		
+		display: block;
+	}
+}
+
+
+
+input[type="radio"], input[type="checkbox"] {
+	width: 13px;
 }

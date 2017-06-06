@@ -102,7 +102,7 @@
 				</div>
 			</div>
 
-			<div>
+			<div style="padding: 1em">
 				<form action="/forum/{{$foro->id}}">
 					<input placeholder="Buscar..." type="text" name="q" class="form-control" style="border-radius:20px;">
 					<button type="submit" style="display:none"></button>

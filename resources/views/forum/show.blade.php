@@ -3,7 +3,7 @@
 @include('layouts.header')
 <div class="row">
 	<div class="container" style="padding: 2em 0;">
-		<div class="col-md-3">
+		<div class="col-md-3" id="forum-sidebar-desktop">
 			@include('forum.sidebar-extra', ['foro' => $foro])
 		</div>
 		<div class="col-md-9">
@@ -12,7 +12,8 @@
 			</div>
 
 			<div class="content-list">
-				<table class="table" style="background: white;">
+				<div class="table-responsive">
+					<table class="table" style="background: white;">
 					<thead>
 						<th>TEMA</th>
 						<th style="text-align:center;">FORO</th>
@@ -53,7 +54,12 @@
 						@endforeach
 					</tbody>
 				</table>
+				</div>
 			</div>
+		</div>
+
+		<div class="col-md-3" id="forum-sidebar-mobile">
+			@include('forum.sidebar-extra', ['foro' => $foro])
 		</div>
 	</div>
 </div>
