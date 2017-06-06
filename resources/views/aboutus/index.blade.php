@@ -7,7 +7,7 @@
 			<h1 class="title">Quienes Somos</h1>
 			<div class="content">
 				<p>
-					{{$contenido->cuerpo}}
+					{!! $contenido->cuerpo !!}
 				</p>
 			</div>
 		</div>

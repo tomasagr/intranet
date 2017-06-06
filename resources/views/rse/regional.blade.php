@@ -14,7 +14,7 @@
 			<img width="100%" class="img-responsive" src="{{'/storage/'.$contenido->image}}" alt="" style="height: auto!important;">
 			<p class="date">{{$contenido->updated_at->format('d-m-Y')}}</p>
 			<div class="content">
-				<p style="column-count: 2;"> {{$contenido->cuerpo}}</p>
+				<p style="column-count: 2;"> {!! $contenido->cuerpo !!}</p>
 			</div>
 		</div>
 	</div>

@@ -17,7 +17,7 @@
 
 			<div class="content">
 				<p style="column-count: 2;"> 
-				 {{$contenido->cuerpo}}
+				 {!! $contenido->cuerpo !!}
 				</p>
 			</div>
 		</div>
