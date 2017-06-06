@@ -37,7 +37,7 @@
 					<div class="products-items clearfix">
 						<div class="item clearfix">
 							<div class="image">
-								<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $item->image)}}); background-size: cover; width:100%; height: 150px;">
+								<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $item->image)}}); background-size: cover; width:100%; height: 150px;background-position: 0;">
 							</div>
 							<div class="item-content">
 								<header>
