@@ -634,14 +634,13 @@ $duration: 20s;
 }
 
 
-
-input[type="radio"], input[type="checkbox"] {
-	width: 13px;
-}
-
 .main-menu {
 	.btn-group > .btn:first-child {
     margin-left: 0;
     font-family: "Lato";
 	}
+}
+
+.radiocalendar {
+	height: 13px!important;
 }

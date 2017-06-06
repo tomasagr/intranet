@@ -48,8 +48,8 @@
 								No hay franjas horarias guardadas o disponibles
 							</div>
 							<input type="hidden" value="{{\Auth::user()->id}}" data-userid>
-							<label ng-repeat="item in franja" style="display: flex;">
-								<input type="radio" value="@{{item.id}}" ng-model="$parent.reservation">
+							<label class="radio-label" ng-repeat="item in franja" style="display: flex;">
+								<input class="radiocalendar" type="radio" value="@{{item.id}}" ng-model="$parent.reservation">
 								<span style="margin-left: 10px;">@{{item.start}} - @{{item.end}}</span>
 							</label>
 						</div>
