@@ -57,7 +57,7 @@
 
 	<li><a href="/forum">FOROS</a></li>
 
-	<li><a href="/rincon-japones">RINCÓN JAPONES</a></li>
+	<li><a href="/rincon-japones">RINCÓN JAPONÉS</a></li>
 
 	<li style="position:relative; border: 0">
 		<a href="" ng-click="toggleBox()"><i class="fa fa-search"></i></a>
