@@ -88,7 +88,7 @@
 			<div class="messages">
 				<div class="item">
 					<header>
-						<p>MAS POPULARES</a>
+						<p>MÁS POPULARES</a>
 						<p>{{$comentarios->where('foro_id', $foro->id)->count()}}</p>
 					</header>
 					<hr>

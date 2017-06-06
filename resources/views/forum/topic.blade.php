@@ -41,7 +41,7 @@
 				
 				<form action="/foro/{{$tema->foro_id}}/tema/{{$tema->id}}/comentario" style="padding: 2em;" method="POST">
 					{{csrf_field()}}
-					<textarea style=" height: 200px;" name="cuerpo" class="form-control" placeholder="Escribe tu respusta aquí"></textarea>
+					<textarea style=" height: 200px;" name="cuerpo" class="form-control" placeholder="Escribe tu respuesta aquí"></textarea>
 					<br>
 					<div class="pull-right">
 						<button type="submit" class="btn btn-warning danger-alternative"

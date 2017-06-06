@@ -18,7 +18,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <p>Titulo del tema (Maximo 80 caracteres)</p>
+                <p>Título del tema (Máximo 80 caracteres)</p>
                 <input name="nombre" type="text" class="form-control" maxlength="80" autofocus required>
               </div>
             </div>

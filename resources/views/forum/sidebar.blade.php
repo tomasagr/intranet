@@ -35,7 +35,7 @@
 			<div class="messages">
 				<div class="item">
 					<header>
-						<p>MAS POPULARES</p>
+						<p>MÁS POPULARES</p>
 						<p>{{$comentarios->count()}}</p>
 					</header>
 					<hr>
