@@ -66,7 +66,7 @@
 				ng-show="isOpen"
 				type="text" class="form-control" 
 				ng-model="querySend"
-				placeholder="Ingrese su busqueda"
+				placeholder="Ingrese su búsqueda"
 				style="position: absolute;
 				transition: .3s all ease;
 				width: 300px;

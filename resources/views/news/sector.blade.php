@@ -1,10 +1,11 @@
 @inject('model', 'Intranet\Sector')
 @extends('layouts.master')
 @section('content')
+@inject('sectorName', 'Intranet\Sector')
 @include('layouts.header')
 <div class="main-content" style="padding-top: 1em; margin-top: 0; background: white;">
 	<div class="title" style="margin: 0; padding-bottom: 1em">
-		RSE
+		{{$sectorName->find($sector[0]->sector_id)->name}}
 	</div>
 	<div class="container clearfix">
 		<div class="col-md-12">
@@ -49,7 +50,7 @@
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
+									<img class="img-responsive" src="" style="background:url({{asset('/storage/'.$item->image)}}); background-size:cover; width:100%; height:160px;" alt="">
 								</div>
 								<div class="item-content">
 									<header>
@@ -97,7 +98,7 @@
 						<div class="products-items clearfix">
 							<div class="item clearfix">
 								<div class="image">
-									<img class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
+									<img class="img-responsive" src="" style="background:url({{asset('/storage/'.$item->image)}}); background-size:cover; width:100%; height:160px;" alt="">
 								</div>
 								<div class="item-content">
 									<header>

@@ -9,7 +9,7 @@
 	<div class="rse" style="background: white;">
 		<div class="container">
 			<div class="col-md-12">
-				<img class="img-responsive" src="{{asset('/storage/'. $noticia->image)}}" alt="" style="height: 320px!important; width: 100%">
+				<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $noticia->image)}}); background-size: cover; width:100%; height: 320px;">
 
 				<p class="date" style="margin-bottom: 5px">{{$noticia->created_at->format('d-m-Y')}} | <b style="color: black;text-transform:uppercase;">{{$noticia->category->name}}</b></p>
 
@@ -32,12 +32,12 @@
 			<h2>Otras noticias relacionadas</h2>
 
 			<div class="col-md-12" style="margin-top: 1em; padding: 0 0;">
-				@foreach($ultimas as $item)
+				@foreach($ultimas->slice(0, 4) as $item)
 				<div class="col-md-3" style="margin: 3em 0;">
 					<div class="products-items clearfix">
 						<div class="item clearfix">
 							<div class="image">
-								<img class="img-responsive" src="{{asset('/storage/'. $item->image)}}" alt="">
+								<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $item->image)}}); background-size: cover; width:100%; height: 150px;">
 							</div>
 							<div class="item-content">
 								<header>
@@ -50,9 +50,9 @@
 								</article>
 								<footer display="display: flex">
 									@if ($item->category_id == 3)
-									 <a href="/products/{{$item->id}}" style="color: black;">Ver mas</a>
+									 <a href="/products/{{$item->id}}" style="color: black;">Ver más</a>
 									@else
-										<a href="/individual/{{$item->id}}" style="color: black;">Ver mas</a>
+										<a href="/individual/{{$item->id}}" style="color: black;">Ver más</a>
 									@endif
 									<div class="tag-orange">
 										<p>{{$item->sector->name}}</p>

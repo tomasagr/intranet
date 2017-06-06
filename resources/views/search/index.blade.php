@@ -16,7 +16,7 @@
 							 ng-model="querySend"
 						   class="form-control"  
 							 style="border-radius: 20px;"
-							 placeholder="Ingrese Aquí su busqueda">
+							 placeholder="Ingrese Aquí su búsqueda">
 				  <a href="" type="submit" style="position: absolute;top: 42px;left: -7px;-webkit-appearance:initial; opacity: 0"><i class="fa fa-search"></i></a>
 				</form>
 			</div>
