@@ -39,6 +39,7 @@ angular.module('app.salas-controller', [])
         })
 
       $scope.setTab = function (name, date) {
+        $scope.reservation = null
         $scope.tab = name
         $scope.daySelected = moment(date).format($scope.format)
 

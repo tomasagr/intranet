@@ -7,7 +7,7 @@
 <!-- Cuerpo Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('cuerpo', 'Cuerpo:') !!}
-    {!! Form::textarea('cuerpo', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('cuerpo', null, ['class' => 'form-control edit-area']) !!}
 </div>
 
 <!-- Image Field -->

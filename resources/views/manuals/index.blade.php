@@ -40,7 +40,7 @@
 						@{{item.cuerpo}}
 					</p>
 				</div>
-				<div class="options">
+				<div class="options" style="opacity:0">
 					<div class="col-md-12 first">
 						<div class="col-md-6">
 							<p class="option">Primera Opción</p>
@@ -75,7 +75,7 @@
 						@{{item.cuerpo}}
 					</p>
 				</div>
-				<div class="options">
+				<div class="options" style="opacity:0">
 					<div class="col-md-12 first">
 						<div class="col-md-6">
 							<p class="option">Primera Opción</p>

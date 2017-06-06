@@ -11,18 +11,6 @@
     {!! Form::textarea('cuerpo', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Opcion1 Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('opcion1', 'Opcion1:') !!}
-    {!! Form::text('opcion1', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Opcion2 Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('opcion2', 'Opcion2:') !!}
-    {!! Form::text('opcion2', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Type Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('type', 'Tipo:') !!}

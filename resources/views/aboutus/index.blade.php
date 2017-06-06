@@ -63,11 +63,15 @@
 			</div>
 		</div>
 
-		
-
-		<div class="col-md-12">
-			<div class="slider">
-				<img width="100%" class="img-responsive" src="{{asset('/storage/'.$contenido->image)}}" alt="">
+		<div class="col-md-12 aboutus-slider">
+			<div class="my-slider">
+				<ul class="slider">
+				@foreach($contenido->images as $item)
+					<li class="slider-item">
+						<img width="100%" style="height:547px;" class="img-responsive" src="{{asset('/storage/'.$item->imagen)}}" alt="">
+					</li>
+				@endforeach
+			</ul>
 			</div>
 		</div>
 	</div>

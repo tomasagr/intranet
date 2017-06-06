@@ -48,7 +48,6 @@
   </ul>
 </li>
 
-
 <li class="treeview {{ Request::is('panel/contenidos/1/edit') || Request::is('panel/contenidos/2/edit') ||  Request::is('panel/contenidos/3/edit') ? 'active menu-open' : '' }}">
   <a href="#"><i class="fa fa-file-text-o"></i>
   <span>RSE</span>
@@ -126,5 +125,19 @@
     <a href="{!! route('foros.index') !!}"><i class="fa fa-comment"></i><span>FOROS</span></a>
 </li>
 
-
-
+<li class="treeview">
+  <a href="#"><i class="fa fa-image"></i>
+  <span>GALERIAS/SLIDERS</span>
+  <span class="pull-right-container">
+  <i class="fa fa-angle-left pull-right"></i>
+  </span>
+  </a>
+  <ul class="treeview-menu">
+    <li class="{{ Request::is('sliders*') ? 'active' : '' }}">
+      <a href="{!! route('sliders.index') !!}"><i class="fa fa-edit"></i><span>Imagenes</span></a>
+    </li>
+    <li class="{{ Request::is('galeria/informacion*') ? 'active' : '' }}">
+      <a href="/galerias/informacion"><i class="fa fa-edit"></i><span>Galerias Información</span></a>
+    </li>
+  </ul>
+</li>

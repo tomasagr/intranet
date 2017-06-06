@@ -9,19 +9,19 @@ class RSEController extends Controller
 {
     public function solidaria()
     {
-        $contenido = Contenido::where('tag', 'SOLIDARIA')->first();
+        $contenido = Contenido::with('images')->where('tag', 'SOLIDARIA')->first();
     	return view('rse.solidaria', compact('contenido'));
     }
 
     public function regional()
     {
-        $contenido = Contenido::where('tag', 'REGIONAL')->first();
+        $contenido = Contenido::with('images')->where('tag', 'REGIONAL')->first();
     	return view('rse.regional', compact('contenido'));
     }
 
     public function begreen()
     {
-        $contenido = Contenido::where('tag', 'BEGREEN')->first();
+        $contenido = Contenido::with('images')->where('tag', 'BEGREEN')->first();
     	return view('rse.begreen', compact('contenido'));
     }
 }

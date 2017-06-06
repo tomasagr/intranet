@@ -55,8 +55,6 @@ class Manuales extends Model
     public static $rules = [
         'titulo' => 'required',
         'cuerpo' => 'required',
-        'opcion1' => 'required',
-        'opcion2' => 'required',
         'type' => 'required',
         'sector_id' => 'required'
     ];

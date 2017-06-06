@@ -18,7 +18,6 @@
 				<hr>
 			</div>
 			<div class="videos-preview col-md-6">
-				<img src="/images/video-prev.png" alt="" ng-if="!videoSelected">
 				<iframe width="100%" height="300" src="@{{link}}" frameborder="0" allowfullscreen ng-if="videoSelected"></iframe>
 			</div>
 		</div>

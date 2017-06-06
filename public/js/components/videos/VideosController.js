@@ -1,10 +1,12 @@
 angular.module('app.video-controller', [])
   .controller('VideosController', ['$scope', '$http', '$sce', function ($scope, $http, $sce) {
-    $scope.videoSelected = null
+    $scope.videoSelected = true
 
     $http.get('/api/videos')
       .then(function (response) {
         $scope.videos = response.data
+        var link = $scope.videos[0].link
+        $scope.link = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + link)
       })
 
     $http.get('/api/informacion')

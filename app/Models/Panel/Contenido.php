@@ -4,7 +4,7 @@ namespace Intranet\Models\Panel;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use Intranet\Models\Slider;
 /**
  * Class Contenido
  * @package App\Models\Panel
@@ -47,5 +47,8 @@ class Contenido extends Model
         'cuerpo' => 'required'
     ];
 
-    
+    public function images () 
+    {
+        return $this->hasMany(Slider::class);
+    }
 }

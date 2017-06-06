@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 
 Route::group(['middleware' => 'auth'], function() {
+	Route::get('/galerias/informacion', 'SliderController@info');
+	Route::post('/galerias/informacion/{id}', 'SliderController@saveInfo');
 	Route::post('/foro/{foro}/tema/{tema}/comentario', 'TemaComentarioController@store');
 	Route::post('users/{id}/vote', 'UsersController@vote');
 	Route::get('/home', 'HomeController@index');
@@ -202,3 +204,8 @@ Route::patch('panel/avisos/{avisos}', ['as'=> 'panel.avisos.update', 'uses' => '
 Route::delete('panel/avisos/{avisos}', ['as'=> 'panel.avisos.destroy', 'uses' => 'Panel\AvisosController@destroy']);
 Route::get('panel/avisos/{avisos}', ['as'=> 'panel.avisos.show', 'uses' => 'Panel\AvisosController@show']);
 Route::get('panel/avisos/{avisos}/edit', ['as'=> 'panel.avisos.edit', 'uses' => 'Panel\AvisosController@edit']);
+
+
+Route::resource('sliders', 'SliderController');
+
+Route::resource('sliders', 'SliderController');

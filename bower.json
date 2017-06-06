@@ -23,6 +23,8 @@
     "trumbowyg": "^2.5.1",
     "angular-bootstrap-calendar": "^0.29.1",
     "underscore": "^1.8.3",
-    "iCheck": "^1.0.2"
+    "iCheck": "^1.0.2",
+    "ekko-lightbox": "^5.1.1",
+    "lightbox2": "^2.9.0"
   }
 }

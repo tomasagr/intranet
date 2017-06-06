@@ -1,3 +1,4 @@
+@inject('info', 'Intranet\GaleriaInformacion')
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
@@ -15,7 +16,7 @@
 			<p class="date">{{$contenido->updated_at->format('d-m-Y')}}</p>
 
 			<div class="content">
-				<p>
+				<p style="column-count: 2;"> 
 				 {{$contenido->cuerpo}}
 				</p>
 			</div>
@@ -26,18 +27,21 @@
 <div class="rse-images clearfix">
 	<div class="container">
 		<div class="col-md-3 description">
-			<div class="title">Lorem ipsum dolor sit amet, consectetur</div>
+			<div class="title">{{$info->all()[0]->titulo}}</div>
 			<p class="content">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis magni eveniet molestiae sapiente ipsum ea, impedit quae aliquam nesciunt omnis nam soluta illum quam alias numquam consectetur at voluptatibus accusantium.
+				{{$info->all()[0]->texto}}
 			</p>
 		</div>
 
 		<div class="col-md-9 images">
-			@for($i = 0; $i < 6; $i++)
-				<div class="col-md-4 image-item">
-					<img src="/images/item-rse.png" alt="">
-				</div>
-			@endfor
+				@foreach($contenido->images as $item)
+					<div class="col-md-4 image-item">
+						<a href="{{asset('/storage/'.$item->imagen)}}" data-lightbox="roadtrip">
+							<img class="img-responsive" src="{{asset('/storage/'.$item->imagen)}}"
+								style="width:100%; height:205px;">
+						</a>
+					</div>
+				@endforeach
 		</div>
 	</div>
 </div>

@@ -14,6 +14,7 @@
 	<link href="/bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/bower_components/iCheck/skins/square/_all.css">
 	<link rel="stylesheet" href="/bower_components/trumbowyg/dist/ui/trumbowyg.css">
+	<link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
 
 </head>
 <body class="main background-main" ng-cloak>
@@ -44,6 +45,7 @@
 		 <script src="/bower_components/underscore/underscore-min.js"></script>
 		 <script src="/bower_components/iCheck/icheck.js"></script>
 		 <script src="/bower_components/trumbowyg/dist/trumbowyg.js"></script>
+		 <script src="/bower_components/lightbox2/dist/js/lightbox.js"></script>
 
 		 <!-- APP -->
 		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>
@@ -90,6 +92,10 @@
 						$('.users').css('display', 'none')
 					}
        	})
+				 $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    			event.preventDefault();
+    			$(this).ekkoLightbox();
+				});
 			});
 		</script>
 
