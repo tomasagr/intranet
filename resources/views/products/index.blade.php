@@ -38,9 +38,9 @@
 		</div>
 		@endforeach
 	</div>
-
+	
 	<div class="col-md-12" style="margin-top: 3em;">
-		@foreach($productos as $item)
+		@foreach($productos->slice(2) as $item)
 		<div class="col-md-3" style="margin: 3em 0;">
 			<div class="products-items clearfix">
 				<div class="item clearfix">
