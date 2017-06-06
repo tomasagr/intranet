@@ -13,7 +13,10 @@
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
-							<img class="img-responsive" src="{{asset('/storage/'. $item->image)}}" alt="">
+							<img class="img-responsive" src=""
+									 alt=""
+									 style="background:url({{asset('/storage/'. $item->image)}}); background-size:cover;width: 100%;
+    height: 190px;">
 						</div>
 						<div class="item-content">
 							<header>
@@ -26,7 +29,7 @@
 								<p>{{$item->titulo}}</p>
 							</article>
 							<footer>
-								<a href="/institutional/{{$item->id}}">Ver mas</a>
+								<a href="/institutional/{{$item->id}}">Ver más</a>
 								<span class="label label-success tag">{{$item->sector->name}}</span>
 								<div class="cover">
 									<span class="triangle"></span>
