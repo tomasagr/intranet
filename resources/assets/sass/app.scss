@@ -471,3 +471,116 @@ $duration: 20s;
 		}
 	}
 }
+
+
+@media all and (max-width: 375px) {
+	.background-login {
+		.login-container {
+			width: 80%;
+		}
+	} 
+
+	.card .inline-flex {
+		display: block;
+	}
+
+	.card .upload-row {
+		flex: block;
+		flex-direction: column;
+
+			img {
+				margin-bottom: 1em;
+			}
+	}
+
+	.lastest-news .news-items {
+    display: flex;
+    flex-wrap: wrap;
+		
+		.item {
+			width: 100%;
+		}
+
+		.item > a {
+			width: 100%;
+		}
+	}
+
+	.news-slider {
+		button.btn.btn-warning.danger-alternative.orange-alt {
+			width: 100%;
+			font-size: 11px;
+			margin-bottom: 2em;
+		}
+	}
+
+	.news-slider .title-top .title {
+    margin: 0 auto !important;
+	}
+
+	.col-md-6.calendar-item {
+		padding: 0;
+    font-size: 11px;
+	}
+
+	.agenda .ticks span {
+    margin-right: 4em;
+    font-size: 11px;
+    font-weight: 600;
+	}
+
+	.sectores.clearfix {
+    text-align: center;
+
+		img {
+			display: inline-block;
+			text-align: center;
+		}
+	}
+
+
+	.aboutus {
+		.my-slider {
+			.unslider {
+				overflow: hidden;
+			}
+			img {
+				height: auto !important; 
+			}
+		}
+	}
+
+	.manuals {
+		.options {
+			display: none;
+		}
+
+	.manual-lists .description .image {
+			margin: 1em;
+			margin-left: 0;
+		}
+	}
+
+	div#myModal {
+		width: 380px;
+	}
+
+	.jobs-list .description {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		
+
+		.data {
+			padding: 0;
+			text-align: center
+		}
+
+		.options {
+    margin: 2em 0em;
+    padding: 0 8em;
+    text-align: center;
+}
+	}
+}
