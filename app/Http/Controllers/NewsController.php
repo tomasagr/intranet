@@ -4,6 +4,7 @@ namespace Intranet\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intranet\Models\Panel\Noticias;
+use Intranet\Sector;
 
 class NewsController extends Controller
 {
@@ -109,10 +110,11 @@ class NewsController extends Controller
 
     public function sector($id) 
     {
+        $sectorNombre = Sector::find($id)->name;
         $institutional = Noticias::where('category_id', 2)->where('sector_id', $id)->limit(2)->get();
         $informal = Noticias::where('category_id', 1)->where('sector_id', $id)->limit(2)->get();
         $sector = Noticias::limit(2)->where('sector_id', $id)->get();
-    	return view('news.sector', compact('institutional', 'informal', 'sector'));
+    	return view('news.sector', compact('institutional', 'informal', 'sector', 'sectorNombre'));
     }
 
 }
