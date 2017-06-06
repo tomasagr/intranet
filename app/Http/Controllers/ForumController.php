@@ -70,10 +70,23 @@ class ForumController extends Controller
 
     public function store(Request $request) 
     {
-        $data = $request->all();
-        $data["author_id"] = \Auth::user()->id;
 
+        $data = $request->all();
+        
+        $data["author_id"] = \Auth::user()->id;
+        
         $tema = Tema::create($data);
+        
+        $data["user_id"] =  array_map(function($element) {
+            $user = \Intranet\User::where('fullname', $element)->first();
+
+            \Mail::to($user)->send(new \Intranet\Mail\EmailForumTopic($user));
+
+            return $user->id;
+        }, $data["user_id"]);
+
+        
+        $tema->users()->attach($data["user_id"]);     
 
         if ($tema) {
             \Flash::success('Tema creado con éxito');

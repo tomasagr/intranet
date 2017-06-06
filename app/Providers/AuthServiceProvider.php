@@ -36,5 +36,19 @@ class AuthServiceProvider extends ServiceProvider
                 return $element->tag == 'UPDATE_USERS';
             });
         });
+
+        Gate::define('topic', function($user, $tema) {
+            if ($tema->privado == 1) {
+                $isAuthor = $tema->author_id == \Auth::user()->id;
+
+                $isUser = $tema->users->first(function($element) {
+                    return $element->user_id == \Auth::user()->id;
+                });
+                
+                return $isAuthor || $isUser;
+            }
+
+            return true;
+        });
     }
 }

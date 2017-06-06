@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="/bower_components/iCheck/skins/square/_all.css">
 	<link rel="stylesheet" href="/bower_components/trumbowyg/dist/ui/trumbowyg.css">
 	<link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
+	<link rel="stylesheet" href="/bower_components/angucomplete-alt/angucomplete-alt.css">
 
 </head>
 <body class="main background-main" ng-cloak>
@@ -98,8 +99,7 @@
 				});
 			});
 		</script>
-
-
+		<script src="/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
 
 	</body>
 	</html>

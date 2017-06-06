@@ -22,6 +22,16 @@
         })
     }
 
+    vm.search = function (q) {
+      return $http.get('/api/users/search?q=' + q)
+        .then(function (response) {
+          return response.data
+        })
+        .catch(function (error) {
+          return error
+        })
+    }
+
     vm.getAll = function (id) {
       return $http.get('/api/users/' + id)
         .then(function (response) {

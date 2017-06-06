@@ -29,29 +29,31 @@
 					</thead>
 					<tbody>
 						@foreach($temas as $key => $tema)
-							<tr>
-							<td>
-								<b><a style="color: black; text-transform: uppercase;" href="/topic/{{$tema->id}}">{{$tema->nombre}}</a></b>
-								<p>Iniciado por: {{$tema->autor->fullname}}</p>
-							</td>
-							<td>
-								<button type="submit" class="btn @if($key % 2 == 0 ) {{'btn-success'}}  @else {{'btn-warning'}} @endif danger-alternative"
-									style="width: 100%; padding: inherit 1em; @if($key % 2 == 0 ) {{'background: #74B956'}}  @endif"
-									onclick="window.location='/forum/{{$tema->foro_id}}'">{{$tema->foro->nombre}}</button>
-							</td>
-							<td style="text-align:center;">
-								{{$tema->comentario->count()}}
-							</td>
-							<td style="text-align:center;">
-								{{$tema->comentario->count()}}
-							</td>
-							<td>
-								{{$tema->updated_at->diffForHumans()}}
-							</td>
-							@if (Auth::user()->rol_id == 1)
-								<td><a href="/topic/{{$tema->id}}/delete" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
-							@endif
+							@can('topic', $tema)
+								<tr>
+								<td>
+									<b><a style="color: black; text-transform: uppercase;" href="/topic/{{$tema->id}}">{{$tema->nombre}}</a></b>
+									<p>Iniciado por: {{$tema->autor->fullname}}</p>
+								</td>
+								<td>
+									<button type="submit" class="btn @if($key % 2 == 0 ) {{'btn-success'}}  @else {{'btn-warning'}} @endif danger-alternative"
+										style="width: 100%; padding: inherit 1em; @if($key % 2 == 0 ) {{'background: #74B956'}}  @endif"
+										onclick="window.location='/forum/{{$tema->foro_id}}'">{{$tema->foro->nombre}}</button>
+								</td>
+								<td style="text-align:center;">
+									{{$tema->comentario->count()}}
+								</td>
+								<td style="text-align:center;">
+									{{$tema->comentario->count()}}
+								</td>
+								<td>
+									{{$tema->updated_at->diffForHumans()}}
+								</td>
+								@if (Auth::user()->rol_id == 1)
+									<td><a href="/topic/{{$tema->id}}/delete" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+								@endif
 						</tr>
+							@endcan
 						@endforeach
 					</tbody>
 				</table>

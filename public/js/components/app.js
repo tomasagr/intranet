@@ -17,7 +17,8 @@ var app = angular.module('app', [
   'ngFileUpload',
   'oitozero.ngSweetAlert',
   'mwl.calendar',
-  'ngSanitize'
+  'ngSanitize',
+  'angucomplete-alt'
 ])
 
 app.filter('inDate', function () {

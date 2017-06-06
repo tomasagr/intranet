@@ -16,13 +16,21 @@ class UsersController extends Controller
     public function profile()
     {
         $voting = \Auth::user()->voting;
-        
     	return view('users.profile', compact('voting'));
     }
 
     public function index() 
     {
         return User::with(['profile', 'unit', 'sector', 'voting'])->get();
+    }
+
+    public function search(Request $request) 
+    {
+        if ($request->q) {
+            return User::where('fullname', 'LIKE', "%$request->q%")->get();
+        } else {
+            return User::all();
+        }
     }
 
     public function show($id) 
@@ -32,7 +40,7 @@ class UsersController extends Controller
         return $user;
     }
 
-    public function register(Request $request) 
+    public function register(Request $request)
     {
         $data = $request->all();
     

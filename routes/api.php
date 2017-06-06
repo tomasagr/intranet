@@ -19,6 +19,7 @@ Route::get('/units/{id}/sectors', 'UnitSectorsController@show');
 
 Route::post('/users', 'UsersController@register');
 Route::get('/users', 'UsersController@index');
+Route::get('/users/search', 'UsersController@search');
 Route::get('/users/{id}', 'UsersController@show');
 Route::post('/users/{id}/edit', 'UsersController@update');
 

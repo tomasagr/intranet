@@ -52,7 +52,7 @@ class Tema extends Model
 
     public function users() 
     {
-        return $this->belongsToMany(User::class, 'usuario_tema', 'tema_id', 'user_id');
+        return $this->belongsToMany(User::class, 'usuario_temas', 'tema_id', 'user_id');
     }
 
     public function autor() 
