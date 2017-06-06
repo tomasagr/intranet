@@ -23,7 +23,7 @@
 					</p>
 				</header>
 				<article>
-					<p ng-bind-html="item.cuerpo | limitTo: 100"></p>
+					<p ng-bind-html="item.titulo | limitTo: 100"></p>
 				</article>
 				<footer>
 					<span class="tag">
