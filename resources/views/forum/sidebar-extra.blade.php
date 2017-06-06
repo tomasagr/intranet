@@ -32,7 +32,7 @@
 
 				<div class="item">
 					<header>
-						<p><a href="">ULTIMO POST</a></p>
+						<p><a href="">ÚLTIMO POST</a></p>
 						<p>
 							@if (count($foro->temas()->orderBy('created_at', 'desc')->first()))
 								{{$foro->temas()->orderBy('created_at', 'desc')->first()->autor->fullname}}
@@ -46,7 +46,7 @@
 			
 				<div class="item">
 					<header>
-						<p><a href="">ULTIMA ACTIVIDAD</a></p>
+						<p><a href="">ÚLTIMA ACTIVIDAD</a></p>
 						<p>
 							@if (count($foro->temas()->orderBy('created_at', 'desc')->first()))
 								{{$foro->temas()->orderBy('created_at', 'desc')->first()->created_at->diffForHumans()}}
