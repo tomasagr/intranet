@@ -22,7 +22,7 @@
 @else
     <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('category_id', 'Categoria:') !!}
-    {!! Form::select('category_id', $category->all()->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
+    {!! Form::select('category_id', $category->all()->slice(0,2)->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
 </div>
 @endif
 
