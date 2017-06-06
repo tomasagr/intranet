@@ -4,10 +4,10 @@
 @include('layouts.header')
 <div class="row">
 	<div class="container" style="padding: 2em 0;">
-		<div class="col-md-3">
+		<div class="col-md-3" id="forum-sidebar-desktop">
 			@include('forum.sidebar', ['foros' => $foros])
 		</div>
-		<div class="col-md-9">
+		<div class="col-md-9" >
 			<div class="forum-header grey">
 				CREAR TEMA
 			</div>
@@ -92,13 +92,17 @@
 
           <div class="row">
             <div class="col-md-12">
-              <div class="button-send pull-right">
+              <div class="button-send pull-right button-responsive">
                 <button type="submit" class="btn btn-warning danger-alternative orange-alt">ENVIAR</button>
               </div>
             </div>
           </div>
         </form>
 			</div>
+		</div>
+
+    <div class="col-md-3" id="forum-sidebar-mobile">
+			@include('forum.sidebar', ['foros' => $foros])
 		</div>
 	</div>
 </div>

@@ -4,7 +4,7 @@
 @include('layouts.header')
 <div class="row">
 	<div class="container" style="padding: 2em 0;">
-		<div class="col-md-3">
+		<div class="col-md-3" id="forum-sidebar-desktop">
 			@include('forum.sidebar')
 		</div>
 		<div class="col-md-9">
@@ -49,6 +49,9 @@
 					</div>
 				</form>
 			</div>
+		</div>
+			<div class="col-md-3" id="forum-sidebar-mobile">
+			@include('forum.sidebar')
 		</div>
 	</div>
 </div>
