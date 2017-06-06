@@ -52,7 +52,7 @@
 			<div class="pearsons-list">
 				<div ng-cloak ng-show="!filteredUser.length" class="alert alert-info">No hay personas para el filtro aplicado.</div>
 				<div class="col-md-3 pearson text-center" ng-repeat="user in filteredUser = (users | filter:search)" style="height:350px;">
-					<img  ng-if="user.avatar && user.avatar != 'null'"  class="img-responsive img-circle" ng-src="/storage/@{{user.avatar}}" alt="" style="display: inline-block; width: 150px; height: 140px;" >
+					<img  ng-if="user.avatar && user.avatar != 'null'"  class="img-responsive img-circle"  alt="" style="display: inline-block; width: 150px; height: 140px;background:url(/storage/@{{user.avatar}});background-size:cover; background-position:center">
 					<img  ng-if="user.avatar == 'null' || !user.avatar"  class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
 					<p class="name">@{{user.fullname}}</p>
 					<p class="charge">@{{user.position}}</p>
