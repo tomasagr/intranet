@@ -85,7 +85,7 @@
 		</h1>
 	</div>
 	@include('partials.sugerencias', [
-		'titles' => ['Rincon Japones', 'Productos'],
+		'titles' => ['Rincón Japonés', 'Productos'],
 		'links' => ['/rincon-japones', '/products']
 	])
 </div>
