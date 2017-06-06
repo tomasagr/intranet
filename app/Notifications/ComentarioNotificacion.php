@@ -56,7 +56,8 @@ class ComentarioNotificacion extends Notification
     public function toArray($notifiable)
     {
         return [
-            'comentario' => $this->comentario->cuerpo 
+            'comentario' => $this->comentario->cuerpo,
+            'id' => $this->comentario->tema->id
         ];
     }
 }
