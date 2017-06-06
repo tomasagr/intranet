@@ -61,7 +61,7 @@
                 <span><b>Usuario:</b> @{{item.user.fullname}}</span>
                 <span><a href="/api/reservas/@{{item.id}}/delete"><i class="fa fa-trash"></i></a></span>
               </p>
-              <p><b>Franja:</b> @{{item.franja.start}} - @{{item.franja.start}}</p>
+              <p><b>Franja:</b> @{{item.franja.start}} - @{{item.franja.end}}</p>
               <hr>
             </div>
           </div>
