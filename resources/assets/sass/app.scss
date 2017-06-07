@@ -679,9 +679,9 @@ $duration: 20s;
 
 	.news-preview {
 		.content {
-			padding-top: 3rem;
-    	padding-left: 2rem;
-    	padding-right: 2rem;
+			padding-top: 3rem !important;
+    	padding-left: 2rem !important;
+    	padding-right: 2rem !important;
 
 			h1 {
 				font-size: 2.5rem !important;
