@@ -15,7 +15,7 @@
       <div class="row upload-row">
         <div class="col-md-2">
           <img
-            style="width: 150px; height: 120px" 
+            style="width: 150px; height: 150px" 
             class="img-responsive user-image img-circle" 
             ngf-thumbnail="file || fileAvatar" alt="">
         </div>
