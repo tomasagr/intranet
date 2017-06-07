@@ -16,10 +16,46 @@
 	<link rel="stylesheet" href="/bower_components/trumbowyg/dist/ui/trumbowyg.css">
 	<link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
 	<link rel="stylesheet" href="/bower_components/angucomplete-alt/angucomplete-alt.css">
+	<link rel="stylesheet" href="/js/libs/jquery.mmenu/jquery.mmenu.all.css">
 
 </head>
-<body class="main background-main" ng-cloak>
-	@yield('content')
+<body class="main background-main"ng-cloak>
+	<nav id="my-menu">
+   <ul>
+	 		<li><a href="/">HOME</a>
+      <li><a href="#">INFORMACIÓN ÚTIL</a>
+				<ul>
+					<li><a href="/about-us">Nosotros</a></li>
+					<li><a href="/manuals">Manuales</a></li>
+					<li><a href="/products">Info Productos</a></li>
+					<li><a href="/jobs">Búsqueda Laboral</a></li>
+				</ul>
+			</li>
+
+      <li>
+				<a href="#">RSE</a>
+				<ul>
+					<li><a href="/solidaria">Summit Solidaria</a></li>
+					<li><a href="/regional">Regional</a></li>
+					<li><a href="/regional">BeGreen</a></li>
+				</ul>
+			</li>
+      <li>
+				<a href="#">AGENDA</a>
+				<ul>
+					<li><a href="/diary">Reserva de Sala</a></li>
+					<li><a href="/diary">Eventos</a></li>
+					<li><a href="/diary">Vacaciones</a></li>
+				</ul>
+			</li>
+			<li><a href="/forum">FOROS</a></li>
+			<li><a href="/rincon-japones">RINCÓN JAPONÉS</a></li>
+   </ul>
+</nav>
+
+	<div class="div" id="my-wrapper">
+		@yield('content')
+	</div>
 	<script>
 	  // rename myToken as you like
 	  window.myToken =  <?php echo json_encode([
@@ -97,9 +133,25 @@
     			event.preventDefault();
     			$(this).ekkoLightbox();
 				});
+
+				$("#my-menu").mmenu({
+         // options
+      	}, {
+         // configuration
+         offCanvas: {
+            pageSelector: "#my-wrapper"
+         }
+      	});
+
+				var API = $("#my-menu").data( "mmenu" );
+      
+				$(".hamburger").click(function() {
+					API.open();
+				});
 			});
 		</script>
 		<script src="/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+		<script src="/js/libs/jquery.mmenu/jquery.mmenu.all.js"></script>
 
 	</body>
 	</html>

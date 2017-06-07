@@ -44,10 +44,9 @@ class AuthServiceProvider extends ServiceProvider
                 $isUser = $tema->users->first(function($element) {
                     return $element->user_id == \Auth::user()->id;
                 });
-                
+               
                 return $isAuthor || $isUser || \Auth::user()->rol_id == 1;
             }
-
             return true;
         });
     }

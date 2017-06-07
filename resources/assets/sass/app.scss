@@ -478,6 +478,10 @@ $duration: 20s;
 		display: none;
 	}
 
+	.mobile-header {
+		display: none;
+	}
+
 @media all and (max-width: 412px) {
 	.content-list {
 		padding: 0 1em;
@@ -723,6 +727,33 @@ $duration: 20s;
     height: 300px !important;
     display: none;
 	}
+
+	.main-header {
+		display: none;
+	}
+
+	.mobile-header {
+		display: block;
+
+		.container {
+			display: flex;
+			align-items: center;
+
+			.logo-responsive {
+				flex-basis: 100%;
+    		display: flex;
+    		justify-content: flex-start;
+			}
+
+			a {
+				color: #444;
+			}
+
+			i {
+				font-size: 23px;
+			}
+		}
+	}
 }
 
 
@@ -735,4 +766,14 @@ $duration: 20s;
 
 .radiocalendar {
 	height: 13px!important;
+}
+
+nav#my-menu {
+  background: #74b956;
+
+	a {
+		font-family: "Lato";
+    font-weight: 600;
+		color: #444;
+	}
 }

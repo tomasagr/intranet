@@ -56,4 +56,11 @@
 	@include('partials.menu')
 </div>
 
+<div class="mobile-header">
+	<div class="container">
+		<a href="/home" class="logo-responsive"><img src="/images/logo.svg" class="img-responsive" alt="" width="200"></a>
+		<a href="" class="hamburger"><i class="fa fa-bars"></i></a>
+	</div>
+</div>
+
 </header>
