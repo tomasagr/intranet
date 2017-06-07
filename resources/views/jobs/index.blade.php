@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			<div class="download-link">
-				<a href="/jobs/1">
+				<a href="/jobs/{{$job->id}}">
 					<img src="/images/tick.png" alt="">
 				</a>
 			</div>
