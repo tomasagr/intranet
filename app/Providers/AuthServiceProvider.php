@@ -45,7 +45,7 @@ class AuthServiceProvider extends ServiceProvider
                     return $element->user_id == \Auth::user()->id;
                 });
                 
-                return $isAuthor || $isUser;
+                return $isAuthor || $isUser || \Auth::user()->rol_id == 1;
             }
 
             return true;
