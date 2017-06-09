@@ -40,12 +40,12 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('topic', function($user, $tema) {
             if ($tema->privado == 1) {
                 $isAuthor = $tema->author_id == \Auth::user()->id;
-
+                
                 $isUser = $tema->users->first(function($element) {
-                    return $element->user_id == \Auth::user()->id;
+                    return $element->id == \Auth::user()->id;
                 });
                
-                return $isAuthor || $isUser || \Auth::user()->rol_id == 1;
+                return  $isAuthor || $isUser || \Auth::user()->rol_id == 1;
             }
             return true;
         });

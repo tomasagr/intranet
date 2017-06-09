@@ -26,6 +26,7 @@
 					</thead>
 					<tbody>
 							@foreach($temas as $key => $tema)
+							@can('topic', $tema)
 							<tr>
 							<td>
 								<b><a style="color: black; text-transform: uppercase;" href="/topic/{{$tema->id}}">{{$tema->nombre}}</a></b>
@@ -51,6 +52,7 @@
 								@endif
 							</td>
 						</tr>
+							@endcan
 						@endforeach
 					</tbody>
 				</table>

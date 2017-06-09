@@ -152,6 +152,5 @@
 		</script>
 		<script src="/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
 		<script src="/js/libs/jquery.mmenu/jquery.mmenu.all.js"></script>
-
 	</body>
 	</html>
