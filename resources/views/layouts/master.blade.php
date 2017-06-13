@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="/bower_components/lightbox2/dist/css/lightbox.css">
 	<link rel="stylesheet" href="/bower_components/angucomplete-alt/angucomplete-alt.css">
 	<link rel="stylesheet" href="/js/libs/jquery.mmenu/jquery.mmenu.all.css">
+	<link rel="stylesheet" href="/bower_components/stacktable.js/stacktable.css">
 
 </head>
 <body class="main background-main"ng-cloak>
@@ -36,7 +37,7 @@
 				<a href="#">RSE</a>
 				<ul>
 					<li><a href="/solidaria">Summit Solidaria</a></li>
-					<li><a href="/regional">Regional</a></li>
+					<li><a href="/regional">Nuestros Valores</a></li>
 					<li><a href="/begreen">BeGreen</a></li>
 				</ul>
 			</li>
@@ -161,5 +162,6 @@
 		</script>
 		<script src="/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
 		<script src="/js/libs/jquery.mmenu/jquery.mmenu.all.js"></script>
+		<script src="/bower_components/stacktable.js/stacktable.js"></script>
 	</body>
 	</html>
