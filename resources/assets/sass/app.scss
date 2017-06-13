@@ -455,6 +455,16 @@ $duration: 20s;
 }
 
 @media all and (max-width: 412px) {
+    .rse>.container>.col-md-12 {
+        padding: 0;
+    }
+    .jobs-list {
+        overflow-x: hidden!important;
+    }
+    .jobs-list .description .data .content {
+        color: #aaa;
+        padding: 1em 9em;
+    }
     .aboutus .unslider {
         overflow: hidden !important;
     }
