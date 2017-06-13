@@ -455,6 +455,17 @@ $duration: 20s;
 }
 
 @media all and (max-width: 412px) {
+    .aboutus .unslider {
+        overflow: hidden !important;
+    }
+    .aboutus-slider {
+        padding: 0!important;
+    }
+    .aboutus .content p {
+        column-count: 1!important;
+        margin: 0em .6em;
+        text-align: justify;
+    }
     .news-slider .slider .slider-item .content .title {
         margin-right: 6em;
     }
