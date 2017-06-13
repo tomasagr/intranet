@@ -17,8 +17,10 @@
 			<p><b>SECTORES</b></p>
 			<div class="btn-group">
 						<button type="button"
-						class="btn btn-default dropdown-toggle btn-summit" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						SELECCIONAR <i class="fa fa-chevron-down"></i>
+						class="btn btn-default dropdown-toggle btn-summit" 
+						data-toggle="dropdown" 
+						aria-haspopup="true" aria-expanded="false">
+						@{{selectedFilter || 'SELECCIONAR'}} <i class="fa fa-chevron-down"></i>
 					</button>
 					<ul class="dropdown-menu">
 					<li><a href="" ng-click="filterSector()">Todos</a></li>
@@ -32,7 +34,7 @@
 			<div class="manual-item" ng-repeat="item in manual | filter: search">
 			<section class="description" ng-if="item.type == 'PDF'">
 				<div class="image">
-					<img src="/images/pdf.png" alt="">
+					<img src="/images/file.svg" alt="" width="50">
 				</div>
 				<div class="data">
 					<p><b>@{{item.titulo}}</b></p>
