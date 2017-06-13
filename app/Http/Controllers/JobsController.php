@@ -4,6 +4,7 @@ namespace Intranet\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intranet\Models\Panel\RSE;
+use Intranet\Mail\JobNotification;
 
 class JobsController extends Controller
 {
@@ -25,6 +26,7 @@ class JobsController extends Controller
 
         $job->users()->attach(\Auth::user());
          
+         \Mail::to('lucasmichailian@gmail.com')->send(new JobNotification($job, \Auth::user()));
          \Flash::success('Aplicación enviada con éxito.');
     	
         return redirect('/jobs');
