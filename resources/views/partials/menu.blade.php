@@ -28,9 +28,9 @@
 				RSE <i class="fa fa-chevron-down"></i>
 			</button>
 			<ul class="dropdown-menu">
-				<li><a class="menu-item" href="/solidaria">Summit Solidaria</a></li>
+				<li><a class="menu-item" href="/regional">Nuestros Valores</a></li>
 				<li role="separator" class="divider"></li>
-				<li><a class="menu-item" href="/regional">Regional</a></li>
+				<li><a class="menu-item" href="/solidaria">Summit Solidaria</a></li>
 				<li role="separator" class="divider"></li>
 				<li><a class="menu-item" href="/begreen">Be Green</a></li>
 			</ul>

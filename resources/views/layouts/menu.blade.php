@@ -60,7 +60,7 @@
       <a href="/panel/contenidos/1/edit"><i class="fa fa-heart"></i><span>Summit Solidaria</span></a>
     </li>
     <li class="{{ Request::is('panel/contenidos/2/edit') ? 'active' : '' }}">
-      <a href="/panel/contenidos/2/edit"><i class="fa fa-globe"></i><span>Regional</span></a>
+      <a href="/panel/contenidos/2/edit"><i class="fa fa-globe"></i><span>Nuestros Valores</span></a>
     </li>
     <li class="{{ Request::is('panel/contenidos/3/edit') ? 'active' : '' }}">
       <a href="/panel/contenidos/3/edit"><i class="fa fa-sun-o"></i><span>Be Green</span></a>

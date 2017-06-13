@@ -4,7 +4,7 @@
 @include('layouts.header')
 <div class="main-content" style="padding-top: 1em; margin-top: 0; background: white;">
 	<div class="title" style="margin: 0; padding-bottom: 1em">
-		Regional
+		Nuestros Valores
 	</div>
 </div>
 
