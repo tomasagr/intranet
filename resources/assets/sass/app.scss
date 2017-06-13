@@ -225,7 +225,7 @@ select.inline-block-input {
     height: 100vh;
     background: url('../img/bg-login.png');
     background-size: cover;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -455,6 +455,12 @@ $duration: 20s;
 }
 
 @media all and (max-width: 412px) {
+    .news-slider .slider .slider-item .content .title {
+        margin-right: 6em;
+    }
+    img.elipse {
+        width: 80%;
+    }
     .content-list {
         padding: 0 1em;
     }
