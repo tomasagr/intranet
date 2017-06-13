@@ -106,7 +106,16 @@
 
 		<script>
 			jQuery(document).ready(function($) {
+			
 				setTimeout(function() {
+					$('.news-items .item').mouseover(function() { 
+						$(this).find('.tag').addClass('hovered')
+				 	})
+
+					 $('.news-items .item').mouseleave(function() { 
+						$(this).find('.tag').removeClass('hovered')
+				 	})
+
 					$('.my-slider').unslider({
 					arrows: false,
 					autoplay: true
