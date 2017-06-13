@@ -15,21 +15,27 @@
       <div class="row upload-row">
         <div class="col-md-2">
           <img
-            style="width: 150px; height: 150px" 
+            style="width: 150px; height: 120px" 
             class="img-responsive user-image img-circle" 
-            ngf-thumbnail="file || fileAvatar" alt="">
+            ngf-thumbnail="file || fileAvatar" alt=""
+            >
         </div>
         <div class="col-md-4">
           <div class="input-group">
             <input type="text"
-              class="form-control" placeholder="Cargar imagen" disabled>
+              class="form-control" placeholder="Cargar imagen" readonly
+              ngf-select ng-model="file" 
+              name="file" 
+              ngf-pattern="'image/*'"
+              ngf-accept="'image/*'"
+              gf-resize="{width: 150, height: 120}">
             <span class="input-group-btn">
             <button class="btn btn-default bg-orange"
               ngf-select ng-model="file" 
               name="file" 
               ngf-pattern="'image/*'"
               ngf-accept="'image/*'"
-              gf-resize="{width: 100, height: 100}"><i class="fa fa-upload"></i></button>
+              gf-resize="{width: 150, height: 120}"><i class="fa fa-upload"></i></button>
             </span>
           </div>
         </div>

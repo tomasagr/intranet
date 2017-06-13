@@ -16,7 +16,7 @@
       <div class="row upload-row">
         <div class="col-md-2">
           <img
-            style="width: 150px; height: 150px" 
+            style="width: 150px; height: 120px" 
             class="img-responsive user-image img-circle" 
             ngf-thumbnail="file || fileAvatar" alt="">
         </div>
@@ -27,15 +27,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12" style="text-align: center; margin-bottom: 2em;" ng-cloak>
-          <button ng-if="!isVoted" 
-                  data-toggle="modal" data-target="#modalVotes"
-                  class="btn btn-warning danger-alternative" 
-                  style="padding: 1.5em 0; width: 200px;">VOTAR</button>
-          <button ng-if="isVoted" disabled="disabled" class="btn btn-warning danger-alternative" style="padding: 1.5em 0; width: 200px;">
-             VOTADO
-          </button>
-        </div>
+       <!--  <div class="col-md-12" style="text-align: center; margin-bottom: 2em;" ng-cloak>
+         <button ng-if="!isVoted" 
+                 data-toggle="modal" data-target="#modalVotes"
+                 class="btn btn-warning danger-alternative" 
+                 style="padding: 1.5em 0; width: 200px;">VOTAR</button>
+         <button ng-if="isVoted" disabled="disabled" class="btn btn-warning danger-alternative" style="padding: 1.5em 0; width: 200px;">
+            VOTADO
+         </button>
+       </div> -->
       </div>
       <div class="row">
         <div class="col-md-12">
