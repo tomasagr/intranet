@@ -151,13 +151,13 @@
       <p style="margin: 2em 0;"><b>RESPONDIERON TU MENSAJE</b></p>
       <div class="messages-list">
         @foreach(Auth::user()->notifications as $item) 
-          @if ($item->type == 'Intranet\Notifications\ComentarioNotificacion')
+          @if ($item->type == 'Intranet\Notifications\ComentarioNotificacion' && count($comentario->find((int)$item->notifiable_id)))
             <div class="item clearfix" style="margin: 3em 0;">
             <div class="col-md-8" style="padding-left: 0;">
               <p style="color:#ccc">{{$item->data["comentario"]}}</p>
             </div>
             <div class="col-md-4">
-              <button class="btn btn-warning danger-alternative orange-alt" onclick="window.location='/topic/{{$comentario->findOrFail((int)$item->notifiable_id)->tema_id}}'">IR A MENSAJE</button>
+              <button class="btn btn-warning danger-alternative orange-alt" onclick="window.location='/topic/{{$comentario->find((int)$item->notifiable_id)->tema_id}}'">IR A MENSAJE</button>
             </div>
           </div>
           @endif
