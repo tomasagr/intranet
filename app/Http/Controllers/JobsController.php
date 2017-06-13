@@ -26,7 +26,7 @@ class JobsController extends Controller
 
         $job->users()->attach(\Auth::user());
          
-         \Mail::to('lucasmichailian@gmail.com')->send(new JobNotification($job, \Auth::user()));
+         \Mail::to('melina.Fraga@summit-agro.com.ar')->send(new JobNotification($job, \Auth::user()));
          \Flash::success('Aplicación enviada con éxito.');
     	
         return redirect('/jobs');
