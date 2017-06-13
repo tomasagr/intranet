@@ -455,6 +455,12 @@ $duration: 20s;
 }
 
 @media all and (max-width: 412px) {
+    .col-md-9.images {
+        padding: 0;
+    }
+    .col-md-4.image-item {
+        padding: 0;
+    }
     .rse>.container>.col-md-12 {
         padding: 0;
     }

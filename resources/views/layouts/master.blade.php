@@ -37,7 +37,7 @@
 				<ul>
 					<li><a href="/solidaria">Summit Solidaria</a></li>
 					<li><a href="/regional">Regional</a></li>
-					<li><a href="/regional">BeGreen</a></li>
+					<li><a href="/begreen">BeGreen</a></li>
 				</ul>
 			</li>
       <li>
