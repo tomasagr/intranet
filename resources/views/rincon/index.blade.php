@@ -66,7 +66,7 @@
 						<div data-content>
 								<div style="display: flex;">
 									<img ng-if="curiosidad.imagen" width="200px" height="200px" style="margin-right:1em;" ng-src="/storage/@{{curiosidad.imagen}}" alt="">
-									<p>@{{curiosidad.descripcion}}</p>
+									<p style="line-height: 17px;">@{{curiosidad.descripcion}}</p>
 								</div>
 						</div>
 				</div>
