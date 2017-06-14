@@ -707,6 +707,13 @@ $duration: 20s;
             }
         }
     }
+    .news-slider .slider .slider-item .content article {
+        left: 0;
+        top: 30px;
+    }
+    .news-slider .slider .slider-item .content {
+        display: relative!important;
+    }
 }
 
 .main-menu {
