@@ -55,7 +55,7 @@
 
 
 
-<div class="main-content" style="background: white; padding-top: 3em;">
+<div class="main-content" style="background: white; padding-top: 3em; padding-bottom: 4em;">
 	<div class="container curiosidades">
 		<h1 style="text-align:center;">Curiosidades</h1>
 

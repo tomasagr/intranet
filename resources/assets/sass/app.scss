@@ -735,3 +735,8 @@ nav#my-menu {
         border-top: 13px solid #f5f5f5;
     }
 }
+
+[data-accordion]>[data-control]:after {
+    right: 0 !important;
+    width: 30px !important;
+}
