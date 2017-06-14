@@ -22,7 +22,8 @@ class Curiosidades extends Model
 
     public $fillable = [
         'titulo',
-        'descripcion'
+        'descripcion',
+        'imagen'
     ];
 
     /**

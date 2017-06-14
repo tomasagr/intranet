@@ -15,7 +15,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('panel.curiosidades.table')
+                @include('panel.curiosidades.table')
             </div>
         </div>
     </div>

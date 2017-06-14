@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="/bower_components/angucomplete-alt/angucomplete-alt.css">
 	<link rel="stylesheet" href="/js/libs/jquery.mmenu/jquery.mmenu.all.css">
 	<link rel="stylesheet" href="/bower_components/stacktable.js/stacktable.css">
+	<link rel="stylesheet" href="/js/libs/jquery-accordion/css/jquery.accordion.css">
 
 </head>
 <body class="main background-main"ng-cloak>
@@ -105,10 +106,16 @@
 		<script src="/js/components/salas/SalasController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/users/UserSelectorController.js?v=<?php echo time(); ?>"></script>
 
+		<script src="/js/libs/jquery-accordion/js/jquery.accordion.js"></script>
+
 		<script>
 			jQuery(document).ready(function($) {
 			
 				setTimeout(function() {
+					$('.accordion').accordion({
+    				"transitionSpeed": 400
+					});
+
 					$('.news-items .item').mouseover(function() { 
 						$(this).find('.tag').addClass('hovered')
 				 	})
@@ -162,6 +169,7 @@
 		</script>
 		<script src="/bower_components/angucomplete-alt/angucomplete-alt.js"></script>
 		<script src="/js/libs/jquery.mmenu/jquery.mmenu.all.js"></script>
-		<script src="/bower_components/stacktable.js/stacktable.js"></script>
+		
+		
 	</body>
 	</html>

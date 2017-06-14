@@ -65,10 +65,16 @@ class CuriosidadesController extends AppBaseController
     {
         $input = $request->all();
 
+        if (!$request->file('imagen')) {
+            Flash::error('Imagen requerida.');
+            return redirect()->back()->withInput();
+        } else {
+            $input['imagen'] = $request->file('imagen')->store('curiosidades', 'public');
+        }
+
         $curiosidades = $this->curiosidadesRepository->create($input);
 
         Flash::success('Curiosidades creado con exito.');
-
         return redirect(route('panel.curiosidades.index'));
     }
 
@@ -102,7 +108,7 @@ class CuriosidadesController extends AppBaseController
     public function edit($id)
     {
         $curiosidades = $this->curiosidadesRepository->findWithoutFail($id);
-
+        
         if (empty($curiosidades)) {
             Flash::error('Curiosidades no encontrado.');
 
@@ -123,6 +129,7 @@ class CuriosidadesController extends AppBaseController
     public function update($id, UpdateCuriosidadesRequest $request)
     {
         $curiosidades = $this->curiosidadesRepository->findWithoutFail($id);
+        $input = $request->all();
 
         if (empty($curiosidades)) {
             Flash::error('Curiosidades no encontrado.');
@@ -130,7 +137,11 @@ class CuriosidadesController extends AppBaseController
             return redirect(route('panel.curiosidades.index'));
         }
 
-        $curiosidades = $this->curiosidadesRepository->update($request->all(), $id);
+        if ($request->file('imagen')) {
+           $input['imagen'] = $request->file('imagen')->store('curiosidades', 'public'); 
+        } 
+
+        $curiosidades = $this->curiosidadesRepository->update($input, $id);
 
         Flash::success('Curiosidades actualizado con exito.');
 

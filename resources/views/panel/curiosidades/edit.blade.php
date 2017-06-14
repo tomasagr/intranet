@@ -11,10 +11,8 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($curiosidades, ['route' => ['panel.curiosidades.update', $curiosidades->id], 'method' => 'patch']) !!}
-
-                        @include('panel.curiosidades.fields')
-
+                   {!! Form::model($curiosidades, ['route' => ['panel.curiosidades.update', $curiosidades->id], 'method' => 'patch', 'files' => true]) !!}
+                    @include('panel.curiosidades.fields')
                    {!! Form::close() !!}
                </div>
            </div>

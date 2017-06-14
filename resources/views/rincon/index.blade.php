@@ -53,20 +53,26 @@
 	</div>
 </div>
 
+
+
 <div class="main-content" style="background: white; padding-top: 3em;">
 	<div class="container curiosidades">
-		<h1>Curiosidades</h1>
-		<br><br>
-	
+		<h1 style="text-align:center;">Curiosidades</h1>
+
 			<div class="item" ng-repeat="curiosidad in curiosidades">
-				<div class="col-md-4">
-				<a href="" ng-if="!curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-active.png" alt=""></a>
-				<a href="" ng-if="curiosidad.isOpen" ng-click="toggleCuriosidad($index)"><img src="/images/icon-inactive.png" alt=""></a>
-				<p style="display: inline; text-transform: uppercase;"><b>@{{curiosidad.titulo}}</b></p>
-				<div style="width: 100%" class="curiosidad" ng-if="curiosidad.isOpen">
-					<p>@{{curiosidad.descripcion}}</p>
+				<div class="col-md-8 col-md-offset-2">
+					<div data-accordion class="accordion">
+						<div data-control style="text-transform: uppercase; font-family: Lato; font-weight: 600;border-bottom: 2px solid #ccc;" >@{{curiosidad.titulo}}</div>
+						<div data-content>
+								<div style="display: flex;">
+									<img ng-if="curiosidad.imagen" width="200px" height="200px" style="margin-right:1em;" ng-src="/storage/@{{curiosidad.imagen}}" alt="">
+									<p>@{{curiosidad.descripcion}}</p>
+								</div>
+						</div>
 				</div>
+				<br>
 			</div>
+	
 			</div>
 		</div>
 	</div>

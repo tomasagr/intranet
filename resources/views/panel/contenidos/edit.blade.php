@@ -14,7 +14,7 @@
                    {!! Form::model($contenido, ['route' => ['panel.contenidos.update', $contenido->id], 'method' => 'patch', 'files' => true]) !!}
 
                         @include('panel.contenidos.fields')
-
+                        
                    {!! Form::close() !!}
                </div>
            </div>
