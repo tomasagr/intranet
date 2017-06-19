@@ -21,9 +21,9 @@
       </div>
       <div class="my-slider clearfix">
         <ul class="col-md-12 slider clearfix" style="position: relative">
-					<li class="slider-item clearfix" 
+					<li class="slider-item clearfix"
 						ng-repeat="item in institucionales"
-            ng-style="{'background-image': 'url(/storage/'+ item.image +')', 'background-repeat': 'no-repeat','background-size': '100% 100%'}">
+            ng-style="{'background-image': 'url(/storage/'+ item.image +')', 'background-repeat': 'no-repeat','background-size': 'cover'}">
             <div class="content">
               <img class="elipse" src="/images/elipse.png" alt="">
               <article>
@@ -52,7 +52,7 @@
         <ul class="col-md-12 slider clearfix" style="position: relative">
 					<li class="slider-item clearfix" 
 						ng-repeat="item in informales"
-            ng-style="{'background-image': 'url(/storage/'+ item.image +')', 'background-repeat': 'no-repeat','background-size': '100% 100%'}">
+            ng-style="{'background-image': 'url(/storage/'+ item.image +')', 'background-repeat': 'no-repeat','background-size': 'cover'}">
             <div class="content">
               <img class="elipse" src="/images/elipse.png" alt="">
               <article>
