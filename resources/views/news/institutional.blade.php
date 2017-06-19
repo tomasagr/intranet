@@ -30,7 +30,7 @@
 							</article>
 							<footer>
 								<a href="/institutional/{{$item->id}}">Ver más</a>
-								<span class="label label-success tag">{{$item->sector->name}}</span>
+								<span class="label label-success tag tag-alt-inner">{{$item->sector->name}}</span>
 								<div class="cover">
 									<span class="triangle"></span>
 								</div>

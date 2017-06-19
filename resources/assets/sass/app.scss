@@ -747,3 +747,8 @@ nav#my-menu {
     right: 0 !important;
     width: 30px !important;
 }
+
+.tag-alt-inner::after {
+    border-bottom: 13px solid #F6F6F6;
+    border-top: 13px solid #F6F6F6;
+}

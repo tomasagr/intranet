@@ -13,7 +13,6 @@
 		</div>
 	</div>
 	<div class="news-items">
-	
 		<div class="item" ng-repeat="item in lastNews">
 		<a href="/{{$link}}/@{{item.id}}" ng-mouseover="changeSelected($index)">
 				<header>
@@ -26,7 +25,7 @@
 					<p ng-bind-html="item.titulo | limitTo: 100"></p>
 				</article>
 				<footer>
-					<span class="tag">
+					<span class="tag @if(Request::is('institutional*') || Request::is('informal*')){{'tag-alt-inner'}}@endif">
 						<p>@{{item.sector.name}}</p>
 					</span>
 				</footer>
