@@ -24,8 +24,8 @@
 <div class="container">
 	<div class="row">
 		<div class="logo-list" style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center;">
-			<a href="/products/@{{product.id}}" ng-repeat="product in products" style="margin: 1em 1em;">
-				<img width="130" height="50" src="" ng-style="{'background': 'url(storage/@{{product.logo}})', 'background-size': 'cover'}">
+			<a href="/products/@{{product.id}}" ng-repeat="product in products" style="margin: 1em 1em;width: 130px;">
+				<img width="100%" src="/storage/@{{product.logo}}">
 			</a>
 		</div>
 	</div>

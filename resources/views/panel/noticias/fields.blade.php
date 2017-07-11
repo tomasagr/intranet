@@ -27,7 +27,7 @@
 @endif
 
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('vis', 'Categoria:') !!}
+    {!! Form::label('vis', 'Mostrar en:') !!}
     {!! Form::select('visibility',
         [0 => 'No mostrar en home', 1 => 'Mostrar en slider principal', 2 => 'Mostrar en slider secundario'], null,
         ['class' => 'form-control'])
