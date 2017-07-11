@@ -6,10 +6,13 @@ angular.module('app.news-controlller', [])
       var url = '/api/news'
 
       if (pathname == '/institutional') {
-          url = '/api/news?limit=4&category=2'
-        } else if (pathname == '/informal') {
-          url = '/api/news?limit=4&category=1'
-        }
+        url = '/api/news?limit=4&category=2'
+      } else if (pathname == '/informal') {
+        url = '/api/news?limit=4&category=1'
+      }
+
+      $scope.isHome = pathname === '/home'
+      $scope.isSecondary = pathname === '/institutional' || pathname === '/informal'
 
       $http.get(url)
             .then(function (response) {
@@ -17,18 +20,18 @@ angular.module('app.news-controlller', [])
               $scope.selected = response.data[0]
 
               $scope.institucionales = response.data.filter(function (element) {
-                  return element.category_id === 2
-                }).slice(0, 3)
+                return element.category_id === 2
+              }).slice(0, 3)
 
               $scope.informales = response.data.filter(function (element) {
-                  return element.category_id === 1
-                }).slice(0, 3)
+                return element.category_id === 1
+              }).slice(0, 3)
             })
             .catch(function (error) {
               console.log(error)
             })
 
       $scope.changeSelected = function (index) {
-          $scope.selected = $scope.lastNews[index]
-        }
+        $scope.selected = $scope.lastNews[index]
+      }
     }])

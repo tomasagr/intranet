@@ -11,11 +11,11 @@ class NewsController extends Controller
     public function index(Request $request) 
     {
         if ($request->limit) {
-
             if ($request->category) {
                 return Noticias::with(['sector', 'category'])
                     ->where('category_id', '!=', 3)
                     ->where('category_id', $request->category)
+                    ->where('visibility', 1)
                     ->orderBy('created_at', 'desc')
                     ->limit($request->limit)
                     ->get();
@@ -23,6 +23,7 @@ class NewsController extends Controller
 
             return Noticias::with(['sector', 'category'])
                 ->where('category_id', '!=', 3)
+                ->where('visibility', 1)
                 ->orderBy('created_at', 'desc')
                 ->limit($request->limit)
                 ->get();
@@ -30,6 +31,7 @@ class NewsController extends Controller
 
         return Noticias::with(['sector', 'category'])
                         ->where('category_id', '!=', 3)
+                        ->where('visibility', 1)
                         ->orderBy('created_at', 'desc')->get();
     }
 
@@ -48,6 +50,8 @@ class NewsController extends Controller
     {
         $informal = Noticias::with(['sector', 'category'])
                                 ->where('category_id', 1)
+                                ->where('visibility', 2)
+                                ->orWhere('visibility', 0)
                                 ->orderBy('created_at', 'desc')->get();
     	return view('news.informal', compact('informal'));
     }
@@ -56,6 +60,8 @@ class NewsController extends Controller
     {
         $institutional = Noticias::with(['sector', 'category'])
                                 ->where('category_id', 2)
+                                ->where('visibility', 2)
+                                ->orWhere('visibility', 0)
                                 ->orderBy('created_at', 'desc')->get();
     	return view('news.institutional', compact('institutional'));
     }
@@ -85,7 +91,7 @@ class NewsController extends Controller
                             ->where('id', '!=', $id)
                             ->where('category_id', '!=', 3)
                             ->where('id', '!=', $id)    
-                            ->where('category_id', 1)    
+                            ->where('category_id', 1)
                             ->orderBy('created_at', 'desc')
                             ->get();
     	return view('news.individual', compact('noticia', 'ultimas'));

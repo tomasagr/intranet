@@ -18,13 +18,21 @@
 </div>
 
 @if (Request::is('panel/productos/*'))
-    {!! Form::hidden('category_id', 3) !!}
+{!! Form::hidden('category_id', 3) !!}
 @else
-    <div class="form-group col-sm-12 col-lg-12">
+<div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('category_id', 'Categoria:') !!}
     {!! Form::select('category_id', $category->all()->slice(0,2)->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
 </div>
 @endif
+
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('vis', 'Categoria:') !!}
+    {!! Form::select('visibility',
+        [0 => 'No mostrar en home', 1 => 'Mostrar en slider principal', 2 => 'Mostrar en slider secundario'], null,
+        ['class' => 'form-control'])
+    !!}
+</div>
 
 
 <div class="form-group col-sm-12 col-lg-12">
@@ -33,7 +41,7 @@
     
     @if(isset($noticias))
     <br>
-        <img width="100%" height="200" src="{{asset('storage/'.$noticias->image)}}" />
+    <img width="100%" height="200" src="{{asset('storage/'.$noticias->image)}}" />
     @endif
 </div>
 

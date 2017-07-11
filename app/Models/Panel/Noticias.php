@@ -26,7 +26,8 @@ class Noticias extends Model
         'cuerpo',
         'image',
         'sector_id',
-        'category_id'
+        'category_id',
+        'visibility'
     ];
 
     /**

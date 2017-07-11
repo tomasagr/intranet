@@ -1,11 +1,9 @@
 	<div class="lastest-news">
-		<div class="selected"
-			ng-style="{background: 'red url(/storage/'+ selected.image +') no-repeat 0 0', 'background-size': 'cover', 'background-color': 'rgba(123, 123, 123, 1)'}"
-			style="padding:0">
+		<div class="selected" ng-style="{background: 'red url(/storage/'+ selected.image +') no-repeat 0 0', 'background-size': 'cover', 'background-color': 'rgba(123, 123, 123, 1)'}" style="padding:0">
 			<div class="content" style="background: rgba(0,0,0,0.3);
-				width: 100%;
-				padding-top: 6rem;
-				padding-left: 3rem;">
+			width: 100%;
+			padding-top: 6rem;
+			padding-left: 3rem;">
 			<p class="date">@{{selected.created_at | inDate | date:'dd-MM-yyyy'}}</p>
 			<p class="category" style="text-transform: uppercase">@{{selected.sector.name}}</p>
 			<h1>
