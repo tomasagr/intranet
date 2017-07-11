@@ -15,6 +15,10 @@ angular.module('app.user-profile-controller', [])
         $scope.sectors = $scope.unitSelected[0].sectors
       }
 
+      $scope.openGallery = function () {
+
+      }
+
       setTimeout(function () {
         UsersService.getAll($scope.profileid)
         .then(function (response) {

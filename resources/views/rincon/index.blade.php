@@ -39,9 +39,9 @@
 		</div>
 
 		<div class="container items">
-			<div class="col-md-4 item" 
-					ng-repeat="item in info" 
-					style="cursor:pointer" 
+			<div class="col-md-4 item"
+					ng-repeat="item in info"
+					style="cursor:pointer"
 					ng-mouseover="selectContent($index)">
 				<img class="img-responsive" src="/storage/@{{item.imagen}}" alt="">
 				<div class="description">

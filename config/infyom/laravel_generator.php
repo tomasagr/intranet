@@ -55,19 +55,19 @@ return [
 
     'namespace' => [
 
-        'model'             => 'App\Models',
+        'model'             => 'Intranet\Models',
 
-        'datatables'        => 'App\DataTables',
+        'datatables'        => 'Intranet\DataTables',
 
-        'repository'        => 'App\Repositories',
+        'repository'        => 'Intranet\Repositories',
 
-        'controller'        => 'App\Http\Controllers',
+        'controller'        => 'Intranet\Http\Controllers',
 
-        'api_controller'    => 'App\Http\Controllers\API',
+        'api_controller'    => 'Intranet\Http\Controllers\API',
 
-        'request'           => 'App\Http\Requests',
+        'request'           => 'Intranet\Http\Requests',
 
-        'api_request'       => 'App\Http\Requests\API',
+        'api_request'       => 'Intranet\Http\Requests\API',
     ],
 
     /*

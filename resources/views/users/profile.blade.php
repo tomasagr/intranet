@@ -1,9 +1,9 @@
 @inject('comentario', 'Intranet\Models\Comentario')
-
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div class="container main-container"  ng-app="app" 
+
+<div class="container main-container" ng-app="app"
   ng-controller="UsersProfileController">
   <br><br>
   <div class="col-md-10 col-md-offset-1 card" ng-init="profileid={{Auth::user()->id}}">
@@ -125,6 +125,25 @@
       </div>
       <hr class="col-md-8 col-md-offset-2">
       <div class="col-md-8 col-md-offset-2 questions">
+        <h1>Mis imagenes</h1>
+        <div style="text-align: center;">
+          <button class="btn btn-warning danger-alternative orange-alt"
+                  type="button" style="width: 500px; margin-bottom: 10px;"
+                  data-backdrop="false"
+                  data-toggle="modal" data-target="#portadaModal">
+            Ver/Modificar Portada
+          </button>
+
+          <button class="btn btn-warning danger-alternative orange-alt"
+                  type="button" style="width: 500px; margin-bottom: 10px;"
+                  data-backdrop="false"
+                  data-toggle="modal" data-target="#galeriaModal">
+            Ver/Modificar Galeria
+          </button>
+        </div>
+      </div>
+      <hr class="col-md-8 col-md-offset-2">
+      <div class="col-md-8 col-md-offset-2 questions">
         <h1>Sobre mí</h1>
         <div class="questions-items">
           @include('partials.fields.questions')
@@ -156,7 +175,7 @@
       <h1 style="color: #f3922c;">Tu actividad en el foro</h1>
       <p style="margin: 2em 0;"><b>RESPONDIERON TU MENSAJE</b></p>
       <div class="messages-list">
-        @foreach(Auth::user()->notifications as $item) 
+        @foreach(Auth::user()->notifications as $item)
           @if ($item->type == 'Intranet\Notifications\ComentarioNotificacion' && count($comentario->find((int)$item->notifiable_id)))
             <div class="item clearfix" style="margin: 3em 0;">
             <div class="col-md-8" style="padding-left: 0;">
@@ -172,5 +191,8 @@
     </div>
   </div>
 </div>
+@include('modals.portada')
+@include('modals.galeria')
 @include('layouts.footer')
-@stop
+@endsection
+

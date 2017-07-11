@@ -752,3 +752,24 @@ nav#my-menu {
     border-bottom: 13px solid #F6F6F6;
     border-top: 13px solid #F6F6F6;
 }
+
+.products .unslider-nav {
+    position: relative !important;
+    top: 0!important;
+    display: block;
+    ol {
+        text-align: center !important;
+    }
+    ol li {
+        border: 2px solid grey !important;
+    }
+    .unslider-active {
+        background: black !important;
+    }
+}
+
+.slider-profile {
+    .unslider-nav {
+        top: 26em !important;
+    }
+}

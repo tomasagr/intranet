@@ -1,74 +1,36 @@
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div class="main-content" style="margin-bottom: 3em;">
-	<div class="title">
-		Información de productos
+<div ng-controller="ProductosController">
+	<div class="main-content" style="padding-bottom: 3em; background: white;">
+		<div class="title" style="margin: 0">
+			Información de productos
+		</div>
 	</div>
+
+	<div style="background: white">
+		<div class="container clearfix" style="background: white; padding: 1em 0;display: flex; justify-content: space-between;flex-wrap: wrap;">
+			<button class="btn btn-default btn-summit alt" ng-class="{active: selectedTab === ''}"
+			ng-click="setCategory()"><b>TODOS</b>
+		</button>
+		<button ng-repeat="category in categories"
+		class="btn btn-default btn-summit alt"
+		ng-class="{active: selectedTab === category.tag}"
+		ng-click="setCategory(category)">
+		<b style="text-transform: uppercase;">@{{category.name}}</b>
+	</button>
 </div>
 
-<div class="container clearfix">
-	<div class="col-md-12">
-		@foreach($productos->slice(0, 2) as $item)
-		<div class="col-md-6">
-			<div class="products-items clearfix">
-				<div class="item clearfix">
-					<div class="image">
-						<img class="img-responsive" src="" style="background:url({{asset('/storage/'. $item->image)}}); background-size:cover; width: 100%; height: 300px;" alt="">
-					</div>
-					<div class="item-content">
-						<header>
-							<p>
-								<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span style="text-transform:uppercase"> {{$item->category->name}}</span>
-							</p>
-						</header>
-						<article>
-							<p>{{$item->titulo}}</p>
-						</article>
-						<footer>
-							<a href="/products/{{$item->id}}">Ver más</a>
-							<span class="label label-success tag">Ventas</span>
-							<div class="cover">
-								<span class="triangle"></span>
-							</div>
-						</footer>
-					</div>
-				</div>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="logo-list" style="display: flex; justify-content: center; flex-wrap: wrap; align-items: center;">
+			<a href="/products/@{{product.id}}" ng-repeat="product in products" style="margin: 1em 1em;">
+				<img width="130" height="50" src="" ng-style="{'background': 'url(storage/@{{product.logo}})', 'background-size': 'cover'}">
+			</a>
 		</div>
-		@endforeach
 	</div>
-	
-	<div class="col-md-12" style="margin-top: 3em;">
-		@foreach($productos->slice(2) as $item)
-		<div class="col-md-3" style="margin: 3em 0;">
-			<div class="products-items clearfix">
-				<div class="item clearfix">
-					<div class="image">
-						<img class="img-responsive" src="{{asset('/storage/'. $item->image)}}" alt="">
-					</div>
-					<div class="item-content">
-						<header>
-							<p>
-								<span class="date">{{$item->created_at->format('d-m-Y')}} |</span><span style="text-transform:uppercase"> {{$item->category->name}}</span>
-							</p>
-						</header>
-						<article>
-							<p>{{$item->titulo}}</p>
-						</article>
-						<footer>
-							<a href="/products/{{$item->id}}">Ver más</a>
-							<span class="label label-success tag">Ventas</span>
-							<div class="cover">
-								<span class="triangle"></span>
-							</div>
-						</footer>
-					</div>
-				</div>
-			</div>
-		</div>
-		@endforeach
-	</div>
+</div>
+</div>
 </div>
 @include('layouts.footer')
 @stop

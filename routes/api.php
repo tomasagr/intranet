@@ -41,8 +41,16 @@ Route::get('videos', 'Panel\VideosController@getAll');
 Route::get('informacion', 'Panel\InformacionController@getAll');
 Route::get('curiosidades', 'Panel\CuriosidadesController@getAll');
 
-
 Route::resource('foros', 'ForoAPIController');
 Route::resource('temas', 'TemaAPIController');
 Route::resource('usuario_temas', 'UsuarioTemaAPIController');
 Route::resource('comentarios', 'ComentarioAPIController');
+
+Route::get('category-products', 'CategoryProductController@index');
+Route::get('products', 'ProductssController@apiIndex');
+Route::get('products/category/{id}', 'ProductssController@byCategory');
+Route::get('/users/{id}/cover', 'UserImagesController@getCover');
+Route::post('/users/{id}/gallery', 'UserImagesController@setPhoto');
+Route::get('/users/{id}/gallery', 'UserImagesController@getPhoto');
+Route::post('/users/{id}/cover', 'UserImagesController@setCover');
+

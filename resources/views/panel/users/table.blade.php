@@ -27,7 +27,7 @@
                 {!! Form::open(['route' => ['panel.users.destroy', $user->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>
                     <a href="{!! route('panel.users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
-                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro que quiere eliminar?')"]) !!}
                 </div>
                 {!! Form::close() !!}
             </td>

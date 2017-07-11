@@ -2,13 +2,14 @@
 
 namespace Intranet;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Intranet\Profile;
-use Intranet\Unit;
-use Intranet\Sector;
-use Intranet\Rol;
+use Illuminate\Notifications\Notifiable;
 use Intranet\Permissions;
+use Intranet\Profile;
+use Intranet\Rol;
+use Intranet\Sector;
+use Intranet\Unit;
+use Intranet\UserImage;
 use Intranet\UserVote;
 
 class User extends Authenticatable
@@ -22,7 +23,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'fullname', 'email', 'password', 'position',
-        'unit_id', 'sector_id', 'bio', 'rol_id', 'avatar', 'status', 'star'
+        'unit_id', 'sector_id', 'bio', 'rol_id', 'avatar', 'status', 'star', 'cover'
     ];
 
     /**
@@ -64,5 +65,10 @@ class User extends Authenticatable
     public function voting() 
     {
         return $this->hasMany('Intranet\UserVote', 'profile_id');
+    }
+
+     public function photos()
+    {
+        return $this->hasMany(UserImage::class, 'user_id', 'id');
     }
 }

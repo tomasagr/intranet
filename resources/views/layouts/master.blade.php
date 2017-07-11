@@ -105,7 +105,9 @@
 		<script src="/js/components/users/PersonsController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/salas/SalasController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/components/users/UserSelectorController.js?v=<?php echo time(); ?>"></script>
-
+		<script src="/js/components/users/PortadaController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/users/GaleriaController.js?v=<?php echo time(); ?>"></script>
+		<script src="/js/components/productos/ProductosController.js?v=<?php echo time(); ?>"></script>
 		<script src="/js/libs/jquery-accordions/js/jquery.accordion.js"></script>
 
 		<script>

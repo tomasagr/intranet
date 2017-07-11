@@ -84,6 +84,20 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('productos/{productos}', ['as'=> 'panel.productos.show', 'uses' => 'Panel\NoticiasController@show']);
 		Route::get('productos/{productos}/edit', ['as'=> 'panel.productos.edit', 'uses' => 'Panel\NoticiasController@edit']);
 
+		Route::get('productos/{id}/archivos', 'Panel\ArchivosProductosController@index');
+		Route::get('productos/{id}/archivos/create', 'Panel\ArchivosProductosController@create');
+		Route::get('productos/{id}/archivos/{archivo}/edit', 'Panel\ArchivosProductosController@edit');
+		Route::post('productos/{id}/archivos', 'Panel\ArchivosProductosController@store');
+		Route::patch('productos/{id}/archivos/{archivo}', 'Panel\ArchivosProductosController@update');
+		Route::delete('productos/{id}/archivos/{archivo}', 'Panel\ArchivosProductosController@destroy');
+
+		Route::get('productos/{id}/imagenes', 'Panel\ImagenesProductosController@index');
+		Route::get('productos/{id}/imagenes/create', 'Panel\ImagenesProductosController@create');
+		Route::get('productos/{id}/imagenes/{imagen}/edit', 'Panel\ImagenesProductosController@edit');
+		Route::post('productos/{id}/imagenes', 'Panel\ImagenesProductosController@store');
+		Route::patch('productos/{id}/imagenes/{imagen}', 'Panel\ImagenesProductosController@update');
+		Route::delete('productos/{id}/imagenes/{imagen}', 'Panel\ImagenesProductosController@destroy');
+
 		Route::get('contenidos', ['as'=> 'panel.contenidos.index', 'uses' => 'Panel\ContenidoController@index']);
 		Route::post('contenidos', ['as'=> 'panel.contenidos.store', 'uses' => 'Panel\ContenidoController@store']);
 		Route::get('contenidos/create', ['as'=> 'panel.contenidos.create', 'uses' => 'Panel\ContenidoController@create']);
@@ -209,3 +223,13 @@ Route::get('panel/avisos/{avisos}/edit', ['as'=> 'panel.avisos.edit', 'uses' => 
 Route::resource('sliders', 'SliderController');
 
 Route::resource('sliders', 'SliderController');
+
+Route::get('panel/productos', ['as'=> 'panel.productos.index', 'uses' => 'Panel\ProductosController@index']);
+Route::post('panel/productos', ['as'=> 'panel.productos.store', 'uses' => 'Panel\ProductosController@store']);
+Route::get('panel/productos/create', ['as'=> 'panel.productos.create', 'uses' => 'Panel\ProductosController@create']);
+Route::put('panel/productos/{productos}', ['as'=> 'panel.productos.update', 'uses' => 'Panel\ProductosController@update']);
+Route::patch('panel/productos/{productos}', ['as'=> 'panel.productos.update', 'uses' => 'Panel\ProductosController@update']);
+Route::delete('panel/productos/{productos}', ['as'=> 'panel.productos.destroy', 'uses' => 'Panel\ProductosController@destroy']);
+Route::get('panel/productos/{productos}', ['as'=> 'panel.productos.show', 'uses' => 'Panel\ProductosController@show']);
+Route::get('panel/productos/{productos}/edit', ['as'=> 'panel.productos.edit', 'uses' => 'Panel\ProductosController@edit']);
+

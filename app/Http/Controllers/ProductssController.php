@@ -3,24 +3,32 @@
 namespace Intranet\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intranet\CategoryProduct;
 use Intranet\Models\Panel\Noticias;
+use Intranet\Models\Panel\Productos;
 
 class ProductssController extends Controller
 {
     public function index()
     {
-        $productos = Noticias::where('category_id', 3)
-                               ->orderBy('created_at', 'desc')
-                               ->get();
+      $productos = Productos::all();
     	return view('products.index', compact('productos'));
     }
 
     public function show($id)
     {
-        $noticia = Noticias::find($id);
-        $ultimas = Noticias::where('category_id', 3)
-                               ->orderBy('created_at', 'desc')
-                               ->get();
-    	return view('news.individual', compact('noticia','ultimas'));
+      $producto = Productos::find($id);
+      return view('products.show', compact('producto'));
+    }
+
+    public function apiIndex()
+    {
+      $productos = Productos::all();
+      return $productos;
+    }
+
+    public function byCategory($id)
+    {
+      return CategoryProduct::find($id)->products;
     }
 }

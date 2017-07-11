@@ -17,7 +17,7 @@
     {!! Form::select('sector_id',  $sectors->all()->pluck('name', 'id'), null, ['class' => 'form-control']) !!}
 </div>
 
-@if (Request::is('panel/productos/*')) 
+@if (Request::is('panel/productos/*'))
     {!! Form::hidden('category_id', 3) !!}
 @else
     <div class="form-group col-sm-12 col-lg-12">
