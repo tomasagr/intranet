@@ -15,7 +15,7 @@
 	</div>
 	<div class="news-items">
 		<div class="item" ng-repeat="item in lastNews">
-			<a href="/{{$link}}/@{{item.id}}" ng-mouseover="changeSelected($index)">
+			<a href="/{{$link}}/@{{item.id}}" ng-mouseover="changeSelected($index)" ng-class="{'hover-home': lengthNews === $index}">
 				<header>
 					<p>
 						<span class="date">@{{item.created_at | inDate | date:'dd-MM-yyyy'}} |</span>

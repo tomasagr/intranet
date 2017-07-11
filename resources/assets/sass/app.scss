@@ -789,3 +789,19 @@ nav#my-menu {
         font-size: 14px;
     }
 }
+
+.hover-home {
+    background: #f5f5f5;
+    border-top-color: #f3922c !important;
+
+    .tag::after {
+        background: #f5f5f5;
+        border-bottom: 13px solid transparent;
+        border-left: 10px solid $green;
+        border-top: 13px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

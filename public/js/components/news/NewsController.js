@@ -27,9 +27,25 @@ angular.module('app.news-controlller', [])
                 return element.category_id === 1
               }).slice(0, 3)
             })
+            .then(function () {
+              $scope.lengthNews = -1
+              $scope.go()
+            })
             .catch(function (error) {
               console.log(error)
             })
+
+      $scope.go = function () {
+        $scope.lengthNews += 1
+        if ($scope.lengthNews === 4) {
+          $scope.lengthNews = 0
+        }
+        $scope.selected = $scope.lastNews[$scope.lengthNews]
+        if (!$scope.$$phase) {
+          $scope.$apply()
+        }
+        setTimeout($scope.go, 3000)
+      }
 
       $scope.changeSelected = function (index) {
         $scope.selected = $scope.lastNews[index]
