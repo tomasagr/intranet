@@ -1,8 +1,7 @@
 @extends('layouts.master')
 @section('content')
 @include('layouts.header')
-<div class="container main-container"  ng-app="app"
-ng-controller="UsersProfileController" ng-init="authid={{Auth::user()->id}}">
+<div class="container main-container"  ng-app="app" ng-controller="UsersProfileController" ng-init="authid={{Auth::user()->id}}">
 <br><br>
 <div class="col-md-10 col-md-offset-1 card" style="padding-top: 0" ng-init="profileid={{$user->id}}">
   <div class="row">
@@ -10,7 +9,7 @@ ng-controller="UsersProfileController" ng-init="authid={{Auth::user()->id}}">
       @include('flash::message')
     </div>
     <img ng-if="user.cover" width="100%" height="300px" ng-style="{'background': 'url(/storage/' + user.cover + ')', 'background-size': 'cover', 'background-position': 'center center'}" alt="">
-    <img ng-if="!user.cover" width="100%" height="300px" ng-style="{'background': 'url(/images/cover-default.png)', 'background-size': 'cover', 'background-position': 'center center'}" alt="">
+    <img ng-if="!user.cover" width="100%" height="300px" ng-style="{'background': 'url(/images/cover-default.jpg)', 'background-size': 'cover', 'background-position': 'center center'}" alt="">
   </div>
   <form>
     <div class="row upload-row" style="margin-top: -68px;">

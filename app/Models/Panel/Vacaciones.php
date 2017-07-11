@@ -26,7 +26,8 @@ class Vacaciones extends Model
         'cuerpo',
         'fecha',
         'hora',
-        'user_id'
+        'user_id',
+        'to_date'
     ];
 
     /**
@@ -52,6 +53,8 @@ class Vacaciones extends Model
         'fecha' => 'required',
         'user_id' => 'required'
     ];
+
+
 
     public function user() 
     {

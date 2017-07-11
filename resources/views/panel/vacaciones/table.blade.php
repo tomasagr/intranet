@@ -2,7 +2,8 @@
     <thead>
         <th>Titulo</th>
         <th>Cuerpo</th>
-        <th>Fecha</th>
+        <th>Desde</th>
+        <th>Hasta</th>
         <th>Usuario</th>
         <th colspan="3">Acciones</th>
     </thead>
@@ -12,6 +13,7 @@
             <td>{!! $vacaciones->titulo !!}</td>
             <td>{!! $vacaciones->cuerpo !!}</td>
             <td>{!! $vacaciones->fecha !!}</td>
+            <td>{!! $vacaciones->to_date !!}</td>
             <td>{!! $vacaciones->user_id !!}</td>
             <td>
                 {!! Form::open(['route' => ['panel.vacaciones.destroy', $vacaciones->id], 'method' => 'delete']) !!}

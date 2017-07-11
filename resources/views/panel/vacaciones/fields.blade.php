@@ -13,8 +13,13 @@
 
 <!-- Fecha Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fecha', 'Fecha:') !!}
+    {!! Form::label('fecha', 'Desde:') !!}
     {!! Form::date('fecha', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group col-sm-6">
+    {!! Form::label('to_date', 'Hasta:') !!}
+    {!! Form::date('to_date', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- User Id Field -->

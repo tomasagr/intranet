@@ -10,7 +10,7 @@
       <div class="modal-body">
         <div class="alert alert-success" ng-if="success">Guardado con exito!</div>
         <form ng-submit="upload({{Auth::user()->id}})">
-          <img ngf-thumbnail="file || '/images/cover-default.png'"
+          <img ngf-thumbnail="file || '/images/cover-default.jpg'"
                style="background-repeat: no-repeat; background-size: cover; background-position: center 0; width: 100%; height: 300px" ngf-as-background="true">
           <div style="margin-top: 1em">
             <button type="button" class="btn btn-primary"

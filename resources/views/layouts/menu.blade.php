@@ -42,9 +42,11 @@
     <li class="{{ Request::is('panel/productos*') ? 'active' : '' }}">
       <a href="{!! route('panel.productos.index') !!}"><i class="fa fa-cubes"></i><span>Info Productos</span></a>
     </li>
-    <li class="{{ Request::is('panel/rSES*') ? 'active' : '' }}">
-      <a href="{!! route('panel.rSES.index') !!}"><i class="fa fa-briefcase"></i><span>Búsqueda Laboral</span></a>
-    </li>
+    @if (Auth::user()->rol->id == 1)
+      <li class="{{ Request::is('panel/rSES*') ? 'active' : '' }}">
+        <a href="{!! route('panel.rSES.index') !!}"><i class="fa fa-briefcase"></i><span>Búsqueda Laboral</span></a>
+      </li>
+    @endif
   </ul>
 </li>
 

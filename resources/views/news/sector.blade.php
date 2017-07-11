@@ -21,7 +21,7 @@
 					@endif
 					<p class="name">{{$user->fullname}}</p>
 					<p class="charge">{{$user->position}}</p>
-					<p class="description">{{$user->bio}}</p>
+					<p class="description">{{substr($user->bio, 0, 100)}}...</p>
 				</div>
 		@endforeach
 	</div>
