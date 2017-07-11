@@ -9,7 +9,7 @@
 	<div class="rse" style="background: white;">
 		<div class="container">
 			<div class="col-md-12">
-				<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $noticia->image)}}); background-size: cover; width:100%; height: 320px;">
+				<img class="img-responsive" src="" alt="" style="background:url({{asset('/storage/'. $noticia->image)}}); background-size: cover; width:100%; height: 377px;">
 
 				<p class="date" style="margin-bottom: 5px">{{$noticia->created_at->format('d-m-Y')}} | <b style="color: black;text-transform:uppercase;">{{$noticia->category->name}}</b></p>
 
