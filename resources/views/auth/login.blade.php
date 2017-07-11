@@ -33,7 +33,9 @@
                 <button type="submit" class="btn btn-warning danger-alternative">ENVIAR</button>
             </div>
         </form>
-        <p class="default-text">Si aún no tienes cuenta, registrate haciendo <a href="/register" style="color:white;text-decoration:underline">click aquí</a></p>
+        <p class="default-text" style="padding-bottom: 0">Si aún no tienes cuenta, registrate haciendo <a href="/register" style="color:white;text-decoration:underline">click aquí</a></p>
+
+        <a href="/password/reset" class="default-text" style="color:white; text-decoration: underline;padding-top: 10px">Olvide mi contraseña</a>
 
         <p class="default-text copy">© Copyright Summit Agro 2017</p>
     </div>

@@ -1,76 +1,51 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Intranet | Restablecer password</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body id="login" class="background-login">
+    <div class="login-container">
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
         </div>
+        @endif
+        <a href="/login" class="logo-login-wrapper">
+            <img src="/images/logo.png" alt="">
+        </a>
+        <p class="default-text">Ingrese sus datos de usuario para ingresar al sistema</p>
+        <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
+            {{ csrf_field() }}
+            <input type="hidden" value="{{$token}}" name="token">
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required>
+            </div>
+            @if ($errors->has('email'))
+            <span class="help-block">
+                <strong style="color: white">
+                    Las credenciales son invalidas, o el usuario no esta activo.
+                </strong>
+            </span>
+            @endif
+            
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
+                <input type="password" name="password_confirmation" class="form-control" placeholder="Confirmar Password" required>
+            </div>
+            <div class="button-send">
+                <button type="submit" class="btn btn-warning danger-alternative">RESTABLECER</button>
+            </div>
+        </form>
+        <p class="default-text" style="padding-bottom: 0">Si aún no tienes cuenta, registrate haciendo <a href="/register" style="color:white;text-decoration:underline">click aquí</a></p>
+
+        <p class="default-text copy">© Copyright Summit Agro 2017</p>
     </div>
-</div>
-@endsection
+    <script src="/js/app.js"></script>
+</body>
+</html>

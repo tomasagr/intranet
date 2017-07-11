@@ -4,6 +4,7 @@ namespace Intranet;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Intranet\Notifications\ResetNotification;
 use Intranet\Permissions;
 use Intranet\Profile;
 use Intranet\Rol;
@@ -70,5 +71,10 @@ class User extends Authenticatable
      public function photos()
     {
         return $this->hasMany(UserImage::class, 'user_id', 'id');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetNotification($token));
     }
 }
