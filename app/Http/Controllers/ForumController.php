@@ -14,16 +14,16 @@ class ForumController extends Controller
         $foros = Foro::all();
         if ($request->q) {
             $temas = Tema::with('autor', 'foro')
-                        ->where('nombre','LIKE',"%$request->q%")
-                        ->orderBy('created_at', 'desc')
-                        ->get();
+            ->where('nombre','LIKE',"%$request->q%")
+            ->orderBy('created_at', 'desc')
+            ->get();
         } else {
             $temas = Tema::with('autor', 'foro')
-                        ->orderBy('created_at', 'desc')
-                        ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
         }
 
-    	return view('forum.index', compact('foros', 'temas'));
+        return view('forum.index', compact('foros', 'temas'));
     }
 
     public function show(Request $request, $id)
@@ -31,24 +31,24 @@ class ForumController extends Controller
         $foro = Foro::find($id);
         if ($request->q) {
             $temas = Tema::with('autor', 'foro')
-                       ->where('foro_id', $id)
-                       ->where('nombre','LIKE',"%$request->q%")
-                       ->orderBy('created_at', 'desc')
-                       ->get();
+            ->where('foro_id', $id)
+            ->where('nombre','LIKE',"%$request->q%")
+            ->orderBy('created_at', 'desc')
+            ->get();
         } else {
             $temas = Tema::with('autor', 'foro')
-                       ->where('foro_id', $id)
-                       ->orderBy('created_at', 'asc')
-                       ->get();
+            ->where('foro_id', $id)
+            ->orderBy('created_at', 'asc')
+            ->get();
         }
-    	return view('forum.show', compact('foro', 'temas'));
+        return view('forum.show', compact('foro', 'temas'));
     }
 
     public function topic($id)
     {
         $foros = Foro::all();
         $tema = Tema::find($id);
-    	return view('forum.topic', compact('foros', 'tema'));
+        return view('forum.topic', compact('foros', 'tema'));
     }
 
     public function create(Request $request) 
@@ -56,37 +56,30 @@ class ForumController extends Controller
         $foros = Foro::all();
         if ($request->q) {
             $temas = Tema::with('autor', 'foro')
-                        ->where('nombre','LIKE',"%$request->q%")
-                        ->orderBy('created_at')
-                        ->get();
+            ->where('nombre','LIKE',"%$request->q%")
+            ->orderBy('created_at')
+            ->get();
         } else {
             $temas = Tema::with('autor', 'foro')
-                        ->orderBy('created_at')
-                        ->get();
+            ->orderBy('created_at')
+            ->get();
         }
 
         return view('forum.create', compact('foros', 'temas'));
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
-
         $data = $request->all();
-        
         $data["author_id"] = \Auth::user()->id;
-        
         $tema = Tema::create($data);
-        
         $data["user_id"] =  array_map(function($element) {
             $user = \Intranet\User::where('fullname', $element)->first();
-
             \Mail::to($user)->send(new \Intranet\Mail\EmailForumTopic($user));
-
             return $user->id;
         }, $data["user_id"]);
 
-        
-        $tema->users()->attach($data["user_id"]);     
+        $tema->users()->attach($data["user_id"]);
 
         if ($tema) {
             \Flash::success('Tema creado con éxito');
@@ -94,16 +87,30 @@ class ForumController extends Controller
         }
     }
 
-    public function delete($id) 
+    public function addUser(Request $request, $id)
+    {
+        $tema = Tema::find($id);
+        $tema->users()->attach($request->user_id);
+        $user = \Intranet\User::find($request->user_id)->first();
+
+        \Mail::to($user)->send(new \Intranet\Mail\EmailForumTopic($user));
+
+        if ($tema) {
+            \Flash::success('Tema creado con éxito');
+            return redirect("/topic/$id");
+        }
+    }
+
+    public function delete($id)
     {
         $tema = Tema::find($id);
 
         if (count($tema->comentario)) {
             $tema->comentario()->delete();
             User::find($tema->author_id)
-                ->notifications()
-                ->where('type', 'Intranet\Notifications\ComentarioNotificacion')
-                ->delete();
+            ->notifications()
+            ->where('type', 'Intranet\Notifications\ComentarioNotificacion')
+            ->delete();
         }
 
         $tema->delete();
