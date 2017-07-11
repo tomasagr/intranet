@@ -66,7 +66,7 @@ class NewsController extends Controller
     	return view('news.institutional', compact('institutional'));
     }
 
-    public function show($id) 
+    public function show($id)
     {
         $noticia = Noticias::with(['sector', 'category'])
                             ->where('category_id','!=', 3)
@@ -74,13 +74,13 @@ class NewsController extends Controller
 
         $ultimas = Noticias::with(['sector', 'category'])
                             ->where('id', '!=', $id)
-                            ->where('category_id', '!=', 3)        
+                            ->where('category_id', '!=', 3)
                             ->orderBy('created_at', 'desc')
                             ->get();
     	return view('news.individual', compact('noticia', 'ultimas'));
     }
 
-    public function showInformal($id) 
+    public function showInformal($id)
     {
         $noticia = Noticias::with(['sector', 'category'])
                             ->where('category_id','!=', 3)
@@ -116,11 +116,11 @@ class NewsController extends Controller
 
     public function sector($id) 
     {
-        $sectorNombre = Sector::find($id)->name;
+        $sectores = Sector::with('users')->find($id);
         $institutional = Noticias::where('category_id', 2)->where('sector_id', $id)->limit(2)->get();
         $informal = Noticias::where('category_id', 1)->where('sector_id', $id)->limit(2)->get();
         $sector = Noticias::limit(2)->where('sector_id', $id)->get();
-    	return view('news.sector', compact('institutional', 'informal', 'sector', 'sectorNombre'));
+    	return view('news.sector', compact('institutional', 'informal', 'sector', 'sectores'));
     }
 
 }

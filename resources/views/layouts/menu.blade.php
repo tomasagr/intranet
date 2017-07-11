@@ -142,3 +142,7 @@
   </ul>
 </li>
 
+<li class="{{ Request::is('sectores*') ? 'active' : '' }}">
+    <a href="{!! route('sectores.index') !!}"><i class="fa fa-edit"></i><span>Sectores</span></a>
+</li>
+

@@ -5,8 +5,27 @@
 @include('layouts.header')
 <div class="main-content" style="padding-top: 1em; margin-top: 0; background: white;">
 	<div class="title" style="margin: 0; padding-bottom: 1em">
-		{{$sectorNombre}}
+		{{$sectores->name}}
 	</div>
+	<div class="container" style="text-align: center; font-weight: 600; font-size: 16px; margin-bottom: 3em;">
+		{{$sectores->descripcion}}
+	</div>
+
+	<div class="container">
+		@foreach($sectores->users as $user)
+			<div class="col-md-3 pearson text-center" style="height:350px;">
+					@if ($user->avatar && $user->avatar != 'null')
+					<img class="img-responsive img-circle"  alt="" style="display: inline-block; width: 150px; height: 150px;background:url(/storage/{{$user->avatar}});background-size:cover; background-position:center">
+					@elseif ($user->avatar == 'null' || !$user->avatar)
+					<img class="img-responsive img-circle" ng-src="/images/default.svg" alt="" style="display: inline-block; width: 150px; height: 140px;" >
+					@endif
+					<p class="name">{{$user->fullname}}</p>
+					<p class="charge">{{$user->position}}</p>
+					<p class="description">{{$user->bio}}</p>
+				</div>
+		@endforeach
+	</div>
+	<br>
 	<div class="container clearfix">
 		<div class="col-md-12">
 			@foreach($sector as $item)

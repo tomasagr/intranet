@@ -773,3 +773,19 @@ nav#my-menu {
         top: 26em !important;
     }
 }
+
+.pearson {
+        margin: 1em 0;
+        margin-bottom: 2em;
+
+        .name {
+            font-weight: bold;
+            color: black;
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
+        a {
+            color: $orange;
+            font-size: 14px;
+        }
+    }

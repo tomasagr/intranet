@@ -233,3 +233,10 @@ Route::delete('panel/productos/{productos}', ['as'=> 'panel.productos.destroy', 
 Route::get('panel/productos/{productos}', ['as'=> 'panel.productos.show', 'uses' => 'Panel\ProductosController@show']);
 Route::get('panel/productos/{productos}/edit', ['as'=> 'panel.productos.edit', 'uses' => 'Panel\ProductosController@edit']);
 
+
+
+Route::resource('sectores', 'SectoresController');
+
+Route::resource('sectores', 'SectoresController');
+
+Route::resource('sectores', 'SectoresController');
