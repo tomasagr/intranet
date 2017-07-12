@@ -15,10 +15,18 @@
         <div class="col-md-12">
           <p><b>SALAS:</b></p>
 				
-				<button class="btn btn-warning" ng-class="{active: tab == 'TOKYO'}" ng-click="setTab('TOKYO', calendarDate)"><b>TOKYO</b> | SALA GRANDE</button>
-				<button class="btn btn-warning" ng-class="{active: tab == 'OSAKA'}" ng-click="setTab('OSAKA', calendarDate)"><b>OSAKA</b> | SALA INTERMEDIA</button>
-				<button class="btn btn-warning" ng-class="{active: tab == 'KYOTO'}" ng-click="setTab('KYOTO', calendarDate)"><b>KYOTO </b>| SALA NARANJA</button>
-				<button class="btn btn-warning" ng-class="{active: tab == 'NARA'}" ng-click="setTab('NARA', calendarDate)"><b>NARA </b>| SALA VERDE</button>
+				<button class="btn btn-warning" ng-class="{active: tab == 'TOKYO'}" ng-click="setTab('TOKYO', calendarDate)">
+          <b>TOKYO</b> | SALA GRANDE
+        </button>
+				<button class="btn btn-warning" ng-class="{active: tab == 'OSAKA'}" ng-click="setTab('OSAKA', calendarDate)">
+          <b>OSAKA</b> | SALA INTERMEDIA
+        </button>
+				<button class="btn btn-warning" ng-class="{active: tab == 'KYOTO'}" ng-click="setTab('KYOTO', calendarDate)">
+          <b>KYOTO </b>| SALA NARANJA
+        </button>
+				<button class="btn btn-warning" ng-class="{active: tab == 'NARA'}" ng-click="setTab('NARA', calendarDate)">
+          <b>NARA </b>| SALA VERDE
+        </button>
 				<hr>
         </div>
         <div class="col-md-6">

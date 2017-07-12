@@ -13,7 +13,6 @@ class FranjaController extends Controller
     {
         $franja = SalaFranja::find($id);
         $sala = Salas::where('tag', $request->sala_tag)->first();
-    
         $res = Reserva::create([
             'fecha' => $request->fecha,
             'sala_id' =>  $sala->id,
