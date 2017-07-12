@@ -16,9 +16,12 @@ angular.module('app.salas-controller', [])
       $scope.sala = response.data
       $scope.title = response.data.nombre
       $scope.franja = response.data.franja
-      $scope.events = response.data.reservas.map(function (element) {
+      $scope.reservas = response.data.reservas
+      $scope.events = $scope.reservas.map(function (element) {
         return {
           title: 'Reserva',
+          'user_id': element.user_id,
+          'franja_id': element.franja_id,
           startsAt: moment(element.fecha).toDate(),
           incrementsBadgeTotal: false,
           color: {primary: '#008000'}
@@ -35,9 +38,15 @@ angular.module('app.salas-controller', [])
       })
     })
 
-    $scope.deleteReserva = function (franja, authid) {
-      console.log(franja, authid, $scope.sala.id)
+    $scope.userOwnFranja = function (id, user) {
+      var userOwn = $scope.reservas.find(function (element) {
+        return element.franja_id == id && element.user_id == user && element.sala_id == $scope.sala.id
+      })
 
+      return userOwn != undefined
+    }
+
+    $scope.deleteReserva = function (franja, authid) {
       SweetAlert.swal({
         title: 'Esta seguro?',
         text: 'Se dara de baja la reserva para la sala.',
@@ -48,7 +57,10 @@ angular.module('app.salas-controller', [])
         cancelButtonText: 'No',
         closeOnConfirm: false},
        function () {
-         $http.delete('franja/' + franja + '/sala/' + $scope.sala.id)
+         $http.delete('/api/franja/' + franja + '/sala/' + $scope.sala.id + '/user/' + authid)
+          .then(function () {
+            window.location.reload()
+          })
        })
     }
 

@@ -50,7 +50,7 @@ on-timespan-click="timespanClicked(calendarDate)">
 					<input type="hidden" value="{{\Auth::user()->id}}" data-userid>
 					<div ng-repeat="item in franja">
 						<label class="radio-label"  style="display: flex;">
-						<a ng-if="item.is_used" ng-click="deleteReserva(item.id, {{Auth::user()->id}})"><i class="fa fa-trash"></i></a>
+						<a ng-if="item.is_used && userOwnFranja(item.id, {{Auth::user()->id}})" ng-click="deleteReserva(item.id, {{Auth::user()->id}})"><i class="fa fa-trash"></i></a>
 						<input ng-show="!item.is_used" class="radiocalendar"
 							type="checkbox"
 							ng-true-value="@{{item.id}}"

@@ -53,4 +53,5 @@ Route::get('/users/{id}/cover', 'UserImagesController@getCover');
 Route::post('/users/{id}/gallery', 'UserImagesController@setPhoto');
 Route::get('/users/{id}/gallery', 'UserImagesController@getPhoto');
 Route::post('/users/{id}/cover', 'UserImagesController@setCover');
+Route::delete('/franja/{franja}/sala/{sala}/user/{user}','SalasReservasController@destroy');
 

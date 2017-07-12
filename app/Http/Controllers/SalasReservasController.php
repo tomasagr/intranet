@@ -24,4 +24,11 @@ class SalasReservasController extends Controller
 
         return response()->json(['reservas' => $reservas, 'franja' => $newFranjas]);
     }
+
+    public function destroy($franja, $sala, $user)
+    {
+        return Reserva::where('franja_id', $franja)
+        ->where('sala_id', $sala)
+        ->where('user_id', $user)->delete();
+    }
 }

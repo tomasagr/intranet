@@ -15,7 +15,6 @@ Route::get('/', function () {
 	return redirect('/home');
 });
 
-
 Route::group(['middleware' => 'auth'], function() {
 	Route::get('/galerias/informacion', 'SliderController@info');
 	Route::post('/galerias/informacion/{id}', 'SliderController@saveInfo');
@@ -153,7 +152,6 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('/votos/refresh', 'Panel\StarmeupController@refresh');
 		Route::get('/users/{id}/star', 'Panel\StarmeupController@star');
 
-
 		Route::get('manuales', ['as'=> 'panel.manuales.index', 'uses' => 'Panel\ManualesController@index']);
 		Route::post('manuales', ['as'=> 'panel.manuales.store', 'uses' => 'Panel\ManualesController@store']);
 		Route::get('manuales/create', ['as'=> 'panel.manuales.create', 'uses' => 'Panel\ManualesController@create']);
@@ -162,7 +160,6 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::delete('manuales/{manuales}', ['as'=> 'panel.manuales.destroy', 'uses' => 'Panel\ManualesController@destroy']);
 		Route::get('manuales/{manuales}', ['as'=> 'panel.manuales.show', 'uses' => 'Panel\ManualesController@show']);
 		Route::get('manuales/{manuales}/edit', ['as'=> 'panel.manuales.edit', 'uses' => 'Panel\ManualesController@edit']);
-
 
 		Route::get('videos', ['as'=> 'panel.videos.index', 'uses' => 'Panel\VideosController@index']);
 		Route::post('videos', ['as'=> 'panel.videos.store', 'uses' => 'Panel\VideosController@store']);
@@ -173,7 +170,6 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::get('videos/{videos}', ['as'=> 'panel.videos.show', 'uses' => 'Panel\VideosController@show']);
 		Route::get('videos/{videos}/edit', ['as'=> 'panel.videos.edit', 'uses' => 'Panel\VideosController@edit']);
 
-
 		Route::get('informacions', ['as'=> 'panel.informacions.index', 'uses' => 'Panel\InformacionController@index']);
 		Route::post('informacions', ['as'=> 'panel.informacions.store', 'uses' => 'Panel\InformacionController@store']);
 		Route::get('informacions/create', ['as'=> 'panel.informacions.create', 'uses' => 'Panel\InformacionController@create']);
@@ -182,7 +178,6 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::delete('informacions/{informacions}', ['as'=> 'panel.informacions.destroy', 'uses' => 'Panel\InformacionController@destroy']);
 		Route::get('informacions/{informacions}', ['as'=> 'panel.informacions.show', 'uses' => 'Panel\InformacionController@show']);
 		Route::get('informacions/{informacions}/edit', ['as'=> 'panel.informacions.edit', 'uses' => 'Panel\InformacionController@edit']);
-
 
 		Route::get('curiosidades', ['as'=> 'panel.curiosidades.index', 'uses' => 'Panel\CuriosidadesController@index']);
 		Route::post('curiosidades', ['as'=> 'panel.curiosidades.store', 'uses' => 'Panel\CuriosidadesController@store']);
@@ -198,10 +193,7 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::post('salas/{id}/franja', 'SalaFranjaController@store');
 
 		Route::get('reservas', ['as'=> 'panel.reservas.index', 'uses' => 'ReservasController@index']);
-
 		Route::get('franja/{id}/delete', 'FranjaController@delete');
-
-		
 	});
 });
 
