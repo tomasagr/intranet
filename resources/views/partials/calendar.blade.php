@@ -31,8 +31,9 @@
     </div>
     @if($title != 'VACACIONES')
     <div class="col-md-12 ticks">
-      <span><i class="fa fa-circle" style="color: red;margin-right: 10px"></i> EVENTOS AGRO</span>
-      <span><i class="fa fa-circle" style="color:green;;margin-right: 10px"></i> EVENTOS SUMMIT</span>
+      <span><i class="fa fa-circle" style="color: red;margin-right: 0px"></i> EVENTOS AGRO</span>
+      <span><i class="fa fa-circle" style="color:green;;margin-right: 0px"></i> EVENTOS SUMMIT</span>
+      <span><i class="fa fa-circle" style="color:#EC8E2B;;margin-right: 0px"></i> VACACIONES</span>
     </div>
     @endif
   </div>
@@ -43,8 +44,7 @@
     </div>
     <div class="items" style="
     overflow-y: scroll;
-    height: 320px;
-">
+    height: 320px;">
       <div class="alert alert-info" ng-if="!frontEvents.length">
         No hay eventos para el día seleccionado
       </div>
