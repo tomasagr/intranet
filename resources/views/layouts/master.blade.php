@@ -85,6 +85,7 @@
 		 <script src="/bower_components/iCheck/icheck.js"></script>
 		 <script src="/bower_components/trumbowyg/dist/trumbowyg.js"></script>
 		 <script src="/bower_components/lightbox2/dist/js/lightbox.js"></script>
+		 <script src="/bower_components/rrule/lib/rrule.js"></script>
 
 		 <!-- APP -->
 		 <script src="/js/components/app.js?v=<?php echo time(); ?>"></script>

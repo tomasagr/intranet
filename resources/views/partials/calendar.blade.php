@@ -26,7 +26,7 @@
         events="events"
         view-title="calendarTitle"
         cell-auto-open-disabled="true"
-        on-timespan-click="timespanClicked(calendarDate, '{{$type}}')">
+        on-timespan-click="timespanClicked(calendarDate, calendarCell, '{{$type}}')">
       </mwl-calendar>
     </div>
     @if($title != 'VACACIONES')
@@ -48,13 +48,11 @@
       <div class="alert alert-info" ng-if="!frontEvents.length">
         No hay eventos para el día seleccionado
       </div>
+
       <div class="item" ng-repeat ="item in frontEvents">
         <header style="background-color: transparent;">
-          @if($title != 'VACACIONES')
-          <p class="hour">@{{item.hora}}</p>
-          @else 
-            <p class="hour">Usuario: @{{item.user.fullname}}</p>
-          @endif
+          <p class="hour" ng-if="item.type == 'eventos'">@{{item.hora}}</p>
+          <p class="hour" ng-if="item.type == 'vacaciones'">Usuario: @{{item.user.fullname}}</p>
 
           <p class="event-title" style="text-transform: uppercase">
             <i ng-if="item.tipo == 'AGRO'" class="fa fa-circle" style="color: red;margin-right: 10px"></i>

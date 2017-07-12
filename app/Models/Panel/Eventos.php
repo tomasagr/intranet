@@ -25,7 +25,8 @@ class Eventos extends Model
         'cuerpo',
         'fecha',
         'hora',
-        'tipo'
+        'tipo',
+        'is_birthday'
     ];
 
     /**

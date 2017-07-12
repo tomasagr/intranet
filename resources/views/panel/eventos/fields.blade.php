@@ -28,6 +28,11 @@
     {!! Form::select('tipo', ['SUMMIT' => 'SUMMIT', 'AGRO' => 'AGRO'], null, ['class' => 'form-control']) !!}
 </div>
 
+<div class="form-group col-sm-6">
+    {!! Form::label('is_birthday', 'Es cumpleaños:') !!}
+    {!! Form::select('is_birthday', [0 => 'No', 1 => 'Si'], null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}

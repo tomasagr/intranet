@@ -20,7 +20,7 @@ class EventsApiController extends Controller
     {
         return response()->json([
             'eventos' => Eventos::whereDate('fecha', $date)->get(),
-            'vacaciones' => Vacaciones::with('user')->whereDate('fecha', $date)->get(),
+            'vacaciones' => Vacaciones::with('user')->whereDate('fecha', '<=' ,$date)->get(),
         ]);
     }
 }
