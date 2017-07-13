@@ -8,6 +8,7 @@
         "php": ">=5.6.4",
         "doctrine/dbal": "~2.3",
         "guzzlehttp/guzzle": "^6.2",
+        "ifsnop/mysqldump-php": "2.*",
         "infyomlabs/adminlte-templates": "5.3.x-dev",
         "infyomlabs/laravel-generator": "5.3.x-dev",
         "laravel/tinker": "~1.0",
