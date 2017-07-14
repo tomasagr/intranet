@@ -56,6 +56,7 @@
 
           <p class="event-title" style="text-transform: uppercase">
             <i ng-if="item.tipo == 'AGRO'" class="fa fa-circle" style="color: red;margin-right: 10px"></i>
+            <i ng-if="item.type == 'vacaciones'" class="fa fa-circle" style="color: #EC8E2B;margin-right: 10px"></i>
             <i ng-if="item.tipo == 'SUMMIT'" class="fa fa-circle" style="color: green;margin-right: 10px"></i>@{{item.titulo}}
           <p>
           <p class="event-description">

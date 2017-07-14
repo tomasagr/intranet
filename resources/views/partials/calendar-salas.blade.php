@@ -20,12 +20,12 @@
 	</button>
 </div>
 <mwl-calendar
-view="calendarView"
-view-date="viewDate"
-events="events"
-view-title="calendarTitle"
-cell-auto-open-disabled="true"
-on-timespan-click="timespanClicked(calendarDate)">
+	view="calendarView"
+	view-date="viewDate"
+	events="events"
+	view-title="calendarTitle"
+	cell-auto-open-disabled="true"
+	on-timespan-click="timespanClicked(calendarDate)">
 </mwl-calendar>
 </div>
 </div>
@@ -55,7 +55,8 @@ on-timespan-click="timespanClicked(calendarDate)">
 							type="checkbox"
 							ng-true-value="@{{item.id}}"
 							ng-model="$parent.reservation[$index]">
-							<span style="margin-left: 10px;">@{{item.start}} - @{{item.end}}</span>
+							<span ng-if="!item.is_used" style="margin-left: 10px;">@{{item.start}} - @{{item.end}}</span>
+							<span ng-if="item.is_used" style="margin-left: 10px; text-decoration: line-through;">@{{item.start}} - @{{item.end}}</span>
 						</label>
 					</div>
 				</div>

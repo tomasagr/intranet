@@ -29,7 +29,7 @@ class BackupDone extends Mailable
     public function build()
     {
         return $this->view('mail.backup')
-        ->subject('Se ha generado el backup semanal con exito!')
+        ->subject('Se ha generado el backup semanal con éxito!')
         ->from('server@somossummit.com.ar');
     }
 }

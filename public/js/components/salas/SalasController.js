@@ -48,8 +48,8 @@ angular.module('app.salas-controller', [])
 
     $scope.deleteReserva = function (franja, authid) {
       SweetAlert.swal({
-        title: 'Esta seguro?',
-        text: 'Se dara de baja la reserva para la sala.',
+        title: '¿Estás seguro?',
+        text: 'Se dará de baja la reserva de la sala.',
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55',
@@ -129,7 +129,7 @@ angular.module('app.salas-controller', [])
     $scope.setReservation = function (id, data) {
       $http.post('/api/franja/' + id + '/reservation', data)
       .then(function (response) {
-        SweetAlert.swal('Exito!', 'Sala reservada con éxito', 'success')
+        SweetAlert.swal('Éxito!', 'Sala reservada con éxito', 'success')
 
         $scope.events = response.data.map(function (element) {
           return {

@@ -8,8 +8,8 @@ angular.module('app.agenda-controller', [])
     $scope.daySelected = moment().format('DD [de] MMMM')
 
     calendarConfig.showTimesOnWeekView = false
-    calendarEventTitle.monthViewTooltip = calendarEventTitle.weekViewTooltip = calendarEventTitle.dayViewTooltip = function () {
-      return ''
+    calendarEventTitle.monthViewTooltip = function (event) {
+      return event.title
     }
 
     $scope.events = []

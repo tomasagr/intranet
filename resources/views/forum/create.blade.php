@@ -1,3 +1,4 @@
+@inject('users', 'Intranet\User')
 @extends('layouts.master')
 @section('content')
 <?php \Carbon\Carbon::setLocale('es'); ?>
@@ -66,16 +67,12 @@
             <div class="row" ng-repeat="item in fields">
               <div class="col-md-12">
                 <div class="form-group" style="display:flex; align-items:center">
-                 
-                 <angucomplete-alt style="width: 94%; margin-right: 1em;"
-                                   placeholder="Buscar usuario"
-                                   input-name="user_id[]"
-                                   selected-object="selectedUser[$index]"
-                                   remote-url="/api/users/search?q="
-                                   title-field="fullname"
-                                   input-class="form-control form-control-small">
-                 </angucomplete-alt>
-                
+                 <select name="user_id[@{{$index}}]" id="" required="" class="form-control">
+                   <option value="">Seleccionar</option>
+                   @foreach($users->all() as $user)
+                    <option value="{{$user->id}}">{{$user->fullname}}</option>
+                   @endforeach
+                 </select>
                   <a ng-show="!$last && !first" href="" ng-click="removeField($index)" class="orange" 
                     style="color: white; border-radius: 100%; padding: .5em .7em">
                     <i class="fa fa-minus"></i>

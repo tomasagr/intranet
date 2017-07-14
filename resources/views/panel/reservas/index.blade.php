@@ -30,7 +30,7 @@
 				<hr>
         </div>
         <div class="col-md-6">
-          <div class="controls" 
+          <div class="controls"
           style="display: flex; align-items:center; justify-content: space-between; margin: 0em 0 1.5em 0">
           <button
             class="btn btn-default btn-calendar"

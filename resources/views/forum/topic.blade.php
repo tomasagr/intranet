@@ -28,7 +28,8 @@
 				</div>
 				<hr style="width: 100%;">
 
-				<div class="col-md-12">
+				@if ($tema->privado)
+					<div class="col-md-12">
 					<p><b>Participantes: </b>
 						@foreach($tema->users as $user)
 							{{$user->fullname}} /
@@ -45,6 +46,7 @@
 				</div>
 				<br><br>
 				<hr style="width: 100%;">
+				@endif
 
 				<div class="col-md-12">
 					@foreach($tema->comentario as $item)

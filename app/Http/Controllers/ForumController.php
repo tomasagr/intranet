@@ -74,7 +74,7 @@ class ForumController extends Controller
         $data["author_id"] = \Auth::user()->id;
         $tema = Tema::create($data);
         $data["user_id"] =  array_map(function($element) {
-            $user = \Intranet\User::where('fullname', $element)->first();
+            $user = \Intranet\User::where('id', $element)->first();
             \Mail::to($user)->send(new \Intranet\Mail\EmailForumTopic($user));
             return $user->id;
         }, $data["user_id"]);
