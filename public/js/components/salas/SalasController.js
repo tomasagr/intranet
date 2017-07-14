@@ -129,7 +129,7 @@ angular.module('app.salas-controller', [])
     $scope.setReservation = function (id, data) {
       $http.post('/api/franja/' + id + '/reservation', data)
       .then(function (response) {
-        SweetAlert.swal('Éxito!', 'Sala reservada con éxito', 'success')
+        SweetAlert.swal('¡Éxito!', 'Sala reservada con éxito', 'success')
 
         $scope.events = response.data.map(function (element) {
           return {

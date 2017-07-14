@@ -8,7 +8,7 @@ use Intranet\Sector;
 
 class NewsController extends Controller
 {
-    public function index(Request $request) 
+    public function index(Request $request)
     {
         if ($request->limit) {
             if ($request->category) {
@@ -50,8 +50,6 @@ class NewsController extends Controller
     {
         $informal = Noticias::with(['sector', 'category'])
                                 ->where('category_id', 1)
-                                ->where('visibility', 2)
-                                ->orWhere('visibility', 0)
                                 ->orderBy('created_at', 'desc')->get();
     	return view('news.informal', compact('informal'));
     }
@@ -60,8 +58,6 @@ class NewsController extends Controller
     {
         $institutional = Noticias::with(['sector', 'category'])
                                 ->where('category_id', 2)
-                                ->where('visibility', 2)
-                                ->orWhere('visibility', 0)
                                 ->orderBy('created_at', 'desc')->get();
     	return view('news.institutional', compact('institutional'));
     }
@@ -90,31 +86,30 @@ class NewsController extends Controller
         $ultimas = Noticias::with(['sector', 'category'])
                             ->where('id', '!=', $id)
                             ->where('category_id', '!=', 3)
-                            ->where('id', '!=', $id)    
+                            ->where('id', '!=', $id)
                             ->where('category_id', 1)
                             ->orderBy('created_at', 'desc')
                             ->get();
     	return view('news.individual', compact('noticia', 'ultimas'));
     }
 
-    public function showInstitucional($id) 
+    public function showInstitucional($id)
     {
         $noticia = Noticias::with(['sector', 'category'])
-                            ->where('category_id','!=', 3)
                             ->where('category_id', 2)
                             ->find($id);
 
         $ultimas = Noticias::with(['sector', 'category'])
                             ->where('id', '!=', $id)
                             ->where('category_id', '!=', 3)
-                            ->where('id', '!=', $id)    
-                            ->where('category_id', 2)    
+                            ->where('id', '!=', $id)
+                            ->where('category_id', 2)
                             ->orderBy('created_at', 'desc')
                             ->get();
     	return view('news.individual', compact('noticia', 'ultimas'));
     }
 
-    public function sector($id) 
+    public function sector($id)
     {
         $sectores = Sector::with('users')->find($id);
         $institutional = Noticias::where('category_id', 2)->where('sector_id', $id)->limit(2)->get();
@@ -122,5 +117,4 @@ class NewsController extends Controller
         $sector = Noticias::limit(2)->where('sector_id', $id)->get();
     	return view('news.sector', compact('institutional', 'informal', 'sector', 'sectores'));
     }
-
 }
