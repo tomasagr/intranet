@@ -65,8 +65,9 @@
 						<div data-control style="text-transform: uppercase; font-family: Lato; font-weight: 600;border-bottom: 2px solid #ccc;" >@{{curiosidad.titulo}}</div>
 						<div data-content>
 								<div style="display: flex;">
-									<img ng-if="curiosidad.imagen" width="200px" height="200px" style="margin-right:1em;" ng-src="/storage/@{{curiosidad.imagen}}" alt="">
-									<p style="line-height: 17px;">@{{curiosidad.descripcion}}</p>
+									<img ng-if="curiosidad.imagen" width="200px" height="200px" style="margin-right:1em;"
+									ng-style="{'background': 'url(/storage/'+ curiosidad.imagen + ')','background-size': 'cover','background-position': 'center left'}" alt="">
+									<p style="line-height: 17px; width: 500px">@{{curiosidad.descripcion}}</p>
 								</div>
 						</div>
 				</div>

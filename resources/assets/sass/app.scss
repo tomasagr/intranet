@@ -811,3 +811,9 @@ nav#my-menu {
     font-family: "Lato";
     font-weight: 400;
 }
+
+.accordion.open {
+      div[data-content] {
+        max-height: 100%!important;
+    }
+}
