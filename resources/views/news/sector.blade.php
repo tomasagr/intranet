@@ -33,7 +33,8 @@
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
-							<img style="height: 400px" class="img-responsive" src="{{asset('/storage/'.$item->image)}}" alt="">
+							<img style="height: 400px" class="img-responsive"
+								ng-style="{'background': 'url({{asset('/storage/'.$item->image)}})', 'background-size': 'cover', 'background-position': 'center left'}" alt="">
 						</div>
 						<div class="item-content">
 							<header>
