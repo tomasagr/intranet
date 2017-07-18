@@ -9,7 +9,7 @@
 		@include('news.latests', ['link' => 'institutional'])
 		<div class="col-md-12" style="margin-top: 3em; padding: 0 0;">
 			@foreach($institutional as $item)
-			<div class="col-md-3" style="margin: 3em 0;">
+			<div class="col-md-3" style="margin: 3em 0; height: 320px;">
 				<div class="products-items clearfix">
 					<div class="item clearfix">
 						<div class="image">
