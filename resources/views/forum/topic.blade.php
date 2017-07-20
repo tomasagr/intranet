@@ -28,25 +28,6 @@
 				</div>
 				<hr style="width: 100%;">
 
-				@if ($tema->privado)
-					<div class="col-md-12">
-					<p><b>Participantes: </b>
-						@foreach($tema->users as $user)
-							{{$user->fullname}} /
-						@endforeach
-					</p>
-				</div>
-				<hr style="width: 100%;">
-				<div class="col-md-12">
-					{{Form::open(['url' => "/topic/$tema->id/user", 'method' => 'POST', 'class' => 'form-inline'])}}
-						{!! Form::select('user_id', $userModel->where('id', '!=', $tema->autor->id)->pluck('fullname', 'id'), null,
-							['class' => 'form-control']) !!}
-						<button type="submit" class="btn btn-warning" style="font-family: Lato ">Agregar como participante</button>
-					{{Form::close()}}
-				</div>
-				<br><br>
-				<hr style="width: 100%;">
-				@endif
 
 				<div class="col-md-12">
 					@foreach($tema->comentario as $item)
